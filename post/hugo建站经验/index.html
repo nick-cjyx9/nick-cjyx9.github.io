@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh-cn"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Hugo建站经验 - 小彼方の卧室</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="第一点hugo的版本一定要新，很多主题在老版本报错 第二在hugo new xxx.md时，使用的front matter 默认使用---分割线和类似json的写法，这里推荐换作&#43;&#43;&#43;，默认配置在/archetypes/default.md修改，附上个人配置: &#43;&#43;&#43; author= &#34;cjyx9&#34; title= &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34; date= &#34;{{ .Date }}&#34; tags= [ &#34;&#34;, ] &#43;&#43;&#43; 个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录） newPost.bat @echo off set /p name=Enter post name: set /p in=R U sure it&#39;s %name%?(press enter to continue,ctrl&#43;c to exit) hugo new /post/%name%.md E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md set /p in=Press `enter` to apply. ::这两行可不写 deploy.bat
+cd E:/gayhub/blog hugo -D cd public git add ." />
+  <meta
+    name="author"
+    content=""
+  />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://nick-cjyx9.github.io/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://nick-cjyx9.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/github.svg" />
+  
+
+  
+  <link rel="icon" href="https://nick-cjyx9.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Hugo建站经验" />
+<meta property="og:description" content="第一点hugo的版本一定要新，很多主题在老版本报错 第二在hugo new xxx.md时，使用的front matter 默认使用---分割线和类似json的写法，这里推荐换作&#43;&#43;&#43;，默认配置在/archetypes/default.md修改，附上个人配置: &#43;&#43;&#43; author= &#34;cjyx9&#34; title= &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34; date= &#34;{{ .Date }}&#34; tags= [ &#34;&#34;, ] &#43;&#43;&#43; 个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录） newPost.bat @echo off set /p name=Enter post name: set /p in=R U sure it&#39;s %name%?(press enter to continue,ctrl&#43;c to exit) hugo new /post/%name%.md E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md set /p in=Press `enter` to apply. ::这两行可不写 deploy.bat
+cd E:/gayhub/blog hugo -D cd public git add ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-01-08T00:00:00+00:00" />
+
+  
+  <meta itemprop="name" content="Hugo建站经验">
+<meta itemprop="description" content="第一点hugo的版本一定要新，很多主题在老版本报错 第二在hugo new xxx.md时，使用的front matter 默认使用---分割线和类似json的写法，这里推荐换作&#43;&#43;&#43;，默认配置在/archetypes/default.md修改，附上个人配置: &#43;&#43;&#43; author= &#34;cjyx9&#34; title= &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34; date= &#34;{{ .Date }}&#34; tags= [ &#34;&#34;, ] &#43;&#43;&#43; 个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录） newPost.bat @echo off set /p name=Enter post name: set /p in=R U sure it&#39;s %name%?(press enter to continue,ctrl&#43;c to exit) hugo new /post/%name%.md E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md set /p in=Press `enter` to apply. ::这两行可不写 deploy.bat
+cd E:/gayhub/blog hugo -D cd public git add ."><meta itemprop="datePublished" content="2023-01-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-01-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="112">
+<meta itemprop="keywords" content="技术," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo建站经验"/>
+<meta name="twitter:description" content="第一点hugo的版本一定要新，很多主题在老版本报错 第二在hugo new xxx.md时，使用的front matter 默认使用---分割线和类似json的写法，这里推荐换作&#43;&#43;&#43;，默认配置在/archetypes/default.md修改，附上个人配置: &#43;&#43;&#43; author= &#34;cjyx9&#34; title= &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34; date= &#34;{{ .Date }}&#34; tags= [ &#34;&#34;, ] &#43;&#43;&#43; 个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录） newPost.bat @echo off set /p name=Enter post name: set /p in=R U sure it&#39;s %name%?(press enter to continue,ctrl&#43;c to exit) hugo new /post/%name%.md E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md set /p in=Press `enter` to apply. ::这两行可不写 deploy.bat
+cd E:/gayhub/blog hugo -D cd public git add ."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="https://nick-cjyx9.github.io"
+      >小彼方の卧室</a
+    >
+    <a
+      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+    ></a>
+  </div>
+
+  <a
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+  ></a>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/post/%E6%89%8B%E5%8A%A8%E7%BD%AE%E9%A1%B6%E5%81%87%E6%9C%9Ftodolist"
+        >todolist</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href=" https://twitter.com/cjyx9x "
+        target="_blank"
+      ></a>
+      
+      <a
+        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href=" https://github.com/nick-cjyx9 "
+        target="_blank"
+      ></a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Hugo建站经验</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Jan 8, 2023</time>
+      
+      
+    </div>
+    
+  </header>
+
+  <section><ol>
+<li>第一点hugo的版本一定要新，很多主题在老版本报错</li>
+<li>第二在<code>hugo new xxx.md</code>时，使用的front matter 默认使用<code>---</code>分割线和类似json的写法，这里推荐换作<code>+++</code>，默认配置在/archetypes/default.md修改，附上个人配置:</li>
+</ol>
+<pre tabindex="0"><code>+++
+author= &#34;cjyx9&#34;
+title= &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34;
+date= &#34;{{ .Date }}&#34;
+tags= [
+    &#34;&#34;,
+]
++++
+</code></pre><ol start="3">
+<li>个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录）
+newPost.bat</li>
+</ol>
+<pre tabindex="0"><code>@echo off
+set /p name=Enter post name:
+set /p in=R U sure it&#39;s %name%?(press enter to continue,ctrl+c to exit)
+hugo new /post/%name%.md
+
+E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md
+set /p in=Press `enter` to apply.
+::这两行可不写
+</code></pre><p>deploy.bat</p>
+<pre tabindex="0"><code>cd E:/gayhub/blog
+hugo -D
+cd public
+git add .
+git commit -m&#34;auto commit miao~&#34;
+git status
+::检查下状态以保证commit正常，可不写
+@echo off
+set /p in=Press `enter` to apply.
+git push
+set /p in=Press `enter` to exit.
+</code></pre><p>server.bat</p>
+<pre tabindex="0"><code>&#34;C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe&#34; --profile-directory=Default http://localhost:1313
+hugo server
+set /p in=Press `enter` to apply.
+</code></pre><ol start="4">
+<li>关于百度收录：</li>
+</ol>
+<ul>
+<li><a href="https://ziyuan.baidu.com/linksubmit/url?sitename=">提交</a></li>
+<li><a href="https://ziyuan.baidu.com/dashboard/index">bd资源平台</a>可以看到收录数量</li>
+</ul>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
+      href="https://nick-cjyx9.github.io/tags/%E6%8A%80%E6%9C%AF"
+      >技术</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav
+    class="mt-24 flex rounded-lg bg-black/[3%] p-1.5 text-lg dark:bg-white/[8%]" style="margin-bottom: 22px;"
+  >
+    
+    <a
+      class="flex w-1/2 items-center rounded-md p-6 pr-3 no-underline hover:bg-black/[2%]"
+      href="https://nick-cjyx9.github.io/post/%E5%81%87%E6%9C%9F%E7%AC%AC%E4%BA%8C%E5%A4%A9/"
+      ><span class="mr-1.5">←</span><span>假期第二天</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-md p-6 pl-3 no-underline hover:bg-black/[2%]"
+      href="https://nick-cjyx9.github.io/post/%E5%81%87%E6%9C%9F%E7%AC%AC%E4%B8%80%E5%A4%A9/"
+      ><span>假期第一天</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  <script src="https://giscus.app/client.js"
+        data-repo="nick-cjyx9/blog-comment"
+        data-repo-id="R_kgDOIu_GWQ"
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOIu_GWc4CTc3U"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://nick-cjyx9.github.io">小彼方の卧室</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >▷ Paper 6</a
+  >
+</footer>
+
+  </body>
+</html>

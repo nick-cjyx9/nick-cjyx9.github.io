@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on 小彼方の卧室</title>
+    <link>https://nick-cjyx9.github.io/tags/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 小彼方の卧室</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright © 20022–2023, Nick Chen; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 08 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo建站经验</title>
+      <link>https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/</link>
+      <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/</guid>
+      <description>第一点hugo的版本一定要新，很多主题在老版本报错 第二在hugo new xxx.md时，使用的front matter 默认使用---分割线和类似json的写法，这里推荐换作+++，默认配置在/archetypes/default.md修改，附上个人配置: +++ author= &amp;#34;cjyx9&amp;#34; title= &amp;#34;{{ replace .Name &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title }}&amp;#34; date= &amp;#34;{{ .Date }}&amp;#34; tags= [ &amp;#34;&amp;#34;, ] +++ 个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录） newPost.bat @echo off set /p name=Enter post name: set /p in=R U sure it&amp;#39;s %name%?(press enter to continue,ctrl+c to exit) hugo new /post/%name%.md E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md set /p in=Press `enter` to apply. ::这两行可不写 deploy.bat
+cd E:/gayhub/blog hugo -D cd public git add .</description>
+    </item>
+    
+  </channel>
+</rss>

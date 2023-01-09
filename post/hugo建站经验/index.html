@@ -129,7 +129,7 @@ cd E:/gayhub/blog hugo -D cd public git add ." />
 <meta itemprop="description" content="第一点hugo的版本一定要新，很多主题在老版本报错 第二在hugo new xxx.md时，使用的front matter 默认使用---分割线和类似json的写法，这里推荐换作&#43;&#43;&#43;，默认配置在/archetypes/default.md修改，附上个人配置: &#43;&#43;&#43; author= &#34;cjyx9&#34; title= &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34; date= &#34;{{ .Date }}&#34; tags= [ &#34;&#34;, ] &#43;&#43;&#43; 个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录） newPost.bat @echo off set /p name=Enter post name: set /p in=R U sure it&#39;s %name%?(press enter to continue,ctrl&#43;c to exit) hugo new /post/%name%.md E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md set /p in=Press `enter` to apply. ::这两行可不写 deploy.bat
 cd E:/gayhub/blog hugo -D cd public git add ."><meta itemprop="datePublished" content="2023-01-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-01-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="112">
+<meta itemprop="wordCount" content="128">
 <meta itemprop="keywords" content="技术," />
   
   <meta name="twitter:card" content="summary"/>
@@ -321,6 +321,19 @@ set /p in=Press `enter` to apply.
 <li><a href="https://ziyuan.baidu.com/linksubmit/url?sitename=">提交</a></li>
 <li><a href="https://ziyuan.baidu.com/dashboard/index">bd资源平台</a>可以看到收录数量</li>
 </ul>
+<ol start="5">
+<li>
+<p>评论系统
+像gitcomment和disqus这种系统比较常见,
+推荐一个用github discussion的<a href="https://giscus.app/zh-CN">giscus</a>
+如果主题不自带可以直接去<code>/themes/xxx/layouts</code>改</p>
+</li>
+<li>
+<p>markdown
+力荐typora，界面清新，功能强大，picgo图床加上snipaste很舒服，目前买断88￥，3台机子可用，有经济实力可入正
+其次vscode加markdown插件：markdown all in one 和 Markdown Preview Mermaid Support基本可以实现预览和图表</p>
+</li>
+</ol>
 </section>
 
   

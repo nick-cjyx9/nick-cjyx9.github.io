@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>技术 on 小彼方の卧室</title>
-    <link>https://nick-cjyx9.github.io/tags/%E6%8A%80%E6%9C%AF/</link>
-    <description>Recent content in 技术 on 小彼方の卧室</description>
+    <title>干货 on 小彼方の卧室</title>
+    <link>https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7/</link>
+    <description>Recent content in 干货 on 小彼方の卧室</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 08 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo建站经验</title>
       <link>https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/</link>

@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 09 Jan 2023 14:50:56 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2023 16:26:41 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ybt_1220_单词接龙</title>
+      <link>https://nick-cjyx9.github.io/post/ybt_1220_%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/</link>
+      <pubDate>Thu, 12 Jan 2023 16:26:41 +0800</pubDate>
+      
+      <guid>https://nick-cjyx9.github.io/post/ybt_1220_%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/</guid>
+      <description>【题目直达】 http://ybt.ssoier.cn:8088/problem_show.php?pid=1220
+【题目描述】 单词接龙是一个与我们经常玩的成语接龙相类似的游戏，现在我们已知一组单词，且给定一个开头的字母，要求出以这个字母开头的最长的“龙”（每个单词都最多在“龙”中出现两次），在两个单词相连时，其重合部分合为一部分，例如beast和astonish，如果接成一条龙则变为beastonish，另外相邻的两部分不能存在包含关系，例如at和atide间不能相连。
+【输入】 输入的第一行为一个单独的整数n(n&amp;lt;=20)表示单词数，以下n行每行有一个单词（只含有大写或小写字母，长度不超过20），输入的最后一行为一个单个字符，表示“龙”开头的字母。你可以假定以此字母开头的“龙”一定存在。
+【输出】 只需输出以此字母开头的最长的“龙”的长度。
+【输入样例】 5 at touch cheat choose tact a 【输出样例】 23 【题解】 #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int n,hans;char words[30][30],key; //定义存储变量 short vis[30],DEBUG=0; //每个单词都最多在“龙”中出现两次，使用short类型vis数组 template&amp;lt;typename L&amp;gt; inline void logr(L a){ if(DEBUG)cout&amp;lt;&amp;lt;a; } //debug控制是否输出过程变量（就是调试） inline int coin(char a[],char b[]){ /* coin(char[],char[])-&amp;gt;int 判断形参a，b是否能首尾相接， 返回重合部分大小 */ int i=strlen(a)-1,j=0; while(1){ if(j==strlen(b)) return 0; //超出边界，尚未搜到a串尾字母 if(a[i]==b[j]){ //从标记点回搜 int ans=1; for(int o=j-1;o&amp;gt;=0;o--){ if(b[o]!=a[i-j+o])return 0; ans++; //不重合一票否决 } return (ans!=strlen(a)&amp;amp;&amp;amp;ans!=strlen(b))?ans:0; //对于coin(&amp;#34;at&amp;#34;,&amp;#34;atide&amp;#34;)此类的特判 } j++; } } inline void dfs(int h,int cnt){ if(cnt&amp;gt;hans)hans=cnt; //更新答案 for(int i=1;i&amp;lt;=n;i++){ int coinn=coin(words[h],words[i]); //遍历，&amp;#34;找尾巴&amp;#34; if(coinn!</description>
+    </item>
+    
     <item>
       <title>纪念一下第一次国士</title>
       <link>https://nick-cjyx9.github.io/post/%E7%BA%AA%E5%BF%B5%E4%B8%80%E4%B8%8B%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%9B%BD%E5%A3%AB/</link>

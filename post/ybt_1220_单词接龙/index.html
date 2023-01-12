@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh-cn"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Ybt_1220_单词接龙 - 小彼方の卧室</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="【题目直达】 http://ybt.ssoier.cn:8088/problem_show.php?pid=1220
+【题目描述】 单词接龙是一个与我们经常玩的成语接龙相类似的游戏，现在我们已知一组单词，且给定一个开头的字母，要求出以这个字母开头的最长的“龙”（每个单词都最多在“龙”中出现两次），在两个单词相连时，其重合部分合为一部分，例如beast和astonish，如果接成一条龙则变为beastonish，另外相邻的两部分不能存在包含关系，例如at和atide间不能相连。
+【输入】 输入的第一行为一个单独的整数n(n&lt;=20)表示单词数，以下n行每行有一个单词（只含有大写或小写字母，长度不超过20），输入的最后一行为一个单个字符，表示“龙”开头的字母。你可以假定以此字母开头的“龙”一定存在。
+【输出】 只需输出以此字母开头的最长的“龙”的长度。
+【输入样例】 5 at touch cheat choose tact a 【输出样例】 23 【题解】 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int n,hans;char words[30][30],key; //定义存储变量 short vis[30],DEBUG=0; //每个单词都最多在“龙”中出现两次，使用short类型vis数组 template&lt;typename L&gt; inline void logr(L a){ if(DEBUG)cout&lt;&lt;a; } //debug控制是否输出过程变量（就是调试） inline int coin(char a[],char b[]){ /* coin(char[],char[])-&gt;int 判断形参a，b是否能首尾相接， 返回重合部分大小 */ int i=strlen(a)-1,j=0; while(1){ if(j==strlen(b)) return 0; //超出边界，尚未搜到a串尾字母 if(a[i]==b[j]){ //从标记点回搜 int ans=1; for(int o=j-1;o&gt;=0;o--){ if(b[o]!=a[i-j&#43;o])return 0; ans&#43;&#43;; //不重合一票否决 } return (ans!=strlen(a)&amp;&amp;ans!=strlen(b))?ans:0; //对于coin(&#34;at&#34;,&#34;atide&#34;)此类的特判 } j&#43;&#43;; } } inline void dfs(int h,int cnt){ if(cnt&gt;hans)hans=cnt; //更新答案 for(int i=1;i&lt;=n;i&#43;&#43;){ int coinn=coin(words[h],words[i]); //遍历，&#34;找尾巴&#34; if(coinn!" />
+  <meta
+    name="author"
+    content="cjyx9"
+  />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://nick-cjyx9.github.io/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://nick-cjyx9.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/github.svg" />
+  
+
+  
+  <link rel="icon" href="https://nick-cjyx9.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Ybt_1220_单词接龙" />
+<meta property="og:description" content="【题目直达】 http://ybt.ssoier.cn:8088/problem_show.php?pid=1220
+【题目描述】 单词接龙是一个与我们经常玩的成语接龙相类似的游戏，现在我们已知一组单词，且给定一个开头的字母，要求出以这个字母开头的最长的“龙”（每个单词都最多在“龙”中出现两次），在两个单词相连时，其重合部分合为一部分，例如beast和astonish，如果接成一条龙则变为beastonish，另外相邻的两部分不能存在包含关系，例如at和atide间不能相连。
+【输入】 输入的第一行为一个单独的整数n(n&lt;=20)表示单词数，以下n行每行有一个单词（只含有大写或小写字母，长度不超过20），输入的最后一行为一个单个字符，表示“龙”开头的字母。你可以假定以此字母开头的“龙”一定存在。
+【输出】 只需输出以此字母开头的最长的“龙”的长度。
+【输入样例】 5 at touch cheat choose tact a 【输出样例】 23 【题解】 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int n,hans;char words[30][30],key; //定义存储变量 short vis[30],DEBUG=0; //每个单词都最多在“龙”中出现两次，使用short类型vis数组 template&lt;typename L&gt; inline void logr(L a){ if(DEBUG)cout&lt;&lt;a; } //debug控制是否输出过程变量（就是调试） inline int coin(char a[],char b[]){ /* coin(char[],char[])-&gt;int 判断形参a，b是否能首尾相接， 返回重合部分大小 */ int i=strlen(a)-1,j=0; while(1){ if(j==strlen(b)) return 0; //超出边界，尚未搜到a串尾字母 if(a[i]==b[j]){ //从标记点回搜 int ans=1; for(int o=j-1;o&gt;=0;o--){ if(b[o]!=a[i-j&#43;o])return 0; ans&#43;&#43;; //不重合一票否决 } return (ans!=strlen(a)&amp;&amp;ans!=strlen(b))?ans:0; //对于coin(&#34;at&#34;,&#34;atide&#34;)此类的特判 } j&#43;&#43;; } } inline void dfs(int h,int cnt){ if(cnt&gt;hans)hans=cnt; //更新答案 for(int i=1;i&lt;=n;i&#43;&#43;){ int coinn=coin(words[h],words[i]); //遍历，&#34;找尾巴&#34; if(coinn!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nick-cjyx9.github.io/post/ybt_1220_%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-12T16:26:41+08:00" />
+<meta property="article:modified_time" content="2023-01-12T16:26:41+08:00" />
+
+  
+  <meta itemprop="name" content="Ybt_1220_单词接龙">
+<meta itemprop="description" content="【题目直达】 http://ybt.ssoier.cn:8088/problem_show.php?pid=1220
+【题目描述】 单词接龙是一个与我们经常玩的成语接龙相类似的游戏，现在我们已知一组单词，且给定一个开头的字母，要求出以这个字母开头的最长的“龙”（每个单词都最多在“龙”中出现两次），在两个单词相连时，其重合部分合为一部分，例如beast和astonish，如果接成一条龙则变为beastonish，另外相邻的两部分不能存在包含关系，例如at和atide间不能相连。
+【输入】 输入的第一行为一个单独的整数n(n&lt;=20)表示单词数，以下n行每行有一个单词（只含有大写或小写字母，长度不超过20），输入的最后一行为一个单个字符，表示“龙”开头的字母。你可以假定以此字母开头的“龙”一定存在。
+【输出】 只需输出以此字母开头的最长的“龙”的长度。
+【输入样例】 5 at touch cheat choose tact a 【输出样例】 23 【题解】 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int n,hans;char words[30][30],key; //定义存储变量 short vis[30],DEBUG=0; //每个单词都最多在“龙”中出现两次，使用short类型vis数组 template&lt;typename L&gt; inline void logr(L a){ if(DEBUG)cout&lt;&lt;a; } //debug控制是否输出过程变量（就是调试） inline int coin(char a[],char b[]){ /* coin(char[],char[])-&gt;int 判断形参a，b是否能首尾相接， 返回重合部分大小 */ int i=strlen(a)-1,j=0; while(1){ if(j==strlen(b)) return 0; //超出边界，尚未搜到a串尾字母 if(a[i]==b[j]){ //从标记点回搜 int ans=1; for(int o=j-1;o&gt;=0;o--){ if(b[o]!=a[i-j&#43;o])return 0; ans&#43;&#43;; //不重合一票否决 } return (ans!=strlen(a)&amp;&amp;ans!=strlen(b))?ans:0; //对于coin(&#34;at&#34;,&#34;atide&#34;)此类的特判 } j&#43;&#43;; } } inline void dfs(int h,int cnt){ if(cnt&gt;hans)hans=cnt; //更新答案 for(int i=1;i&lt;=n;i&#43;&#43;){ int coinn=coin(words[h],words[i]); //遍历，&#34;找尾巴&#34; if(coinn!"><meta itemprop="datePublished" content="2023-01-12T16:26:41+08:00" />
+<meta itemprop="dateModified" content="2023-01-12T16:26:41+08:00" />
+<meta itemprop="wordCount" content="114">
+<meta itemprop="keywords" content="干货,题解,ybt," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ybt_1220_单词接龙"/>
+<meta name="twitter:description" content="【题目直达】 http://ybt.ssoier.cn:8088/problem_show.php?pid=1220
+【题目描述】 单词接龙是一个与我们经常玩的成语接龙相类似的游戏，现在我们已知一组单词，且给定一个开头的字母，要求出以这个字母开头的最长的“龙”（每个单词都最多在“龙”中出现两次），在两个单词相连时，其重合部分合为一部分，例如beast和astonish，如果接成一条龙则变为beastonish，另外相邻的两部分不能存在包含关系，例如at和atide间不能相连。
+【输入】 输入的第一行为一个单独的整数n(n&lt;=20)表示单词数，以下n行每行有一个单词（只含有大写或小写字母，长度不超过20），输入的最后一行为一个单个字符，表示“龙”开头的字母。你可以假定以此字母开头的“龙”一定存在。
+【输出】 只需输出以此字母开头的最长的“龙”的长度。
+【输入样例】 5 at touch cheat choose tact a 【输出样例】 23 【题解】 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int n,hans;char words[30][30],key; //定义存储变量 short vis[30],DEBUG=0; //每个单词都最多在“龙”中出现两次，使用short类型vis数组 template&lt;typename L&gt; inline void logr(L a){ if(DEBUG)cout&lt;&lt;a; } //debug控制是否输出过程变量（就是调试） inline int coin(char a[],char b[]){ /* coin(char[],char[])-&gt;int 判断形参a，b是否能首尾相接， 返回重合部分大小 */ int i=strlen(a)-1,j=0; while(1){ if(j==strlen(b)) return 0; //超出边界，尚未搜到a串尾字母 if(a[i]==b[j]){ //从标记点回搜 int ans=1; for(int o=j-1;o&gt;=0;o--){ if(b[o]!=a[i-j&#43;o])return 0; ans&#43;&#43;; //不重合一票否决 } return (ans!=strlen(a)&amp;&amp;ans!=strlen(b))?ans:0; //对于coin(&#34;at&#34;,&#34;atide&#34;)此类的特判 } j&#43;&#43;; } } inline void dfs(int h,int cnt){ if(cnt&gt;hans)hans=cnt; //更新答案 for(int i=1;i&lt;=n;i&#43;&#43;){ int coinn=coin(words[h],words[i]); //遍历，&#34;找尾巴&#34; if(coinn!"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="https://nick-cjyx9.github.io"
+      >小彼方の卧室</a
+    >
+    <a
+      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+    ></a>
+  </div>
+
+  <a
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+  ></a>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/tags/%E5%B9%B2%E8%B4%A7/"
+        >DryText</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/post/%E6%89%8B%E5%8A%A8%E7%BD%AE%E9%A1%B6%E5%81%87%E6%9C%9Ftodolist"
+        >todolist</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href=" https://twitter.com/cjyx9x "
+        target="_blank"
+      ></a>
+      
+      <a
+        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href=" https://github.com/nick-cjyx9 "
+        target="_blank"
+      ></a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Ybt_1220_单词接龙</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Jan 12, 2023</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>cjyx9</span>
+      
+    </div>
+    
+  </header>
+
+  <section><h3 id="题目直达">【题目直达】</h3>
+<p><a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1220">http://ybt.ssoier.cn:8088/problem_show.php?pid=1220</a></p>
+<h3 id="题目描述">【题目描述】</h3>
+<p>单词接龙是一个与我们经常玩的成语接龙相类似的游戏，现在我们已知一组单词，且给定一个开头的字母，要求出以这个字母开头的最长的“龙”（每个单词都最多在“龙”中出现两次），在两个单词相连时，其重合部分合为一部分，例如beast和astonish，如果接成一条龙则变为beastonish，另外相邻的两部分不能存在包含关系，例如at和atide间不能相连。</p>
+<h3 id="输入">【输入】</h3>
+<p>输入的第一行为一个单独的整数n(n&lt;=20)表示单词数，以下n行每行有一个单词（只含有大写或小写字母，长度不超过20），输入的最后一行为一个单个字符，表示“龙”开头的字母。你可以假定以此字母开头的“龙”一定存在。</p>
+<h3 id="输出">【输出】</h3>
+<p>只需输出以此字母开头的最长的“龙”的长度。</p>
+<h3 id="输入样例">【输入样例】</h3>
+<pre tabindex="0"><code>5 
+at 
+touch 
+cheat 
+choose 
+tact 
+a
+</code></pre><h3 id="输出样例">【输出样例】</h3>
+<pre tabindex="0"><code>23
+</code></pre><hr>
+<h3 id="题解">【题解】</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n,hans;<span style="color:#66d9ef">char</span> words[<span style="color:#ae81ff">30</span>][<span style="color:#ae81ff">30</span>],key;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//定义存储变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">short</span> vis[<span style="color:#ae81ff">30</span>],DEBUG<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//每个单词都最多在“龙”中出现两次，使用short类型vis数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">template</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> L<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> logr(L a){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span>(DEBUG)cout<span style="color:#f92672">&lt;&lt;</span>a;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//debug控制是否输出过程变量（就是调试）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">coin</span>(<span style="color:#66d9ef">char</span> a[],<span style="color:#66d9ef">char</span> b[]){
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		coin(char[],char[])-&gt;int
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		判断形参a，b是否能首尾相接，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		返回重合部分大小
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	*/</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>strlen(a)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(j<span style="color:#f92672">==</span>strlen(b)) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//超出边界，尚未搜到a串尾字母
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span>(a[i]<span style="color:#f92672">==</span>b[j]){
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">//从标记点回搜
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> o<span style="color:#f92672">=</span>j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;o<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;o<span style="color:#f92672">--</span>){
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span>(b[o]<span style="color:#f92672">!=</span>a[i<span style="color:#f92672">-</span>j<span style="color:#f92672">+</span>o])<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>				ans<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">//不重合一票否决
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			} <span style="color:#66d9ef">return</span> (ans<span style="color:#f92672">!=</span>strlen(a)<span style="color:#f92672">&amp;&amp;</span>ans<span style="color:#f92672">!=</span>strlen(b))<span style="color:#f92672">?</span>ans:<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">//对于coin(&#34;at&#34;,&#34;atide&#34;)此类的特判
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		} j<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> h,<span style="color:#66d9ef">int</span> cnt){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span>(cnt<span style="color:#f92672">&gt;</span>hans)hans<span style="color:#f92672">=</span>cnt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//更新答案
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>n;i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> coinn<span style="color:#f92672">=</span>coin(words[h],words[i]);
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//遍历，&#34;找尾巴&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span>(coinn<span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>vis[i]<span style="color:#f92672">!=</span><span style="color:#ae81ff">2</span>){
+</span></span><span style="display:flex;"><span>		vis[i]<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>		logr(words[i]);logr(<span style="color:#e6db74">&#34;-&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span>		dfs(i,strlen(words[i])<span style="color:#f92672">+</span>cnt<span style="color:#f92672">-</span>coinn);
+</span></span><span style="display:flex;"><span>		vis[i]<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//标准搜索回溯
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}}logr(<span style="color:#e6db74">&#39;\n&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>	cin<span style="color:#f92672">&gt;&gt;</span>n;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>n;i<span style="color:#f92672">++</span>)cin<span style="color:#f92672">&gt;&gt;</span>words[i];
+</span></span><span style="display:flex;"><span>	cin<span style="color:#f92672">&gt;&gt;</span>key;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>n;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span>(words[i][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span>key){
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//可行性剪枝，key开头的单词打头
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		vis[i]<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>		logr(words[i]);logr(<span style="color:#e6db74">&#34;--</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>		dfs(i,strlen(words[i]));
+</span></span><span style="display:flex;"><span>		vis[i]<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span>hans;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
+      href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7"
+      >干货</a
+    >
+     
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
+      href="https://nick-cjyx9.github.io/tags/%E9%A2%98%E8%A7%A3"
+      >题解</a
+    >
+     
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
+      href="https://nick-cjyx9.github.io/tags/ybt"
+      >ybt</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav
+    class="mt-24 flex rounded-lg bg-black/[3%] p-1.5 text-lg dark:bg-white/[8%]" style="margin-bottom: 22px;"
+  >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-md p-6 pl-3 no-underline hover:bg-black/[2%]"
+      href="https://nick-cjyx9.github.io/post/%E7%BA%AA%E5%BF%B5%E4%B8%80%E4%B8%8B%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%9B%BD%E5%A3%AB/"
+      ><span>纪念一下第一次国士</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  <script src="https://giscus.app/client.js"
+        data-repo="nick-cjyx9/blog-comment"
+        data-repo-id="R_kgDOIu_GWQ"
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOIu_GWc4CTc3U"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://nick-cjyx9.github.io">小彼方の卧室</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >▷ Paper 6</a
+  >
+</footer>
+
+  </body>
+</html>

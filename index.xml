@@ -7,7 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 13 Jan 2023 16:41:13 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 22:08:59 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ybt_1442_拼棍子</title>
+      <link>https://nick-cjyx9.github.io/post/ybt_1442_%E6%8B%BC%E6%A3%8D%E5%AD%90/</link>
+      <pubDate>Fri, 13 Jan 2023 22:08:59 +0800</pubDate>
+      
+      <guid>https://nick-cjyx9.github.io/post/ybt_1442_%E6%8B%BC%E6%A3%8D%E5%AD%90/</guid>
+      <description>【题目直达】 信息学奥赛一本通（C++版）在线评测系统 (ssoier.cn)
+https://www.luogu.com.cn/problem/P1120
+【tips】 ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子，lg规定了范围不用排
+【题目描述】 乔治有一些同样长的小木棍，他把这些木棍随意砍成几段，直到每段的长都不超过50。现在，他想把小木棍拼接成原来的样子，但是却忘记了自己开始时有多少根木棍和它们的长度。给出每段小木棍的长度，编程帮他找出原始木棍的最小可能长度。
+【输入】 第一行为一个单独的整数N表示砍过以后的小木棍的总数，其中N≤60，第二行为N个用空个隔开的正整数，表示N根小木棍的长度。
+【输出】 仅一行，表示要求的原始木棍的最小可能长度。
+【输入样例】 9 5 2 1 5 2 1 5 2 1 【输出样例】 6 【题解】 #include &amp;lt;bits/stdc++.h&amp;gt; int cnt,N,stk[70],tot,maxn=-1; bool vis[70];int nxt[1000]; template&amp;lt;typename L&amp;gt; inline void Read(L &amp;amp;X){ //tip0：快读 char c=getchar();L zhi=0,fu=1; while(not isdigit(c)){if(c==&amp;#39;-&amp;#39;)fu=-1;c=getchar();} while(isdigit(c)){zhi=(zhi&amp;lt;&amp;lt;1)+(zhi&amp;lt;&amp;lt;3)+c-&amp;#39;0&amp;#39;;c=getchar();} X=fu*zhi; } inline void dfs(int its,int sum,int len){ //爆搜思路 its:上一根拼接的棍子 sum：已拼棍子的长度 len：目标长度 if(sum+stk[its]==len){ //已完成此根拼接 for(int j=1;j&amp;lt;=N;j++){ //去找下一根的头，同样tip2：从头找以保证最长 if(vis[j]==0){ vis[j]=1; dfs(j,0,len); vis[j]=0; //tip3：vis存储家访过的棍棍，方便回溯 return ; } }std::cout&amp;lt;&amp;lt;len;exit(0); //tip1：找不到就说明已完成所有工作，输出答案后立即退出，不做多余搜索 }else if(sum+stk[its]&amp;lt;len) for(int i=its+1;i&amp;lt;=N;i++){ //tip2：此处从下一根开找，保证从大到小拼接 if(vis[i]==0&amp;amp;&amp;amp;stk[its]+stk[i]+sum&amp;lt;=len){ vis[i]=1; dfs(i,sum+stk[its],len); vis[i]=0; //tip3 if(len-sum-stk[its]==stk[i]||sum==0)return ; /*tip4：其实我当时也没想明白这个，所以借lg题解区： 如果当前长棍剩余的未拼长度等于当前木棍的长度或原始长度，继续拼下去时却失败了，就直接回溯并改之前拼的木棍。 当前长棍剩余的未拼长度等于当前木棍的长度时，这根木棍在最优情况下显然是拼到这（如果用更多短木根拼完剩下的这段，把这根木棍留到后面显然不如把更多总长相等的短木棍扔到后面）。如果在最优情况下继续拼下去失败了，那肯定是之前的木棍用错了，回溯改即可。 原来的长棍还一点没拼时，现在正在放入一根木棍。很明显，这根木棍还没有跟其它棍子拼接，如果现在拼下去能成功话，它肯定是能用上的，即自组或与其它还没用的木棍拼接。但继续拼下去却失败，说明现在这根木棍不能用上，无法完成拼接，所以回溯改之前的木棍。 */ i=nxt[i]; if(i==N)return ; //tip5：这个长度本来就不行了，不能再用一样长度的了，直接跳到比它小的第一个去 } } } bool cmp(int a,int b){return a&amp;gt;b;} int main(){ Read(cnt);int temp; for(int i=1;i&amp;lt;=cnt;i++){ //非法数据处理 Read(temp); if(temp&amp;lt;=50){ stk[++N]=temp; tot+=stk[N]; if(stk[N]&amp;gt;maxn)maxn=stk[N]; } } std::sort(stk+1,stk+N+1,cmp); //tip2：从大到小排序 nxt[N]=N; for(int i=N-1;i&amp;gt;0;i--){ if(stk[i]==stk[i+1]) nxt[i]=nxt[i+1]; else nxt[i]=i; } for(int i=maxn;i&amp;lt;=tot;i++){ if(tot%i!</description>
+    </item>
+    
     <item>
       <title>今日趣闻</title>
       <link>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5%E8%B6%A3%E9%97%BB/</link>
@@ -15,6 +30,7 @@
       
       <guid>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5%E8%B6%A3%E9%97%BB/</guid>
       <description>既然决定了在这里发牢骚，总得写点qq空间不能写的吧。。
+拒绝犹太审美，从元首做起！
 1/13日记流水账：
 早上又起晚了，操不能熬夜了，我要早起
 彻夜之歌补完了，是真的香，后几集观感有点差，主线剧情走太多，总的来说期待续作
@@ -124,12 +140,7 @@ cd E:/gayhub/blog hugo -D cd public git add .</description>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://nick-cjyx9.github.io/post/%E6%89%8B%E5%8A%A8%E7%BD%AE%E9%A1%B6%E5%81%87%E6%9C%9Ftodolist/</guid>
-      <description>首先是每天whk作业得完成
-影视飓风投稿
-想学习web开发
-oi至少把ybt第一本学完
-补番《clannad》《三狮1》（已完成）《三狮2》
-把网课摆烂的追回</description>
+      <description> 首先是每天whk作业得完成 影视飓风投稿 想学习web开发 oi至少把ybt第一本学完 补番《clannad》《三狮1》（已完成）《三狮2》 把网课摆烂的追回 </description>
     </item>
     
     <item>
@@ -138,7 +149,7 @@ oi至少把ybt第一本学完
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://nick-cjyx9.github.io/about/</guid>
-      <description>一点我的信息： 我是cjyx9,高中生，不喜欢一板一眼的，喜欢的领域是ACG和计算机，是个ller。 摆烂oier，cjyx9这个id是小学的时候取姓名首字母加上为了对抗重名一顿乱敲的产物，沿用至今，基本所有平台统一。 曾经参与破解初中yxp平板，也取得一定成果 没有真正意义上做过完整项目，是条懒狗。 最爱的番剧是相合之物，最想补的番剧是clannad，最近在看的番剧是红四格和三月的狮子还有别当哥，然后赛马娘也真的很好看 星团入坑ll，虹团爱上ll。 最喜欢阿卡林、菜宝、麻油鸡、切咪、鲤鱼、灯露、non酱了！ 技能树： I.计算机 C++（算法方面 python（摸鱼网络爬虫方面 h5（会的不多 kotlin、java（未来会学 II.Game 音游： phi:rks13 md:萌新 llas算音游吗？ 网游： 不知名涩涩卡牌游戏 独立游戏玩的不多且大多数都是免费/白嫖（死亡搁浅，古墓丽影，apex，小小梦魇&amp;hellip;&amp;hellip;.）全都是送过的呢（笑） 关于写博客 曾经建过不止一个博客，都是没写多少字儿进去。经过22年这长期摆烂后心生愧疚，于是在这里记录下假期生活，以激励自己，让生活充实起来。应该不会弃坑吧。。。应该。。。 计数器： </description>
+      <description>一点我的信息： 我是cjyx9,高中生，不喜欢一板一眼的，喜欢的领域是ACG和计算机，是个ller。 摆烂oier，cjyx9这个id是小学的时候取姓名首字母加上为了对抗重名一顿乱敲的产物，沿用至今，基本所有平台统一。 曾经参与破解初中yxp平板，也取得一定成果 没有真正意义上做过完整项目，是条懒狗。 最爱的番剧是相合之物，最想补的番剧是clannad，最近在看的番剧是红四格和三月的狮子还有别当哥，然后赛马娘也真的很好看 星团入坑ll，虹团爱上ll。 最喜欢阿卡林、菜宝、麻油鸡、切咪、鲤鱼、灯露、non酱了！ 技能树： I.计算机 C++（算法方面 python（摸鱼网络爬虫方面 h5（会的不多 kotlin、java（未来会学 II.Game 音游 网游： 老头环事什么lj游戏，感觉不如原神。。。画质， 什么，号是8u借的捏，对着心海发电的也是8u捏 不知名涩涩卡牌游戏 独立游戏玩的不多且大多数都是免费/白嫖（死亡搁浅，古墓丽影，apex，小小梦魇&amp;hellip;&amp;hellip;.）全都是送过的呢（笑） 关于写博客 曾经建过不止一个博客，都是没写多少字儿进去。经过22年这长期摆烂后心生愧疚，于是在这里记录下假期生活，以激励自己，让生活充实起来。应该不会弃坑吧。。。应该。。。 计数器： </description>
     </item>
     
   </channel>

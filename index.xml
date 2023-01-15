@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>小彼方の卧室</title>
+    <title>KanataRoom</title>
     <link>https://nick-cjyx9.github.io/</link>
-    <description>Recent content on 小彼方の卧室</description>
+    <description>Recent content on KanataRoom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
@@ -141,6 +141,15 @@ cd E:/gayhub/blog hugo -D cd public git add .</description>
       
       <guid>https://nick-cjyx9.github.io/contact/</guid>
       <description> github.com/nick-cjyx9原来的github因为喷了胎毒粪子被ban了，这是新的 bilibili luogu </description>
+    </item>
+    
+    <item>
+      <title>Friends</title>
+      <link>https://nick-cjyx9.github.io/friends/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://nick-cjyx9.github.io/friends/</guid>
+      <description>伙计们： </description>
     </item>
     
     <item>

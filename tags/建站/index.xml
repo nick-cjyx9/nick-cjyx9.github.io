@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>建站 on KanataRoom</title>
+    <link>https://nick-cjyx9.github.io/tags/%E5%BB%BA%E7%AB%99/</link>
+    <description>Recent content in 建站 on KanataRoom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 15 Jan 2023 19:47:43 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>胎儿级博客搭建指北</title>
+      <link>https://nick-cjyx9.github.io/post/%E8%83%8E%E5%84%BF%E7%BA%A7%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/</link>
+      <pubDate>Sun, 15 Jan 2023 19:47:43 +0800</pubDate>
+      
+      <guid>https://nick-cjyx9.github.io/post/%E8%83%8E%E5%84%BF%E7%BA%A7%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/</guid>
+      <description>瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -56,7 +56,14 @@
   
   <meta name="theme-color" />
   
-  <meta name="description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。" />
+  <meta name="description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
+在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
+0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
+利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
+如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
+0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
+点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
+如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp." />
   <meta
     name="author"
     content="cjyx9"
@@ -116,7 +123,14 @@
   
   
   <meta property="og:title" content="胎儿级博客搭建指北" />
-<meta property="og:description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。" />
+<meta property="og:description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
+在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
+0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
+利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
+如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
+0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
+点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
+如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nick-cjyx9.github.io/post/%E8%83%8E%E5%84%BF%E7%BA%A7%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-01-15T19:47:43+08:00" />
@@ -124,14 +138,28 @@
 
   
   <meta itemprop="name" content="胎儿级博客搭建指北">
-<meta itemprop="description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。"><meta itemprop="datePublished" content="2023-01-15T19:47:43+08:00" />
+<meta itemprop="description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
+在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
+0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
+利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
+如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
+0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
+点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
+如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp."><meta itemprop="datePublished" content="2023-01-15T19:47:43+08:00" />
 <meta itemprop="dateModified" content="2023-01-15T19:47:43+08:00" />
-<meta itemprop="wordCount" content="1">
+<meta itemprop="wordCount" content="104">
 <meta itemprop="keywords" content="干货,建站," />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="胎儿级博客搭建指北"/>
-<meta name="twitter:description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。"/>
+<meta name="twitter:description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
+在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
+0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
+利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
+如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
+0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
+点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
+如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp."/>
 
   
   
@@ -288,6 +316,69 @@
   <section><blockquote>
 <p>瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。</p>
 </blockquote>
+<p>在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：</p>
+<h2 id="0x00-博客搭建的方式">0x00 博客搭建的方式</h2>
+<ol>
+<li>最推荐：<a href="https://www.luogu.com.cn/blogAdmin/blogConfig">洛谷博客</a>、博客园
+这个应该不用多说，完全白嫖，只需要一个洛谷账号。
+优点是白嫖，稳定（洛谷不日爆的前提下），简洁
+还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好
+<img src="https://s2.loli.net/2023/01/16/ANsCEomFQGJwMt7.png" alt="image.png">
+缺点就是不自由，体现在发言没那么自由，样式没那么自由等</li>
+</ol>
+<p><strong>适合不爱折腾，又想让自己的博文被更多人看到的人</strong>
+<strong>类似的方式还有<a href="https://www.cnblogs.com/">博客园</a>，相较洛谷更加自由</strong></p>
+<ol start="2">
+<li>
+<p>利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现：
+这是本文主讲的方式，自由度极大，稳定，可折腾度高
+**适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去</p>
+</li>
+<li>
+<p>如果你是富哥/姐，可选方案极多：
+i. 不想折腾，还想要自由：V我50，帮你做方案2全套
+ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式
+iii. 折腾：购买服务器，自行部署wordpress等博客系统。</p>
+</li>
+</ol>
+<h2 id="0x01-方案2-事前准备">0x01 方案2 事前准备</h2>
+<p>前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo
+工具：</p>
+<h3 id="点击下载hugohttpsghproxycomqhttps3a2f2fgithubcom2fgohugoio2fhugo2freleases2fdownload2fv010902fhugo_extended_01090_windows-amd64zip-由于是github资源可能下载较慢耐心等待"><a href="https://ghproxy.com/?q=https%3A%2F%2Fgithub.com%2Fgohugoio%2Fhugo%2Freleases%2Fdownload%2Fv0.109.0%2Fhugo_extended_0.109.0_windows-amd64.zip">点击下载Hugo</a> 由于是GitHub资源，可能下载较慢，耐心等待</h3>
+<ul>
+<li>下载后解压到你找得到的地方，<code>win+R</code>后输入<code>SystemPropertiesAdvanced.exe</code>点击<code>环境变量</code>选中<code>用户变量-&gt;Path-&gt;编辑-&gt;新建</code>将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在<code>E:\Hugo</code>，然后一路<strong>确定</strong></li>
+<li><img src="https://s2.loli.net/2023/01/16/MFoqfz1xjVsG6th.png" alt="image.png"></li>
+<li>就此hugo安装完成，<code>win+R</code>输入powershell呼出命令行，输入<code>hugo</code>后如果出现类似于如下信息则安装成功，可进行下一步。</li>
+</ul>
+<pre tabindex="0"><code>Error: Unable to locate config file or config directory. Perhaps you need to create a new site.
+       Run `hugo help new` for details.
+
+Total in 1 ms
+</code></pre><ul>
+<li>Q:我输入hugo后输出了<code>'hugo' 不是内部或外部命令，也不是可运行的程序或批处理文件。</code>这是怎么回事</li>
+<li>A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。</li>
+</ul>
+<h3 id="点击下载githttpsmirrorstunatsinghuaeducngithub-releasegit-for-windowsgitlatestreleasegit-23902-64-bitexe安装一路next"><a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/LatestRelease/Git-2.39.0.2-64-bit.exe">点击下载Git</a>安装一路<code>next</code></h3>
+<h3 id="注册github">注册Github</h3>
+<p>github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容:
+进入<a href="https://github.com/signup">Join Github</a>,</p>
+<p>如果发现进不去,后续报错,有条件请挂t,无条件的话使用<a href="https://steampp.net/">Watt Toolkit - 瓦特工具箱(Steam++官网) (steampp.net)</a>点上Github后再访问</p>
+<p>输入你的email-&gt;continue-&gt;输入密码-&gt;continue-&gt;用户名-&gt;输入<code>n</code>-&gt;continue-&gt;验证-&gt;搞定</p>
+<h3 id="配置">配置</h3>
+<p><code>win+R</code>输入<code>powershell</code>:</p>
+<ol>
+<li>git配置</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;你的用户名&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;注册GitHub的邮箱&#34;</span>
+</span></span></code></pre></div><p>输错可再次使用命令改.
+2. ssh配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;你的邮箱&#34;</span>
+</span></span></code></pre></div><p>之后三次询问皆直接回车即可.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.ssh/id_rsa.pub
+</span></span></code></pre></div><p>将输出的以<code>ssh-rsa</code>开头的字符串复制.<strong>打开</strong><a href="https://github.com/">GitHub</a>设置</p>
+<p><img src="https://s2.loli.net/2023/01/16/NZnTDrYxm3vJqMh.png" alt="image.png"></p>
+<p>进入左侧SSH and GPG keys-&gt; New SSH key</p>
 </section>
 
   

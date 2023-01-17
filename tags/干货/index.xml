@@ -14,7 +14,10 @@
       <pubDate>Sun, 15 Jan 2023 19:50:32 +0800</pubDate>
       
       <guid>https://nick-cjyx9.github.io/post/%E6%B7%B1%E5%85%A5%E8%B0%83%E6%95%99ybtoj/</guid>
-      <description>在做了在做了</description>
+      <description>在做了在做了
+bug0:ybt网站使用php+bom出了问题，网站顶部出现&amp;amp;#xFEFF占20px高度空白
+solution：未解决
+现学现卖把css部分搞定了，解决了字体和缩放问题</description>
     </item>
     
     <item>
@@ -23,7 +26,14 @@
       <pubDate>Sun, 15 Jan 2023 19:47:43 +0800</pubDate>
       
       <guid>https://nick-cjyx9.github.io/post/%E8%83%8E%E5%84%BF%E7%BA%A7%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/</guid>
-      <description>瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。</description>
+      <description>瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
+在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
+0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
+利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
+如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
+0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
+点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win+R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&amp;gt;Path-&amp;gt;编辑-&amp;gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win+R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
+如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam++官网) (steampp.</description>
     </item>
     
     <item>

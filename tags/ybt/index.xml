@@ -14,7 +14,10 @@
       <pubDate>Sun, 15 Jan 2023 19:50:32 +0800</pubDate>
       
       <guid>https://nick-cjyx9.github.io/post/%E6%B7%B1%E5%85%A5%E8%B0%83%E6%95%99ybtoj/</guid>
-      <description>在做了在做了</description>
+      <description>在做了在做了
+bug0:ybt网站使用php+bom出了问题，网站顶部出现&amp;amp;#xFEFF占20px高度空白
+solution：未解决
+现学现卖把css部分搞定了，解决了字体和缩放问题</description>
     </item>
     
     <item>

@@ -102,7 +102,7 @@ cd E:/gayhub/blog hugo -D cd public git add ." />
   <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.109.0">
+  <meta name="generator" content="Hugo 0.110.0">
 
   
   
@@ -129,7 +129,7 @@ cd E:/gayhub/blog hugo -D cd public git add ." />
 <meta itemprop="description" content="第一点hugo的版本一定要新，很多主题在老版本报错 第二在hugo new xxx.md时，使用的front matter 默认使用---分割线和类似json的写法，这里推荐换作&#43;&#43;&#43;，默认配置在/archetypes/default.md修改，附上个人配置: &#43;&#43;&#43; author= &#34;cjyx9&#34; title= &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34; date= &#34;{{ .Date }}&#34; tags= [ &#34;&#34;, ] &#43;&#43;&#43; 个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录） newPost.bat @echo off set /p name=Enter post name: set /p in=R U sure it&#39;s %name%?(press enter to continue,ctrl&#43;c to exit) hugo new /post/%name%.md E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md set /p in=Press `enter` to apply. ::这两行可不写 deploy.bat
 cd E:/gayhub/blog hugo -D cd public git add ."><meta itemprop="datePublished" content="2023-01-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-01-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="128">
+<meta itemprop="wordCount" content="131">
 <meta itemprop="keywords" content="技术,干货," />
   
   <meta name="twitter:card" content="summary"/>
@@ -290,43 +290,43 @@ cd E:/gayhub/blog hugo -D cd public git add ."/>
 <li>第一点hugo的版本一定要新，很多主题在老版本报错</li>
 <li>第二在<code>hugo new xxx.md</code>时，使用的front matter 默认使用<code>---</code>分割线和类似json的写法，这里推荐换作<code>+++</code>，默认配置在/archetypes/default.md修改，附上个人配置:</li>
 </ol>
-<pre tabindex="0"><code>+++
-author= &#34;cjyx9&#34;
-title= &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34;
-date= &#34;{{ .Date }}&#34;
-tags= [
-    &#34;&#34;,
-]
-+++
-</code></pre><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+++</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">author</span>= <span style="color:#e6db74">&#34;cjyx9&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span>= <span style="color:#e6db74">&#34;{{ replace .Name &#34;</span><span style="color:#a6e22e">-</span><span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#34; | title }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">date</span>= <span style="color:#e6db74">&#34;{{ .Date }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tags</span>= [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+++</span>
+</span></span></code></pre></div><ol start="3">
 <li>个人认为网站更新部署过程繁琐，写了3个bat脚本，附上（置于blog的根目录）
 newPost.bat</li>
 </ol>
-<pre tabindex="0"><code>@echo off
-set /p name=Enter post name:
-set /p in=R U sure it&#39;s %name%?(press enter to continue,ctrl+c to exit)
-hugo new /post/%name%.md
-
-E:\Typora\Typora.exe E:/gayhub/blog/content/post/%name%.md
-set /p in=Press `enter` to apply.
-::这两行可不写
-</code></pre><p>deploy.bat</p>
-<pre tabindex="0"><code>cd E:/gayhub/blog
-hugo -D
-cd public
-git add .
-git commit -m&#34;auto commit miao~&#34;
-git status
-::检查下状态以保证commit正常，可不写
-@echo off
-set /p in=Press `enter` to apply.
-git push
-set /p in=Press `enter` to exit.
-</code></pre><p>server.bat</p>
-<pre tabindex="0"><code>&#34;C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe&#34; --profile-directory=Default http://localhost:1313
-hugo server
-set /p in=Press `enter` to apply.
-</code></pre><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>@echo off
+</span></span><span style="display:flex;"><span>set /p name<span style="color:#f92672">=</span>Enter post name:
+</span></span><span style="display:flex;"><span>set /p in<span style="color:#f92672">=</span>R U sure it<span style="color:#960050;background-color:#1e0010">&#39;</span>s %name%?<span style="color:#f92672">(</span>press enter to <span style="color:#66d9ef">continue</span>,ctrl+c to exit<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>hugo new /post/%name%.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>E:<span style="color:#ae81ff">\T</span>ypora<span style="color:#ae81ff">\T</span>ypora.exe E:/gayhub/blog/content/post/%name%.md
+</span></span><span style="display:flex;"><span>set /p in<span style="color:#f92672">=</span>Press <span style="color:#e6db74">`</span>enter<span style="color:#e6db74">`</span> to apply.
+</span></span><span style="display:flex;"><span>::这两行可不写
+</span></span></code></pre></div><p>deploy.bat</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd E:/gayhub/blog
+</span></span><span style="display:flex;"><span>hugo -D
+</span></span><span style="display:flex;"><span>cd public
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m<span style="color:#e6db74">&#34;auto commit miao~&#34;</span>
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span>::检查下状态以保证commit正常，可不写
+</span></span><span style="display:flex;"><span>@echo off
+</span></span><span style="display:flex;"><span>set /p in<span style="color:#f92672">=</span>Press <span style="color:#e6db74">`</span>enter<span style="color:#e6db74">`</span> to apply.
+</span></span><span style="display:flex;"><span>git push
+</span></span><span style="display:flex;"><span>set /p in<span style="color:#f92672">=</span>Press <span style="color:#e6db74">`</span>enter<span style="color:#e6db74">`</span> to exit.
+</span></span></code></pre></div><p>server.bat</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#e6db74">&#34;C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe&#34;</span> --profile-directory<span style="color:#f92672">=</span>Default http://localhost:1313
+</span></span><span style="display:flex;"><span>hugo server
+</span></span><span style="display:flex;"><span>set /p in<span style="color:#f92672">=</span>Press <span style="color:#e6db74">`</span>enter<span style="color:#e6db74">`</span> to apply.
+</span></span></code></pre></div><ol start="4">
 <li>关于百度收录：</li>
 </ol>
 <ul>
@@ -345,7 +345,12 @@ set /p in=Press `enter` to apply.
 力荐typora，界面清新，功能强大，picgo图床加上snipaste很舒服，目前买断88￥，3台机子可用，有经济实力可入正
 其次vscode加markdown插件：markdown all in one 和 Markdown Preview Mermaid Support基本可以实现预览和图表</p>
 </li>
+<li>
+<p>图床：</p>
+</li>
 </ol>
+<p>推荐<a href="https://smms.app">smms</a>+<a href="https://zh.snipaste.com/">snipaste</a></p>
+<p>picgo似乎挺强大，但是个人不爱用，可以了解</p>
 </section>
 
   

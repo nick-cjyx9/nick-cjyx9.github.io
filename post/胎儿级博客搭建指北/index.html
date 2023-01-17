@@ -108,7 +108,7 @@
   <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.109.0">
+  <meta name="generator" content="Hugo 0.110.0">
 
   
   
@@ -147,7 +147,7 @@
 点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
 如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp."><meta itemprop="datePublished" content="2023-01-15T19:47:43+08:00" />
 <meta itemprop="dateModified" content="2023-01-15T19:47:43+08:00" />
-<meta itemprop="wordCount" content="104">
+<meta itemprop="wordCount" content="424">
 <meta itemprop="keywords" content="干货,建站," />
   
   <meta name="twitter:card" content="summary"/>
@@ -344,7 +344,7 @@ iii. 折腾：购买服务器，自行部署wordpress等博客系统。</p>
 <h2 id="0x01-方案2-事前准备">0x01 方案2 事前准备</h2>
 <p>前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo
 工具：</p>
-<h3 id="点击下载hugohttpsghproxycomqhttps3a2f2fgithubcom2fgohugoio2fhugo2freleases2fdownload2fv010902fhugo_extended_01090_windows-amd64zip-由于是github资源可能下载较慢耐心等待"><a href="https://ghproxy.com/?q=https%3A%2F%2Fgithub.com%2Fgohugoio%2Fhugo%2Freleases%2Fdownload%2Fv0.109.0%2Fhugo_extended_0.109.0_windows-amd64.zip">点击下载Hugo</a> 由于是GitHub资源，可能下载较慢，耐心等待</h3>
+<h3 id="点击下载hugohttpsghproxycomqhttpsgithubcomgohugoiohugoreleasesdownloadv01100hugo_extended_01100_windows-amd64zip-由于是github资源可能下载较慢耐心等待"><a href="https://ghproxy.com/?q=https://github.com/gohugoio/hugo/releases/download/v0.110.0/hugo_extended_0.110.0_windows-amd64.zip">点击下载Hugo</a> 由于是GitHub资源，可能下载较慢，耐心等待</h3>
 <ul>
 <li>下载后解压到你找得到的地方，<code>win+R</code>后输入<code>SystemPropertiesAdvanced.exe</code>点击<code>环境变量</code>选中<code>用户变量-&gt;Path-&gt;编辑-&gt;新建</code>将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在<code>E:\Hugo</code>，然后一路<strong>确定</strong></li>
 <li><img src="https://s2.loli.net/2023/01/16/MFoqfz1xjVsG6th.png" alt="image.png"></li>
@@ -378,7 +378,166 @@ Total in 1 ms
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.ssh/id_rsa.pub
 </span></span></code></pre></div><p>将输出的以<code>ssh-rsa</code>开头的字符串复制.<strong>打开</strong><a href="https://github.com/">GitHub</a>设置</p>
 <p><img src="https://s2.loli.net/2023/01/16/NZnTDrYxm3vJqMh.png" alt="image.png"></p>
-<p>进入左侧SSH and GPG keys-&gt; New SSH key</p>
+<p>进入左侧SSH and GPG keys-&gt; New SSH key,粘贴刚才取到的key。</p>
+<p><strong>🎉就此，git与github配置完成</strong></p>
+<h2 id="0x02-开始搭建">0x02 开始搭建</h2>
+<p><strong>首先，本文的一切都可能随hugo版本更新过时，优先参考<a href="https://www.gohugo.org/">Hugo中文文档 (gohugo.org)</a>，不止hugo当你在使用任何项目遇到问题时，都应该优先参考文档。</strong></p>
+<h3 id="1-生成站点">1. 生成站点</h3>
+<p>还是打开powershell，比如希望博客生成到 <code>D:/my_blog</code> 路径：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new site D:/my_blog
+</span></span></code></pre></div><p>这样就在 <code>hugo new site D:/my_blog</code> 目录里生成了初始站点，进去目录：</p>
+<blockquote>
+<p>cd 命令：将工作目录切换到&hellip;
+ls 命令：列出当前工作目录下所有文件及目录</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd hugo new site D:/my_blog
+</span></span><span style="display:flex;"><span>ls
+</span></span></code></pre></div><p>你会看到这样的结构（只截取了部分）：</p>
+<pre tabindex="0"><code>  ▸ archetypes/  -&gt;文章模板
+  ▸ content/     -&gt;存放文章和页面
+  ▸ themes/      -&gt;主题
+  ▸ static/      -&gt;网站静态资源（图片音频类的）
+    config.toml  -&gt;配置文件
+</code></pre><p>至此，站点生成完成。</p>
+<h3 id="2配置主题">2.配置主题</h3>
+<p>hugo的主题很多，各个主题配置不同，难以统一讲解，这里挑选一个我在使用的<a href="https://github.com/nanxiaobei/hugo-paper/">nanxiaobei/hugo-paper: 🪺 A simple, clean, flexible Hugo theme (github.com)</a></p>
+<ol>
+<li>安装，在博客目录下使用</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>安装完成后
+找到\themes\paper目录下examplesite文件夹，将里面的内容复制到my_blog也就是博客根目录,替换config.toml，打开config.toml修改配置<code>theme = &quot;hugo-paper&quot;</code>为<code>theme = &quot;paper&quot;</code>。
+<img src="https://s2.loli.net/2023/01/17/Q5bDykrmTdhcYsz.png" alt="image.png"></p>
+</li>
+<li>
+<p>搞定
+此时，在博客目录下执行<code>hugo server</code>，并访问<a href="http://localhost:1313/">localhost:1313</a>，你会看到hugo生成的实例站点
+<img src="https://s2.loli.net/2023/01/17/wk94GnodCqA8MuE.png" alt="image.png"></p>
+</li>
+<li>
+<p>配置
+确认实例站点无误后，可以删掉它默认的文章（如下），开始配置站点
+<img src="https://s2.loli.net/2023/01/17/jm4GaxPHZnAl2CD.png" alt="image.png"></p>
+</li>
+</ol>
+<p>打开主目录下<code>config.toml</code>修改配置，下面放出我的配置作为参考,大家可以去<a href="https://github.com/nick-cjyx9/blog-comment">nick-cjyx9/blog-comment (github.com)</a>参考我博客的一切配置。三个优化脚本也放在这里了(更多优化参见<a href="https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/">Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a>,如果有人看会一直更)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://nick-cjyx9.github.io&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># title = &#34;Hugo Themes&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;Nick Chen&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;Copyright © 2022–2023, Nick Chen; all rights reserved.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">paginate</span> = <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;zh-cn&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DefaultContentLanguage</span> = <span style="color:#e6db74">&#34;zh-cn&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enableInlineShortcodes</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># prevent build failures when using Hugo&#39;s Instagram shortcode due to deprecated Instagram API.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ignoreErrors</span> = [<span style="color:#e6db74">&#34;error-remote-getjson&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;paper&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;KanataRoom&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span> = <span style="color:#e6db74">&#39;linen&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">twitter</span> = <span style="color:#e6db74">&#39;cjyx9x&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">github</span> = <span style="color:#e6db74">&#39;nick-cjyx9&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">avatar</span> = <span style="color:#e6db74">&#39;cjyx9@outlook.com&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#39;Nick&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">bio</span> = <span style="color:#e6db74">&#34;Do not repeat yourself.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># needed to  render raw HTML (e.g. &lt;sub&gt;, &lt;sup&gt;, &lt;kbd&gt;, &lt;mark&gt;)</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">menu</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;about&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;About&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/about/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;contact&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Contact&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/contact/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;Todolist&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Todolist&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/post/手动置顶假期todolist&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span>=<span style="color:#e6db74">&#34;Drytext&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>=<span style="color:#e6db74">&#34;DryText&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span>=<span style="color:#e6db74">&#34;/tags/干货/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span>=<span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span>=<span style="color:#e6db74">&#34;Friends&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>=<span style="color:#e6db74">&#34;Friends&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span>=<span style="color:#e6db74">&#34;/friends&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span>=<span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">taxonomies</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">category</span> = <span style="color:#e6db74">&#34;categories&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tag</span> = <span style="color:#e6db74">&#34;tags&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">series</span> = <span style="color:#e6db74">&#34;series&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">privacy</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">privacy</span>.<span style="color:#a6e22e">vimeo</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disabled</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">simple</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">privacy</span>.<span style="color:#a6e22e">twitter</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disabled</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enableDNT</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">simple</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">privacy</span>.<span style="color:#a6e22e">instagram</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disabled</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">simple</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">privacy</span>.<span style="color:#a6e22e">youtube</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disabled</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">privacyEnhanced</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">services</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">instagram</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disableInlineCSS</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">twitter</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disableInlineCSS</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>至此，博客搞定，每次配置完想要预览就使用<code>hugo server</code>指令</p>
+<ol start="5">
+<li>写文章
+新建文章可使用套用archetype/中的模板,嫌麻烦可用脚本,见<a href="https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/">Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new post/xxx.md
+</span></span></code></pre></div><p>然后就可以用你喜欢的编辑器愉快写文了</p>
+<h3 id="0x03-上线吧">0x03 上线吧!</h3>
+<p>本地博客搞定后,就可以上线了,首先在博客根目录执行,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo -D
+</span></span></code></pre></div><p>作用是在/public文件夹下生成网站静态文件,继续</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd public
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m<span style="color:#e6db74">&#34;update&#34;</span>
+</span></span></code></pre></div><p>然后前往github.com
+<img src="https://s2.loli.net/2023/01/17/4DmPbWG8rqnIwVt.png" alt="image.png">
+新建一个仓库,仓库名填<strong>你的用户名.github.io</strong>,其他不用管,点击创建后,复制第二个代码并执行,下图仅为实例
+<img src="https://s2.loli.net/2023/01/17/r3AolZtRdKnpH6m.png" alt="image.png"></p>
+<p>如果上传成功，刷新你的仓库页面将会有一系列文件，和这个github-pages栏目，如果小火箭右侧的tag变为Active代表博客部署成功，你就可以通过<code>你的用户名.github.io</code>访问博客了！</p>
+<p><img src="https://s2.loli.net/2023/01/17/NTxzMqRculG9ktj.png" alt="image.png"></p>
+<p>如果上传失败，请再次尝试<code>git push</code>,可能是网络问题。</p>
+<h2 id="至此教程完结以上的新建文章预览上传github操作均有简化脚本在hugo建站经验---kanataroom-nick-cjyx9githubiohttpsnick-cjyx9githubioposthugo建站经验">至此，教程完结，以上的新建文章、预览、上传github操作均有简化脚本，在<a href="https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/">Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a></h2>
 </section>
 
   

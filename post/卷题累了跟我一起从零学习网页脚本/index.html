@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh-cn"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>卷题累了？跟我一起从零学习网页脚本！ - KanataRoom</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="前言：本文旨在让大家了解我在完全不了解一项技术时，是如何去学习实现它的，可能例子不太好，大家看个乐呵就行。
+另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也像文中的otto一样不是很了解js（哭，你们的问题尽量解答吧。
+目录:
+场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
+《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c&#43;&#43;语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
+“ctrl&#43;滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
+设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。
+随口一提，翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
+嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
+bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
+一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
+现在终于搞定这些问题了，开始写脚本！
+现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript啊肯定先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
+body &gt; center &gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
+function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&#39;link&#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&#39;rel&#39;, &#39;stylesheet&#39;); script.setAttribute(&#39;type&#39;, &#39;text/css&#39;); script.setAttribute(&#39;integrity&#39;, &#39;sha384-HSMxcRTRxnN&#43;Bdg0JdbxYKrThecOKuH5zCYotlSAcp1&#43;c8xmyTe9GYg1l9a69psu&#39;); script.setAttribute(&#39;crossorigin&#39;, &#39;anonymous&#39;); script.href = &#34;https://stackpath." />
+  <meta
+    name="author"
+    content="cjyx9"
+  />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://nick-cjyx9.github.io/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://nick-cjyx9.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/github.svg" />
+  
+
+  
+  <link rel="icon" href="https://nick-cjyx9.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.110.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="卷题累了？跟我一起从零学习网页脚本！" />
+<meta property="og:description" content="前言：本文旨在让大家了解我在完全不了解一项技术时，是如何去学习实现它的，可能例子不太好，大家看个乐呵就行。
+另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也像文中的otto一样不是很了解js（哭，你们的问题尽量解答吧。
+目录:
+场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
+《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c&#43;&#43;语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
+“ctrl&#43;滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
+设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。
+随口一提，翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
+嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
+bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
+一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
+现在终于搞定这些问题了，开始写脚本！
+现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript啊肯定先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
+body &gt; center &gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
+function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&#39;link&#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&#39;rel&#39;, &#39;stylesheet&#39;); script.setAttribute(&#39;type&#39;, &#39;text/css&#39;); script.setAttribute(&#39;integrity&#39;, &#39;sha384-HSMxcRTRxnN&#43;Bdg0JdbxYKrThecOKuH5zCYotlSAcp1&#43;c8xmyTe9GYg1l9a69psu&#39;); script.setAttribute(&#39;crossorigin&#39;, &#39;anonymous&#39;); script.href = &#34;https://stackpath." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-18T13:24:20+08:00" />
+<meta property="article:modified_time" content="2023-01-18T13:24:20+08:00" />
+
+  
+  <meta itemprop="name" content="卷题累了？跟我一起从零学习网页脚本！">
+<meta itemprop="description" content="前言：本文旨在让大家了解我在完全不了解一项技术时，是如何去学习实现它的，可能例子不太好，大家看个乐呵就行。
+另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也像文中的otto一样不是很了解js（哭，你们的问题尽量解答吧。
+目录:
+场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
+《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c&#43;&#43;语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
+“ctrl&#43;滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
+设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。
+随口一提，翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
+嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
+bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
+一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
+现在终于搞定这些问题了，开始写脚本！
+现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript啊肯定先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
+body &gt; center &gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
+function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&#39;link&#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&#39;rel&#39;, &#39;stylesheet&#39;); script.setAttribute(&#39;type&#39;, &#39;text/css&#39;); script.setAttribute(&#39;integrity&#39;, &#39;sha384-HSMxcRTRxnN&#43;Bdg0JdbxYKrThecOKuH5zCYotlSAcp1&#43;c8xmyTe9GYg1l9a69psu&#39;); script.setAttribute(&#39;crossorigin&#39;, &#39;anonymous&#39;); script.href = &#34;https://stackpath."><meta itemprop="datePublished" content="2023-01-18T13:24:20+08:00" />
+<meta itemprop="dateModified" content="2023-01-18T13:24:20+08:00" />
+<meta itemprop="wordCount" content="101">
+<meta itemprop="keywords" content="干货,脚本,javascript," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="卷题累了？跟我一起从零学习网页脚本！"/>
+<meta name="twitter:description" content="前言：本文旨在让大家了解我在完全不了解一项技术时，是如何去学习实现它的，可能例子不太好，大家看个乐呵就行。
+另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也像文中的otto一样不是很了解js（哭，你们的问题尽量解答吧。
+目录:
+场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
+《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c&#43;&#43;语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
+“ctrl&#43;滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
+设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。
+随口一提，翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
+嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
+bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
+一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
+现在终于搞定这些问题了，开始写脚本！
+现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript啊肯定先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
+body &gt; center &gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
+function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&#39;link&#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&#39;rel&#39;, &#39;stylesheet&#39;); script.setAttribute(&#39;type&#39;, &#39;text/css&#39;); script.setAttribute(&#39;integrity&#39;, &#39;sha384-HSMxcRTRxnN&#43;Bdg0JdbxYKrThecOKuH5zCYotlSAcp1&#43;c8xmyTe9GYg1l9a69psu&#39;); script.setAttribute(&#39;crossorigin&#39;, &#39;anonymous&#39;); script.href = &#34;https://stackpath."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="https://nick-cjyx9.github.io"
+      >KanataRoom</a
+    >
+    <a
+      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+    ></a>
+  </div>
+
+  <a
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+  ></a>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/tags/%E5%B9%B2%E8%B4%A7/"
+        >DryText</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/friends"
+        >Friends</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/post/%E6%89%8B%E5%8A%A8%E7%BD%AE%E9%A1%B6%E5%81%87%E6%9C%9Ftodolist"
+        >Todolist</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href=" https://twitter.com/cjyx9x "
+        target="_blank"
+      ></a>
+      
+      <a
+        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href=" https://github.com/nick-cjyx9 "
+        target="_blank"
+      ></a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">卷题累了？跟我一起从零学习网页脚本！</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Jan 18, 2023</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>cjyx9</span>
+      
+    </div>
+    
+  </header>
+
+  <section><blockquote>
+<p>前言：本文旨在让大家了解我在完全不了解一项技术时，是如何去学习实现它的，可能例子不太好，大家看个乐呵就行。</p>
+</blockquote>
+<blockquote>
+<p>另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也像文中的otto一样不是很了解js（哭，你们的问题尽量解答吧。</p>
+</blockquote>
+<p>目录:</p>
+<ul>
+<li>场景带入</li>
+<li>发现问题·初探</li>
+<li>
+<ul>
+<li>技术栈的寻找</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>设计方案</li>
+</ul>
+</li>
+<li>着手代码</li>
+<li>
+<ul>
+<li>扒站遇到的问题</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>js的现学现卖</li>
+</ul>
+</li>
+</ul>
+<h2 id="场景带入如有雷同纯属雷同">场景带入（如有雷同，纯属雷同~）</h2>
+<p><del>此段纯纯整活，不喜可直接翻到「发现问题」</del></p>
+<blockquote>
+<p>《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C++」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。</p>
+</blockquote>
+<p>现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c++语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房<del>水题</del>，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个<del>高二的老同志</del>（bushi）。这下，问题来了~
+<img src="https://s2.loli.net/2023/01/18/34dzL8SmypCYJbj.png" alt="image.png"></p>
+<h2 id="发现问题初探">发现问题·初探</h2>
+<p>想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：</p>
+<ul>
+<li>“ctrl+滚轮” 已经试过了，放大会导致显示不完整</li>
+<li>“新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。”</li>
+<li>这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。</li>
+</ul>
+<h3 id="寻找需要的技术栈">寻找需要的技术栈</h3>
+<p>要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。
+你现在还有些疑问，去网上看看吧。
+你上课摸鱼打开最近正火的chatgpt，问道
+<del>这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。</del>
+<img src="https://s2.loli.net/2023/01/18/PD32AyZrK67lpvs.png" alt="image.png">
+<strong>浏览器插件或用户脚本</strong>，我们从网上得知这个信息，有了方向，进一步寻找得到<strong>tampermonkey</strong>这款插件，稍作了解后，你上路了！</p>
+<h3 id="设计解决方案">设计解决方案</h3>
+<p>现在有了神器在手，你开始对ybt下手了
+<img src="https://s2.loli.net/2023/01/18/GuXDZ1YELj9W6y7.png" alt="image.png">
+设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。<img src="https://s2.loli.net/2023/01/15/aRrPlkbhueEJIsy.png" style="zoom:50%;" /></p>
+<blockquote>
+<p>随口一提，翻日报时看到很多推荐vsc写c++的，个人认为vsc在写竞赛c++（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心
+<img src="https://s2.loli.net/2023/01/18/vZ8UwOx245cmjAb.png" alt="image.png"></p>
+</blockquote>
+<h2 id="着手代码">着手代码</h2>
+<h3 id="扒站遇到的问题">扒站遇到的问题</h3>
+<p>otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)</p>
+<p><img src="https://s2.loli.net/2023/01/18/lWPUjEOH26Ntw8h.png" alt="image.png"></p>
+<p>嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上<code>&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;</code>来模拟油猴。然后你直接用浏览器打开html文件，发现：</p>
+<p><img src="https://s2.loli.net/2023/01/18/5ocxQ7hWn6LtqIe.png" alt="image.png"></p>
+<p>bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：<code>f12</code>，反正上一届dalao告诉我这调试网页的，那就试试吧。</p>
+<p><img src="https://s2.loli.net/2023/01/18/uYvM2LNQjJhzOBg.png" alt="image.png"></p>
+<p>一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行</p>
+<p><img src="https://s2.loli.net/2023/01/18/bVZByJjILscOfom.png" alt="image.png"></p>
+<p>现在终于搞定这些问题了，开始写脚本！</p>
+<h3 id="现学现卖js">现学现卖js</h3>
+<p>作为一个Google-Oriented Programmer 遇到不会的JavaScript啊肯定先百度。
+<img src="https://s2.loli.net/2023/01/18/ohxWVE1irc6fuJs.png" alt="image.png">
+你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后<code>display=none;</code>就ok了
+<img src="https://s2.loli.net/2023/01/18/TGF8KpqfUnubdPX.png" alt="image.png"></p>
+<p><code>problemshow.css</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">body</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">center</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">table</span>.<span style="color:#a6e22e">webtop</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadCss</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//这应该是加载css的函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;link&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//css需要link标签引入，这个应该是创造一个标签
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;rel&#39;</span>, <span style="color:#e6db74">&#39;stylesheet&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;type&#39;</span>, <span style="color:#e6db74">&#39;text/css&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;integrity&#39;</span>, <span style="color:#e6db74">&#39;sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;crossorigin&#39;</span>, <span style="color:#e6db74">&#39;anonymous&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//这个刚刚在入门里学过，是设置标签的一系列属性
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//加载css
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>你改了一下，它就变成我们的了</p>
+<p><code>problemshow.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadCss</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;link&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;rel&#39;</span>, <span style="color:#e6db74">&#39;stylesheet&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;type&#39;</span>, <span style="color:#e6db74">&#39;text/css&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;./problemshow.css&#34;</span>;
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;use strict&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">loadCss</span>()
+</span></span><span style="display:flex;"><span>})();
+</span></span></code></pre></div><p>刷新网页看看效果，确实头没了，效果很好</p>
+<p><img src="https://s2.loli.net/2023/01/18/pbSTUfZzEHIYxo4.png" alt="image.png"></p>
+<p>这就算第一个功能实现了。</p>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
+      href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7"
+      >干货</a
+    >
+     
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
+      href="https://nick-cjyx9.github.io/tags/%E8%84%9A%E6%9C%AC"
+      >脚本</a
+    >
+     
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
+      href="https://nick-cjyx9.github.io/tags/javascript"
+      >javascript</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav
+    class="mt-24 flex rounded-lg bg-black/[3%] p-1.5 text-lg dark:bg-white/[8%]" style="margin-bottom: 22px;"
+  >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-md p-6 pl-3 no-underline hover:bg-black/[2%]"
+      href="https://nick-cjyx9.github.io/post/%E6%B7%B1%E5%85%A5%E8%B0%83%E6%95%99ybtoj/"
+      ><span>深入调♂教ybtOJ</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  <script src="https://giscus.app/client.js"
+        data-repo="nick-cjyx9/blog-comment"
+        data-repo-id="R_kgDOIu_GWQ"
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOIu_GWc4CTc3U"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://nick-cjyx9.github.io">KanataRoom</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >▷ Paper 6</a
+  >
+</footer>
+
+  </body>
+</html>

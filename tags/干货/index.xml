@@ -7,27 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 18 Jan 2023 13:24:20 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jan 2023 15:50:57 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>油猴脚本开发指南</title>
+      <link>https://nick-cjyx9.github.io/post/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sat, 28 Jan 2023 15:50:57 +0800</pubDate>
+      
+      <guid>https://nick-cjyx9.github.io/post/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/</guid>
+      <description>前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
+发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C++」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+#发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
+##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
+extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
+分析技术栈:
+运行于油猴容器
+使用语言如下 TypeScript55.5% JavaScript19.6% Vue18.9% CSS5.9% Shell0.1%
+其实总结来ts是js的加强版，我们只用学习js，vue对应前端框架，我们不需要实现复杂前端，js能搞定，故不学。css可以使用现成框架，有很多选择，由简单到复杂分别推荐bootstrap、mdui、Tailwind CSS.
+##方案设计 由于题目页面我使用的最多，这里首先简单设想了一下题目展示页的改造点，并不全面。
+#着手代码 ##准备工作 ###目录结构 exlg这个项目是工程化的，包括 CI，CD，规范化，组件化，模块化，构建等等。需要一定的 Node 和一些构建工具的基础，光看这目录结构就不是我们现在能学的。 所以，我们暂时采用简单目录结构编写项目。
+新建文件夹，目录结构如下（一个完整项目必须拥有好的目录结构才会显得清晰可拓展，单文件在巨大项目中是不可取的)：
+ybt_style/
+userscript.user.js -&amp;gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
+global/ -&amp;gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
+problemshow/ -&amp;gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
+信息学奥赛一本通（C++版）在线评测系统.html -&amp;gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl+s保存即可） 信息学奥赛一本通（C++版）在线评测系统_files/ -&amp;gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。</description>
+    </item>
+    
     <item>
       <title>卷题累了？跟我一起从零学习网页脚本！</title>
       <link>https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Wed, 18 Jan 2023 13:24:20 +0800</pubDate>
       
       <guid>https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/</guid>
-      <description>前言：本文旨在让大家了解我在完全不了解一项技术时，是如何去学习实现它的，可能例子不太好，大家看个乐呵就行。
-另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也像文中的otto一样不是很了解js（哭，你们的问题尽量解答吧。
+      <description>已基本开发完备，代码见gayhub缩放75%使用最佳
+这个版本p话过多，已重构
+另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧。
 目录:
 场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
 《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C++」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
 现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c++语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
 “ctrl+滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
-设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。
-随口一提，翻日报时看到很多推荐vsc写c++的，个人认为vsc在写竞赛c++（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
+设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。 随口一提，翻日报时看到很多推荐vsc写c++的，个人认为vsc在写竞赛c++（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
 嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&amp;lt;script src=&amp;quot;./problemshow.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
 bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
 一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
 现在终于搞定这些问题了，开始写脚本！
-现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript啊肯定先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
+现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript我们先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
 body &amp;gt; center &amp;gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
 function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&amp;#39;link&amp;#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&amp;#39;rel&amp;#39;, &amp;#39;stylesheet&amp;#39;); script.setAttribute(&amp;#39;type&amp;#39;, &amp;#39;text/css&amp;#39;); script.setAttribute(&amp;#39;integrity&amp;#39;, &amp;#39;sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu&amp;#39;); script.setAttribute(&amp;#39;crossorigin&amp;#39;, &amp;#39;anonymous&amp;#39;); script.href = &amp;#34;https://stackpath.</description>
     </item>

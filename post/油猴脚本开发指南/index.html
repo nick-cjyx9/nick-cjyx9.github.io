@@ -57,7 +57,8 @@
   <meta name="theme-color" />
   
   <meta name="description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
-发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+暂无
+《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
 #发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
 ##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
 extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
@@ -72,7 +73,9 @@ ybt_style/
 userscript.user.js -&gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
 global/ -&gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
 problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
-信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。" />
+信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。
+其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。
+翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。 ### 有关git 如果脚本只是自己写给自己用，那git无关紧要。 如果需要多人一起写或给很多人用，git还是要提一下。有关git用法自行百度，这里讲一些点：" />
   <meta
     name="author"
     content="cjyx9"
@@ -133,7 +136,8 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
   
   <meta property="og:title" content="油猴脚本开发指南" />
 <meta property="og:description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
-发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+暂无
+《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
 #发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
 ##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
 extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
@@ -148,7 +152,9 @@ ybt_style/
 userscript.user.js -&gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
 global/ -&gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
 problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
-信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。" />
+信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。
+其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。
+翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。 ### 有关git 如果脚本只是自己写给自己用，那git无关紧要。 如果需要多人一起写或给很多人用，git还是要提一下。有关git用法自行百度，这里讲一些点：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nick-cjyx9.github.io/post/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-01-28T15:50:57+08:00" />
@@ -157,7 +163,8 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
   
   <meta itemprop="name" content="油猴脚本开发指南">
 <meta itemprop="description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
-发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+暂无
+《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
 #发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
 ##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
 extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
@@ -172,15 +179,18 @@ ybt_style/
 userscript.user.js -&gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
 global/ -&gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
 problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
-信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。"><meta itemprop="datePublished" content="2023-01-28T15:50:57+08:00" />
+信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。
+其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。
+翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。 ### 有关git 如果脚本只是自己写给自己用，那git无关紧要。 如果需要多人一起写或给很多人用，git还是要提一下。有关git用法自行百度，这里讲一些点："><meta itemprop="datePublished" content="2023-01-28T15:50:57+08:00" />
 <meta itemprop="dateModified" content="2023-01-28T15:50:57+08:00" />
-<meta itemprop="wordCount" content="241">
+<meta itemprop="wordCount" content="239">
 <meta itemprop="keywords" content="干货," />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="油猴脚本开发指南"/>
 <meta name="twitter:description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
-发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
+暂无
+《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
 #发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
 ##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
 extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
@@ -195,7 +205,9 @@ ybt_style/
 userscript.user.js -&gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
 global/ -&gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
 problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
-信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。"/>
+信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。
+其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。
+翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。 ### 有关git 如果脚本只是自己写给自己用，那git无关紧要。 如果需要多人一起写或给很多人用，git还是要提一下。有关git用法自行百度，这里讲一些点："/>
 
   
   
@@ -356,30 +368,7 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
 <li>我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧</li>
 </ul>
 <p>目录:</p>
-<ul>
-<li>发现问题·初探</li>
-<li>
-<ul>
-<li>技术栈的寻找</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>设计方案</li>
-</ul>
-</li>
-<li>着手代码</li>
-<li>
-<ul>
-<li>扒站遇到的问题</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>js的现学现卖</li>
-</ul>
-</li>
-</ul>
+<p>暂无</p>
 <blockquote>
 <p><del>《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C++」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。</del></p>
 </blockquote>
@@ -521,11 +510,9 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
 这是我们遇到的第一个bug，由于我们还不具备独自修改的能力，故百度<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
 得知<code>// 使用textarea支持换行，使用input不支持换行</code>于是将创建input对象改为textarea，问题解决。</li>
 </ol>
+<h3 id="be-stylish">###Be Stylish</h3>
+<p>接下来将会带大家注入简单css</p>
 <p>注：</p>
-<ul>
-<li></li>
-<li></li>
-</ul>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

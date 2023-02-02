@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on KanataRoom</title>
-    <link>https://nick-cjyx9.github.io/categories/</link>
-    <description>Recent content in Categories on KanataRoom</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright><atom:link href="https://nick-cjyx9.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
+    <channel>
+        <title>Categories on KanataRoom</title>
+        <link>https://nick-cjyx9.github.io/categories/</link>
+        <description>Recent content in Categories on KanataRoom</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language><atom:link href="https://nick-cjyx9.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>归档</title>
+        <link>https://nick-cjyx9.github.io/categories/test/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://nick-cjyx9.github.io/categories/test/</guid>
+        <description>&lt;img src="https://nick-cjyx9.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 归档" /&gt;&lt;h1 id=&#34;归档&#34;&gt;归档&lt;/h1&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

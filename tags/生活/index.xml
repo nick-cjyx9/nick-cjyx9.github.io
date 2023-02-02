@@ -1,42 +1,105 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>生活 on KanataRoom</title>
-    <link>https://nick-cjyx9.github.io/tags/%E7%94%9F%E6%B4%BB/</link>
-    <description>Recent content in 生活 on KanataRoom</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 13 Jan 2023 16:41:13 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>今日趣闻</title>
-      <link>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5%E8%B6%A3%E9%97%BB/</link>
-      <pubDate>Fri, 13 Jan 2023 16:41:13 +0800</pubDate>
-      
-      <guid>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5%E8%B6%A3%E9%97%BB/</guid>
-      <description>既然决定了在这里发牢骚，总得写点qq空间不能写的吧。。
-拒绝犹太审美，从元首做起！
-1/13日记流水账：
-早上又起晚了，操不能熬夜了，我要早起
-彻夜之歌补完了，是真的香，后几集观感有点差，主线剧情走太多，总的来说期待续作
-大早上改题lgP1120，TLE-&amp;gt;WA剪枝优化太多了吧。。（貌似是我尝试切的第一道蓝题）最后还是看了题解
-作业写着一天就挺快的，感觉一天像初三暑假摆烂肝原神时候的3天
-民族主义就是，“对你从没做过的事倍感自豪，对你从未见过的人恨之入骨”
-（这里本来有一大段话）还是别把自己太当回事。
-以后不发牢骚了，键政禁止
-最近老想涩涩的东西，果然是因为粉色软件看多了吗😅
-如果这里被熟人发现的话，我就结束了罢（
-唐可可，我真的好喜欢你啊！ </description>
-    </item>
-    
-    <item>
-      <title>喜提38套试卷！</title>
-      <link>https://nick-cjyx9.github.io/post/%E5%96%9C%E6%8F%9038%E5%A5%97%E8%AF%95%E5%8D%B7/</link>
-      <pubDate>Mon, 09 Jan 2023 11:14:38 +0800</pubDate>
-      
-      <guid>https://nick-cjyx9.github.io/post/%E5%96%9C%E6%8F%9038%E5%A5%97%E8%AF%95%E5%8D%B7/</guid>
-      <description>我是八一特种兵，快乐寒假从我开始！ </description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>生活 on KanataRoom</title>
+        <link>https://nick-cjyx9.github.io/tags/%E7%94%9F%E6%B4%BB/</link>
+        <description>Recent content in 生活 on KanataRoom</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Fri, 13 Jan 2023 16:41:13 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>今日趣闻</title>
+        <link>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5%E8%B6%A3%E9%97%BB/</link>
+        <pubDate>Fri, 13 Jan 2023 16:41:13 +0800</pubDate>
+        
+        <guid>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5%E8%B6%A3%E9%97%BB/</guid>
+        <description>&lt;p&gt;既然决定了在这里发牢骚，总得写点qq空间不能写的吧。。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/13/tjuksADUyQcnI3e.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;无标题.png&#34;
+	
+	
+&gt;拒绝犹太审美，从元首做起！&lt;/p&gt;
+&lt;p&gt;1/13&lt;del&gt;日记&lt;/del&gt;流水账：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;早上又起晚了，操不能熬夜了，我要早起&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;彻夜之歌补完了，是真的香，后几集观感有点差，主线剧情走太多，总的来说期待续作&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大早上改题lgP1120，TLE-&amp;gt;WA剪枝优化太多了吧。。（貌似是我尝试切的第一道蓝题）&lt;del&gt;最后还是看了题解&lt;/del&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;作业写着一天就挺快的，感觉一天像初三暑假摆烂肝原神时候的3天&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;民族主义就是，“对你从没做过的事倍感自豪，对你从未见过的人恨之入骨”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;（这里本来有一大段话）还是别把自己太当回事。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以后不发牢骚了，键政禁止&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;del&gt;&lt;p style=&#34;color:DarkGrey;text-decoration:line-through;&#34;&gt;最近老想涩涩的东西，果然是因为粉色软件看多了吗😅&lt;/p&gt;&lt;p id=&#34;RunTime&#34; style=&#34;color:DarkGray;display:inline-block;text-decoration:line-through;&#34;&gt;&lt;/p&gt;&lt;p style=&#34;color:DarkGrey;text-decoration:line-through;&#34;&gt;如果这里被熟人发现的话，我就结束了罢（&lt;/p&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;唐可可，我真的好喜欢你啊！  &lt;img src=&#34;https://s2.loli.net/2023/01/13/7Y8tfwkOhiyuAgB.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;ZV6EBACMYL9Q9ZM@_R@8`UV.gif&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+var BootDate = new Date(&#34;2023/01/13 00:00:00&#34;);
+function ShowRunTime(id) {
+var NowDate = new Date();
+var RunDateM = parseInt(NowDate - BootDate);
+var RunDays = Math.floor(RunDateM/(24*3600*1000));
+var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+var RunTime = RunDays + &#34;天&#34; + RunHours + &#34;时&#34; + RunMinutes + &#34;分&#34; + RunSeconds + &#34;秒&#34;;
+document.getElementById(id).innerHTML = &#34;戒欲：&#34; + RunTime;
+}
+setInterval(&#34;ShowRunTime(&#39;RunTime&#39;)&#34;, 1000);
+&lt;/script&gt;&lt;blockquote&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>喜提38套试卷！</title>
+        <link>https://nick-cjyx9.github.io/post/%E5%96%9C%E6%8F%9038%E5%A5%97%E8%AF%95%E5%8D%B7/</link>
+        <pubDate>Mon, 09 Jan 2023 11:14:38 +0800</pubDate>
+        
+        <guid>https://nick-cjyx9.github.io/post/%E5%96%9C%E6%8F%9038%E5%A5%97%E8%AF%95%E5%8D%B7/</guid>
+        <description>&lt;h1 id=&#34;我是八一特种兵快乐寒假从我开始&#34;&gt;我是八一特种兵，快乐寒假从我开始！&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/09/Fj3tM6GQkDnxLOH.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_20230109_110857.jpg&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

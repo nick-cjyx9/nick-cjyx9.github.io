@@ -1,50 +1,86 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>瞎BB on KanataRoom</title>
-    <link>https://nick-cjyx9.github.io/tags/%E7%9E%8Ebb/</link>
-    <description>Recent content in 瞎BB on KanataRoom</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 25 Jan 2023 15:35:54 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E7%9E%8Ebb/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>今日bb</title>
-      <link>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5bb/</link>
-      <pubDate>Wed, 25 Jan 2023 15:35:54 +0800</pubDate>
-      
-      <guid>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5bb/</guid>
-      <description> 脚本坑暂停，先搞作业 科学麻将不可取，永远不要相信发牌姬，五面听都给你流咯~ 摆摆摆 </description>
-    </item>
-    
-    <item>
-      <title>给大家拜个早年！</title>
-      <link>https://nick-cjyx9.github.io/post/%E7%BB%99%E5%A4%A7%E5%AE%B6%E6%8B%9C%E4%B8%AA%E6%97%A9%E5%B9%B4/</link>
-      <pubDate>Thu, 19 Jan 2023 20:58:25 +0800</pubDate>
-      
-      <guid>https://nick-cjyx9.github.io/post/%E7%BB%99%E5%A4%A7%E5%AE%B6%E6%8B%9C%E4%B8%AA%E6%97%A9%E5%B9%B4/</guid>
-      <description>年味渐浓mad抠搜猫粮
-更新了感觉原优化变好了？活挺不错，视频挺不错，期待反响如何</description>
-    </item>
-    
-    <item>
-      <title>开新坑</title>
-      <link>https://nick-cjyx9.github.io/post/%E5%BC%80%E6%96%B0%E5%9D%91/</link>
-      <pubDate>Sun, 15 Jan 2023 19:44:46 +0800</pubDate>
-      
-      <guid>https://nick-cjyx9.github.io/post/%E5%BC%80%E6%96%B0%E5%9D%91/</guid>
-      <description>假期闲的打游戏，不如开俩新坑 坑1：ybt改造计划，ybt半屏体验真不行 坑2：oier搭建博客完全指北 圣嘉然保佑 Saint Diana Bless
-嘉心糖今晚要狠狠的做大牌，胡5倍役满！</description>
-    </item>
-    
-    <item>
-      <title>二次元啥卵的钱真好赚</title>
-      <link>https://nick-cjyx9.github.io/post/%E4%BA%8C%E6%AC%A1%E5%85%83%E5%95%A5%E5%8D%B5%E7%9A%84%E9%92%B1%E7%9C%9F%E5%A5%BD%E8%B5%9A/</link>
-      <pubDate>Sat, 14 Jan 2023 11:39:53 +0800</pubDate>
-      
-      <guid>https://nick-cjyx9.github.io/post/%E4%BA%8C%E6%AC%A1%E5%85%83%E5%95%A5%E5%8D%B5%E7%9A%84%E9%92%B1%E7%9C%9F%E5%A5%BD%E8%B5%9A/</guid>
-      <description>原来我就是二次元 -50￥</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>瞎BB on KanataRoom</title>
+        <link>https://nick-cjyx9.github.io/tags/%E7%9E%8Ebb/</link>
+        <description>Recent content in 瞎BB on KanataRoom</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 25 Jan 2023 15:35:54 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E7%9E%8Ebb/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>今日bb</title>
+        <link>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5bb/</link>
+        <pubDate>Wed, 25 Jan 2023 15:35:54 +0800</pubDate>
+        
+        <guid>https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5bb/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;脚本坑暂停，先搞作业&lt;/li&gt;
+&lt;li&gt;科学麻将不可取，永远不要相信发牌姬，五面听都给你流咯~&lt;/li&gt;
+&lt;li&gt;摆摆摆&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>给大家拜个早年！</title>
+        <link>https://nick-cjyx9.github.io/post/%E7%BB%99%E5%A4%A7%E5%AE%B6%E6%8B%9C%E4%B8%AA%E6%97%A9%E5%B9%B4/</link>
+        <pubDate>Thu, 19 Jan 2023 20:58:25 +0800</pubDate>
+        
+        <guid>https://nick-cjyx9.github.io/post/%E7%BB%99%E5%A4%A7%E5%AE%B6%E6%8B%9C%E4%B8%AA%E6%97%A9%E5%B9%B4/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/19/aCepKLwFW5OnsAH.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;年味渐浓&lt;/code&gt;mad抠搜猫粮&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/19/acB9yt45IUhi8OH.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;更新了感觉原优化变好了？活挺不错，视频挺不错，期待反响如何&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>开新坑</title>
+        <link>https://nick-cjyx9.github.io/post/%E5%BC%80%E6%96%B0%E5%9D%91/</link>
+        <pubDate>Sun, 15 Jan 2023 19:44:46 +0800</pubDate>
+        
+        <guid>https://nick-cjyx9.github.io/post/%E5%BC%80%E6%96%B0%E5%9D%91/</guid>
+        <description>&lt;h1 id=&#34;假期闲的打游戏不如开俩新坑&#34;&gt;假期闲的打游戏，不如开俩新坑&lt;/h1&gt;
+&lt;h2 id=&#34;坑1ybt改造计划ybt半屏体验真不行&#34;&gt;坑1：ybt改造计划，ybt半屏体验真不行&lt;/h2&gt;
+&lt;h2 id=&#34;坑2oier搭建博客完全指北&#34;&gt;坑2：oier搭建博客完全指北&lt;/h2&gt;
+&lt;p&gt;圣嘉然保佑 Saint Diana Bless&lt;/p&gt;
+&lt;p&gt;嘉心糖今晚要狠狠的做大牌，胡5倍役满！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>二次元啥卵的钱真好赚</title>
+        <link>https://nick-cjyx9.github.io/post/%E4%BA%8C%E6%AC%A1%E5%85%83%E5%95%A5%E5%8D%B5%E7%9A%84%E9%92%B1%E7%9C%9F%E5%A5%BD%E8%B5%9A/</link>
+        <pubDate>Sat, 14 Jan 2023 11:39:53 +0800</pubDate>
+        
+        <guid>https://nick-cjyx9.github.io/post/%E4%BA%8C%E6%AC%A1%E5%85%83%E5%95%A5%E5%8D%B5%E7%9A%84%E9%92%B1%E7%9C%9F%E5%A5%BD%E8%B5%9A/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/14/strTYhFI7A53la4.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3A0BC5352193F97BA5ACC04D35743F5F.jpg&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;原来我就是二次元 -50￥&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

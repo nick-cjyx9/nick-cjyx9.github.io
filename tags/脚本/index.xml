@@ -1,36 +1,289 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>脚本 on KanataRoom</title>
-    <link>https://nick-cjyx9.github.io/tags/%E8%84%9A%E6%9C%AC/</link>
-    <description>Recent content in 脚本 on KanataRoom</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>Copyright © 2022–2023, Nick Chen; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 18 Jan 2023 13:24:20 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>卷题累了？跟我一起从零学习网页脚本！</title>
-      <link>https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/</link>
-      <pubDate>Wed, 18 Jan 2023 13:24:20 +0800</pubDate>
-      
-      <guid>https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/</guid>
-      <description>已基本开发完备，代码见gayhub缩放75%使用最佳
-这个版本p话过多，已重构
-另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧。
-目录:
-场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C++」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c++语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
-“ctrl+滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
-设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。 随口一提，翻日报时看到很多推荐vsc写c++的，个人认为vsc在写竞赛c++（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
-嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&amp;lt;script src=&amp;quot;./problemshow.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
-bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
-一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
-现在终于搞定这些问题了，开始写脚本！
-现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript我们先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
-body &amp;gt; center &amp;gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
-function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&amp;#39;link&amp;#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&amp;#39;rel&amp;#39;, &amp;#39;stylesheet&amp;#39;); script.setAttribute(&amp;#39;type&amp;#39;, &amp;#39;text/css&amp;#39;); script.setAttribute(&amp;#39;integrity&amp;#39;, &amp;#39;sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu&amp;#39;); script.setAttribute(&amp;#39;crossorigin&amp;#39;, &amp;#39;anonymous&amp;#39;); script.href = &amp;#34;https://stackpath.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>脚本 on KanataRoom</title>
+        <link>https://nick-cjyx9.github.io/tags/%E8%84%9A%E6%9C%AC/</link>
+        <description>Recent content in 脚本 on KanataRoom</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 18 Jan 2023 13:24:20 +0800</lastBuildDate><atom:link href="https://nick-cjyx9.github.io/tags/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>卷题累了？跟我一起从零学习网页脚本！</title>
+        <link>https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/</link>
+        <pubDate>Wed, 18 Jan 2023 13:24:20 +0800</pubDate>
+        
+        <guid>https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/</guid>
+        <description>&lt;p&gt;已基本开发完备，代码见&lt;a class=&#34;link&#34; href=&#34;https://github.com/nick-cjyx9/fxxkybt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;gayhub&lt;/a&gt;缩放75%使用最佳&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这个版本p话过多，已重构&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;目录:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;场景带入&lt;/li&gt;
+&lt;li&gt;发现问题·初探&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;技术栈的寻找&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;设计方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;着手代码&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;扒站遇到的问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;js的现学现卖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;场景带入如有雷同纯属雷同&#34;&gt;场景带入（如有雷同，纯属雷同~）&lt;/h2&gt;
+&lt;p&gt;&lt;del&gt;此段纯纯整活，不喜可直接翻到「发现问题」&lt;/del&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C++」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c++语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房&lt;del&gt;水题&lt;/del&gt;，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个&lt;del&gt;高二的老同志&lt;/del&gt;（bushi）。这下，问题来了~
+&lt;img src=&#34;https://s2.loli.net/2023/01/18/34dzL8SmypCYJbj.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;发现问题初探&#34;&gt;发现问题·初探&lt;/h2&gt;
+&lt;p&gt;想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“ctrl+滚轮” 已经试过了，放大会导致显示不完整&lt;/li&gt;
+&lt;li&gt;“新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。”&lt;/li&gt;
+&lt;li&gt;这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;寻找需要的技术栈&#34;&gt;寻找需要的技术栈&lt;/h3&gt;
+&lt;p&gt;要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。
+你现在还有些疑问，去网上看看吧。
+你上课摸鱼打开最近正火的chatgpt，问道
+&lt;del&gt;这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。&lt;/del&gt;
+&lt;img src=&#34;https://s2.loli.net/2023/01/18/PD32AyZrK67lpvs.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;
+&lt;strong&gt;浏览器插件或用户脚本&lt;/strong&gt;，我们从网上得知这个信息，有了方向，进一步寻找得到&lt;strong&gt;tampermonkey&lt;/strong&gt;这款插件，稍作了解后，你上路了！&lt;/p&gt;
+&lt;h3 id=&#34;设计解决方案&#34;&gt;设计解决方案&lt;/h3&gt;
+&lt;p&gt;现在有了神器在手，你开始对ybt下手了
+&lt;img src=&#34;https://s2.loli.net/2023/01/18/GuXDZ1YELj9W6y7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;
+设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。
+&lt;img src=&#34;https://s2.loli.net/2023/01/15/aRrPlkbhueEJIsy.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;随口一提，翻日报时看到很多推荐vsc写c++的，个人认为vsc在写竞赛c++（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心
+&lt;img src=&#34;https://s2.loli.net/2023/01/18/vZ8UwOx245cmjAb.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;着手代码&#34;&gt;着手代码&lt;/h2&gt;
+&lt;h3 id=&#34;扒站遇到的问题&#34;&gt;扒站遇到的问题&lt;/h3&gt;
+&lt;p&gt;otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/18/lWPUjEOH26Ntw8h.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;code&gt;&amp;lt;script src=&amp;quot;./problemshow.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/18/5ocxQ7hWn6LtqIe.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：&lt;code&gt;f12&lt;/code&gt;，反正上一届dalao告诉我这调试网页的，那就试试吧。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/18/uYvM2LNQjJhzOBg.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/18/bVZByJjILscOfom.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;现在终于搞定这些问题了，开始写脚本！&lt;/p&gt;
+&lt;h3 id=&#34;现学现卖js&#34;&gt;现学现卖js&lt;/h3&gt;
+&lt;p&gt;作为一个Google-Oriented Programmer 遇到不会的JavaScript我们先百度。
+&lt;img src=&#34;https://s2.loli.net/2023/01/18/ohxWVE1irc6fuJs.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;
+你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后&lt;code&gt;display=none;&lt;/code&gt;就ok了
+&lt;img src=&#34;https://s2.loli.net/2023/01/18/TGF8KpqfUnubdPX.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;problemshow.css&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;center&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;webtop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;none&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;loadCss&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//这应该是加载css的函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;createElement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;//css需要link标签引入，这个应该是创造一个标签
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setAttribute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;rel&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;stylesheet&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setAttribute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;type&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;text/css&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setAttribute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;integrity&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setAttribute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;crossorigin&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;anonymous&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;href&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;//这个刚刚在入门里学过，是设置标签的一系列属性
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;documentElement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;appendChild&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;//加载css
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;你改了一下，它就变成我们的了&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;problemshow.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;loadCss&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;createElement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setAttribute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;rel&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;stylesheet&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setAttribute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;type&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;text/css&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;href&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;./problemshow.css&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;documentElement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;appendChild&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;use strict&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;loadCss&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;})();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;刷新网页看看效果，确实头没了，效果很好&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/01/18/pbSTUfZzEHIYxo4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这就算第一个功能实现了。&lt;/p&gt;
+&lt;p&gt;1/28续更：往后会加快进度，少些p话&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

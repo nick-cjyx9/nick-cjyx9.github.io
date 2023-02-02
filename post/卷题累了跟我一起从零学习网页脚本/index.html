@@ -1,351 +1,351 @@
 <!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='已基本开发完备，代码见gayhub缩放75%使用最佳 这个版本p话过多，已重构 另：重点不全在js脚本上，我知道tampermonkey投日报不'>
+<title>卷题累了？跟我一起从零学习网页脚本！</title>
+
+<link rel='canonical' href='https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='卷题累了？跟我一起从零学习网页脚本！'>
+<meta property='og:description' content='已基本开发完备，代码见gayhub缩放75%使用最佳 这个版本p话过多，已重构 另：重点不全在js脚本上，我知道tampermonkey投日报不'>
+<meta property='og:url' content='https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/'>
+<meta property='og:site_name' content='KanataRoom'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='干货' /><meta property='article:tag' content='脚本' /><meta property='article:tag' content='javascript' /><meta property='article:published_time' content='2023-01-18T13:24:20&#43;08:00'/><meta property='article:modified_time' content='2023-01-18T13:24:20&#43;08:00'/>
+<meta name="twitter:title" content="卷题累了？跟我一起从零学习网页脚本！">
+<meta name="twitter:description" content="已基本开发完备，代码见gayhub缩放75%使用最佳 这个版本p话过多，已重构 另：重点不全在js脚本上，我知道tampermonkey投日报不">
+    <link rel="shortcut icon" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">😅</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">KanataRoom</a></h1>
+            <h2 class="site-description">Do not repeat yourself.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/nick_cjyx9'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
 
 
 
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/cjyx9x'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
 
 
 
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
 
 
 
+                
+                <span>home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
 
 
 
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
 
 
 
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-me/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
 
 
 
+                
+                <span>about</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
 
 
 
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
 
 
 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
 
 
 
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
 
 
 
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#场景带入如有雷同纯属雷同">场景带入（如有雷同，纯属雷同~）</a></li>
+    <li><a href="#发现问题初探">发现问题·初探</a>
+      <ol>
+        <li><a href="#寻找需要的技术栈">寻找需要的技术栈</a></li>
+        <li><a href="#设计解决方案">设计解决方案</a></li>
+      </ol>
+    </li>
+    <li><a href="#着手代码">着手代码</a>
+      <ol>
+        <li><a href="#扒站遇到的问题">扒站遇到的问题</a></li>
+        <li><a href="#现学现卖js">现学现卖js</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
 
 
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
 
-
-
-
-
-
-<html
-  class="not-ready text-sm lg:text-base"
-  style="--bg: #faf6f1"
-  lang="zh-cn"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>卷题累了？跟我一起从零学习网页脚本！ - KanataRoom</title>
-
-  
-  <meta name="theme-color" />
-  
-  <meta name="description" content="已基本开发完备，代码见gayhub缩放75%使用最佳
-这个版本p话过多，已重构
-另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧。
-目录:
-场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c&#43;&#43;语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
-“ctrl&#43;滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
-设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。 随口一提，翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
-嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
-bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
-一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
-现在终于搞定这些问题了，开始写脚本！
-现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript我们先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
-body &gt; center &gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
-function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&#39;link&#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&#39;rel&#39;, &#39;stylesheet&#39;); script.setAttribute(&#39;type&#39;, &#39;text/css&#39;); script.setAttribute(&#39;integrity&#39;, &#39;sha384-HSMxcRTRxnN&#43;Bdg0JdbxYKrThecOKuH5zCYotlSAcp1&#43;c8xmyTe9GYg1l9a69psu&#39;); script.setAttribute(&#39;crossorigin&#39;, &#39;anonymous&#39;); script.href = &#34;https://stackpath." />
-  <meta
-    name="author"
-    content="cjyx9"
-  />
-  
-
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://nick-cjyx9.github.io/main.min.css" />
-
-  
-  <script
-    defer
-    src="https://nick-cjyx9.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  
-
-  
-   
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/theme.png" />
-
-  
-  
-  
-  <link rel="preload" as="image" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
-  
-  
-
-  
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/twitter.svg" />
-  
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/github.svg" />
-  
-
-  
-  <link rel="icon" href="https://nick-cjyx9.github.io/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.110.0">
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:title" content="卷题累了？跟我一起从零学习网页脚本！" />
-<meta property="og:description" content="已基本开发完备，代码见gayhub缩放75%使用最佳
-这个版本p话过多，已重构
-另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧。
-目录:
-场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c&#43;&#43;语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
-“ctrl&#43;滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
-设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。 随口一提，翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
-嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
-bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
-一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
-现在终于搞定这些问题了，开始写脚本！
-现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript我们先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
-body &gt; center &gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
-function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&#39;link&#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&#39;rel&#39;, &#39;stylesheet&#39;); script.setAttribute(&#39;type&#39;, &#39;text/css&#39;); script.setAttribute(&#39;integrity&#39;, &#39;sha384-HSMxcRTRxnN&#43;Bdg0JdbxYKrThecOKuH5zCYotlSAcp1&#43;c8xmyTe9GYg1l9a69psu&#39;); script.setAttribute(&#39;crossorigin&#39;, &#39;anonymous&#39;); script.href = &#34;https://stackpath." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://nick-cjyx9.github.io/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-18T13:24:20+08:00" />
-<meta property="article:modified_time" content="2023-01-18T13:24:20+08:00" />
-
-  
-  <meta itemprop="name" content="卷题累了？跟我一起从零学习网页脚本！">
-<meta itemprop="description" content="已基本开发完备，代码见gayhub缩放75%使用最佳
-这个版本p话过多，已重构
-另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧。
-目录:
-场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c&#43;&#43;语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
-“ctrl&#43;滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
-设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。 随口一提，翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
-嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
-bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
-一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
-现在终于搞定这些问题了，开始写脚本！
-现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript我们先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
-body &gt; center &gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
-function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&#39;link&#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&#39;rel&#39;, &#39;stylesheet&#39;); script.setAttribute(&#39;type&#39;, &#39;text/css&#39;); script.setAttribute(&#39;integrity&#39;, &#39;sha384-HSMxcRTRxnN&#43;Bdg0JdbxYKrThecOKuH5zCYotlSAcp1&#43;c8xmyTe9GYg1l9a69psu&#39;); script.setAttribute(&#39;crossorigin&#39;, &#39;anonymous&#39;); script.href = &#34;https://stackpath."><meta itemprop="datePublished" content="2023-01-18T13:24:20+08:00" />
-<meta itemprop="dateModified" content="2023-01-18T13:24:20+08:00" />
-<meta itemprop="wordCount" content="103">
-<meta itemprop="keywords" content="干货,脚本,javascript," />
-  
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="卷题累了？跟我一起从零学习网页脚本！"/>
-<meta name="twitter:description" content="已基本开发完备，代码见gayhub缩放75%使用最佳
-这个版本p话过多，已重构
-另：重点不全在js脚本上，我知道tampermonkey投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧。
-目录:
-场景带入 发现问题·初探 技术栈的寻找 设计方案 着手代码 扒站遇到的问题 js的现学现卖 场景带入（如有雷同，纯属雷同~） 此段纯纯整活，不喜可直接翻到「发现问题」
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c&#43;&#43;语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房水题，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个高二的老同志（bushi）。这下，问题来了~ 发现问题·初探 想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：
-“ctrl&#43;滚轮” 已经试过了，放大会导致显示不完整 “新建html文件,在body标签中添加文字,这里以p标签内容为“演示文本”为例,这时网页将会显示字体默认大小和颜色。在head标签中添加style标签给页面设置css样式，选择p标签，字体大小用的是“font-size”属性，属性值为字体大小，这里以“30px”为例，这时“演示文本”字体将会变大。” 这个看起来挺靠谱，字儿挺多。你悟了，因为之前了解过web开发，并开始往改css的方向寻找。 寻找需要的技术栈 要做到修改这玩意儿，我要用到什么呢，html、js、css这些是肯定的。 你现在还有些疑问，去网上看看吧。 你上课摸鱼打开最近正火的chatgpt，问道 这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。 浏览器插件或用户脚本，我们从网上得知这个信息，有了方向，进一步寻找得到tampermonkey这款插件，稍作了解后，你上路了！
-设计解决方案 现在有了神器在手，你开始对ybt下手了 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。 随口一提，翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心 着手代码 扒站遇到的问题 otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)
-嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;来模拟油猴。然后你直接用浏览器打开html文件，发现：
-bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：f12，反正上一届dalao告诉我这调试网页的，那就试试吧。
-一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行
-现在终于搞定这些问题了，开始写脚本！
-现学现卖js 作为一个Google-Oriented Programmer 遇到不会的JavaScript我们先百度。 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后display=none;就ok了 problemshow.css
-body &gt; center &gt; table.webtop{ display:none; } 现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）
-function loadCss(){ //这应该是加载css的函数 let script = document.createElement(&#39;link&#39;); //css需要link标签引入，这个应该是创造一个标签 script.setAttribute(&#39;rel&#39;, &#39;stylesheet&#39;); script.setAttribute(&#39;type&#39;, &#39;text/css&#39;); script.setAttribute(&#39;integrity&#39;, &#39;sha384-HSMxcRTRxnN&#43;Bdg0JdbxYKrThecOKuH5zCYotlSAcp1&#43;c8xmyTe9GYg1l9a69psu&#39;); script.setAttribute(&#39;crossorigin&#39;, &#39;anonymous&#39;); script.href = &#34;https://stackpath."/>
-
-  
-  
-</head>
-
-  <body class="text-black duration-200 ease-out dark:text-white">
-    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
-  <div class="relative z-50 mr-auto flex items-center">
-    <a
-      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
-      href="https://nick-cjyx9.github.io"
-      >KanataRoom</a
-    >
-    <a
-      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-    ></a>
-  </div>
-
-  <a
-    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-  ></a>
-
-  
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = `"#faf6f1"`.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
-  >
-    
-    
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/%E5%B9%B2%E8%B4%A7/"
-        >DryText</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/friends"
-        >Friends</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/contact/"
-        >Contact</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/post/%E6%89%8B%E5%8A%A8%E7%BD%AE%E9%A1%B6%E5%81%87%E6%9C%9Ftodolist"
-        >Todolist</a
-      >
-      
-    </nav>
+    <div class="article-details">
     
 
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E5%8D%B7%E9%A2%98%E7%B4%AF%E4%BA%86%E8%B7%9F%E6%88%91%E4%B8%80%E8%B5%B7%E4%BB%8E%E9%9B%B6%E5%AD%A6%E4%B9%A0%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC/">卷题累了？跟我一起从零学习网页脚本！</a>
+        </h2>
     
-    <nav
-      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
-    >
-      
-      <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href=" https://twitter.com/cjyx9x "
-        target="_blank"
-      ></a>
-      
-      <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href=" https://github.com/nick-cjyx9 "
-        target="_blank"
-      ></a>
-      
-    </nav>
+        
+    </div>
+
     
-  </div>
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 18, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
 </header>
 
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
-    >
-      
-
-<article>
-  <header class="mb-20">
-    <h1 class="!my-0 pb-2.5">卷题累了？跟我一起从零学习网页脚本！</h1>
-
+    <section class="article-content">
     
-    <div class="text-sm opacity-60">
-      
-      <time>Jan 18, 2023</time>
-      
-      
-      <span class="mx-1">&middot;</span>
-      <span>cjyx9</span>
-      
-    </div>
     
-  </header>
-
-  <section><p>已基本开发完备，代码见<a href="https://github.com/nick-cjyx9/fxxkybt">gayhub</a>缩放75%使用最佳</p>
+    <p>已基本开发完备，代码见<a class="link" href="https://github.com/nick-cjyx9/fxxkybt"  target="_blank" rel="noopener"
+    >gayhub</a>缩放75%使用最佳</p>
 <blockquote>
 <p>这个版本p话过多，已重构</p>
 </blockquote>
@@ -384,7 +384,16 @@ function loadCss(){ //这应该是加载css的函数 let script = document.creat
 <p>《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C++」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。</p>
 </blockquote>
 <p>现在，你将在游戏中扮演24岁，还是学生，学习oi两年半的otto，在这之前只学过c++语言，并且在机房因为码力蒟蒻，处于最低弟位。你像往常一样来到只因房<del>水题</del>，你发现ybt的题目页在半屏下显示不全，缩小后字儿又太小，一点也不体贴你这个<del>高二的老同志</del>（bushi）。这下，问题来了~
-<img src="https://s2.loli.net/2023/01/18/34dzL8SmypCYJbj.png" alt="image.png"></p>
+<img src="https://s2.loli.net/2023/01/18/34dzL8SmypCYJbj.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <h2 id="发现问题初探">发现问题·初探</h2>
 <p>想要让自己舒服点，开始在网上搜索方案“怎么让网站字体变大”：</p>
 <ul>
@@ -397,157 +406,443 @@ function loadCss(){ //这应该是加载css的函数 let script = document.creat
 你现在还有些疑问，去网上看看吧。
 你上课摸鱼打开最近正火的chatgpt，问道
 <del>这里给大家整个花的，不得不说，它懂得真多，例子可能有点傻，将就看下去吧。</del>
-<img src="https://s2.loli.net/2023/01/18/PD32AyZrK67lpvs.png" alt="image.png">
+<img src="https://s2.loli.net/2023/01/18/PD32AyZrK67lpvs.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+>
 <strong>浏览器插件或用户脚本</strong>，我们从网上得知这个信息，有了方向，进一步寻找得到<strong>tampermonkey</strong>这款插件，稍作了解后，你上路了！</p>
 <h3 id="设计解决方案">设计解决方案</h3>
 <p>现在有了神器在手，你开始对ybt下手了
-<img src="https://s2.loli.net/2023/01/18/GuXDZ1YELj9W6y7.png" alt="image.png">
+<img src="https://s2.loli.net/2023/01/18/GuXDZ1YELj9W6y7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+>
 设想是要设想的，设想完了，做不做得到又是一回事。你打开VScode，新建文件夹，开始代码。
-<img src="https://s2.loli.net/2023/01/15/aRrPlkbhueEJIsy.png" alt=""></p>
+<img src="https://s2.loli.net/2023/01/15/aRrPlkbhueEJIsy.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
 <blockquote>
 <p>随口一提，翻日报时看到很多推荐vsc写c++的，个人认为vsc在写竞赛c++（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。不是黑vsc，vsc更适合的是python和Js、ts等开发，各种插件用着也很省心
-<img src="https://s2.loli.net/2023/01/18/vZ8UwOx245cmjAb.png" alt="image.png"></p>
+<img src="https://s2.loli.net/2023/01/18/vZ8UwOx245cmjAb.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 </blockquote>
 <h2 id="着手代码">着手代码</h2>
 <h3 id="扒站遇到的问题">扒站遇到的问题</h3>
 <p>otto凭借自己的计算机常识，知道首先要把ybt的网页下到本地方便调试，你迅速的建好目录(请忽略userscript.user.js，otto还不懂这些)</p>
-<p><img src="https://s2.loli.net/2023/01/18/lWPUjEOH26Ntw8h.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/01/18/lWPUjEOH26Ntw8h.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>嗯，扒了问题页的html代码，注入到网页中的是problemshow.js和problemshow.css。凭借之前对油猴的大致了解，油猴的原理大概是在网页底部运行脚本，于是你在扒下来的html文件低端加上<code>&lt;script src=&quot;./problemshow.js&quot;&gt;&lt;/script&gt;</code>来模拟油猴。然后你直接用浏览器打开html文件，发现：</p>
-<p><img src="https://s2.loli.net/2023/01/18/5ocxQ7hWn6LtqIe.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/01/18/5ocxQ7hWn6LtqIe.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>bug0这就来了，和原站不一样啊，你经过一番尝试，试着像以前把没AC的题改AC的方法：<code>f12</code>，反正上一届dalao告诉我这调试网页的，那就试试吧。</p>
-<p><img src="https://s2.loli.net/2023/01/18/uYvM2LNQjJhzOBg.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/01/18/uYvM2LNQjJhzOBg.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>一片红！这不就发现问题了！访问的是本地的js，我并没有扒这些文件，都换成ybt网站的资源就行</p>
-<p><img src="https://s2.loli.net/2023/01/18/bVZByJjILscOfom.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/01/18/bVZByJjILscOfom.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>现在终于搞定这些问题了，开始写脚本！</p>
 <h3 id="现学现卖js">现学现卖js</h3>
 <p>作为一个Google-Oriented Programmer 遇到不会的JavaScript我们先百度。
-<img src="https://s2.loli.net/2023/01/18/ohxWVE1irc6fuJs.png" alt="image.png">
+<img src="https://s2.loli.net/2023/01/18/ohxWVE1irc6fuJs.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+>
 你花了一个小时把这些全看完了，这些东西对于一个已经AC了P1001的你一点都不难。（这里讲起js篇幅会很长，js本身不难，光看代码能理解）你先准备实现一个小目标——把头头的这一堆隐藏掉。这并不难，取得selector然后<code>display=none;</code>就ok了
-<img src="https://s2.loli.net/2023/01/18/TGF8KpqfUnubdPX.png" alt="image.png"></p>
+<img src="https://s2.loli.net/2023/01/18/TGF8KpqfUnubdPX.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p><code>problemshow.css</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">body</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">center</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">table</span>.<span style="color:#a6e22e">webtop</span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">none</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadCss</span>(){
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//这应该是加载css的函数
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;link&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//css需要link标签引入，这个应该是创造一个标签
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;rel&#39;</span>, <span style="color:#e6db74">&#39;stylesheet&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;type&#39;</span>, <span style="color:#e6db74">&#39;text/css&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;integrity&#39;</span>, <span style="color:#e6db74">&#39;sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;crossorigin&#39;</span>, <span style="color:#e6db74">&#39;anonymous&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css&#34;</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//这个刚刚在入门里学过，是设置标签的一系列属性
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//加载css
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><p>你改了一下，它就变成我们的了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">center</span> <span class="o">&gt;</span> <span class="nt">table</span><span class="p">.</span><span class="nc">webtop</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>现在你要通过脚本将css注入到网页中，有了百度，这也不难，你在网上找到这么一串代码,不难猜到（注释是猜想）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">loadCss</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//这应该是加载css的函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//css需要link标签引入，这个应该是创造一个标签
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;rel&#39;</span><span class="p">,</span> <span class="s1">&#39;stylesheet&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;text/css&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;integrity&#39;</span><span class="p">,</span> <span class="s1">&#39;sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;crossorigin&#39;</span><span class="p">,</span> <span class="s1">&#39;anonymous&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">script</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">&#34;https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//这个刚刚在入门里学过，是设置标签的一系列属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//加载css
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>你改了一下，它就变成我们的了</p>
 <p><code>problemshow.js</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadCss</span>(){
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;link&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;rel&#39;</span>, <span style="color:#e6db74">&#39;stylesheet&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;type&#39;</span>, <span style="color:#e6db74">&#39;text/css&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;./problemshow.css&#34;</span>;
-</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;use strict&#39;</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">loadCss</span>()
-</span></span><span style="display:flex;"><span>})();
-</span></span></code></pre></div><p>刷新网页看看效果，确实头没了，效果很好</p>
-<p><img src="https://s2.loli.net/2023/01/18/pbSTUfZzEHIYxo4.png" alt="image.png"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">loadCss</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;rel&#39;</span><span class="p">,</span> <span class="s1">&#39;stylesheet&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;text/css&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">script</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">&#34;./problemshow.css&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">loadCss</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">})();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>刷新网页看看效果，确实头没了，效果很好</p>
+<p><img src="https://s2.loli.net/2023/01/18/pbSTUfZzEHIYxo4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>这就算第一个功能实现了。</p>
 <p>1/28续更：往后会加快进度，少些p话</p>
+
 </section>
 
-  
-  
-  <footer class="mt-12 flex flex-wrap">
-     
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7"
-      >干货</a
-    >
-     
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/%E8%84%9A%E6%9C%AC"
-      >脚本</a
-    >
-     
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/javascript"
-      >javascript</a
-    >
-    
-  </footer>
-  
 
-  
-  
-  
-  <nav
-    class="mt-24 flex rounded-lg bg-black/[3%] p-1.5 text-lg dark:bg-white/[8%]" style="margin-bottom: 22px;"
-  >
+    <footer class="article-footer">
     
-    <a
-      class="flex w-1/2 items-center rounded-md p-6 pr-3 no-underline hover:bg-black/[2%]"
-      href="https://nick-cjyx9.github.io/post/%E7%BB%99%E5%A4%A7%E5%AE%B6%E6%8B%9C%E4%B8%AA%E6%97%A9%E5%B9%B4/"
-      ><span class="mr-1.5">←</span><span>给大家拜个早年！</span></a
-    >
-    
-    
-    <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-md p-6 pl-3 no-underline hover:bg-black/[2%]"
-      href="https://nick-cjyx9.github.io/post/%E6%B7%B1%E5%85%A5%E8%B0%83%E6%95%99ybtoj/"
-      ><span>深入调♂教ybtOJ</span><span class="ml-1.5">→</span></a
-    >
-    
-  </nav>
-  
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B9%B2%E8%B4%A7/">干货</a>
+        
+            <a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+        
+            <a href="/tags/javascript/">javascript</a>
+        
+    </section>
 
-  
-  <script src="https://giscus.app/client.js"
-        data-repo="nick-cjyx9/blog-comment"
-        data-repo-id="R_kgDOIu_GWQ"
-        data-category="Show and tell"
-        data-category-id="DIC_kwDOIu_GWc4CTc3U"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="nick-cjyx9/blog-comment"
+    data-repo-id="R_kgDOIu_GWQ"
+    data-category="Show and tell"
+    data-category-id="DIC_kwDOIu_GWc4CTc3U"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('true');
+            }
+        }
+    })();
 </script>
 
-    </main>
+    
 
-    <footer
-  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
->
-  <div class="mr-auto">
-    &copy; 2023
-    <a class="link" href="https://nick-cjyx9.github.io">KanataRoom</a>
-  </div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >Powered by Hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >▷ Paper 6</a
-  >
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2023 KanataRoom
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
 </footer>
 
-  </body>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
 </html>

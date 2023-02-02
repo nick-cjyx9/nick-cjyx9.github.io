@@ -1,370 +1,361 @@
 <!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermon'>
+<title>油猴脚本开发指南</title>
+
+<link rel='canonical' href='https://nick-cjyx9.github.io/post/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='油猴脚本开发指南'>
+<meta property='og:description' content='前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermon'>
+<meta property='og:url' content='https://nick-cjyx9.github.io/post/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/'>
+<meta property='og:site_name' content='KanataRoom'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='干货' /><meta property='article:published_time' content='2023-01-28T15:50:57&#43;08:00'/><meta property='article:modified_time' content='2023-01-28T15:50:57&#43;08:00'/>
+<meta name="twitter:title" content="油猴脚本开发指南">
+<meta name="twitter:description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermon">
+    <link rel="shortcut icon" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">😅</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">KanataRoom</a></h1>
+            <h2 class="site-description">Do not repeat yourself.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/nick_cjyx9'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
 
 
 
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/cjyx9x'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
 
 
 
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
 
 
 
+                
+                <span>home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
 
 
 
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
 
 
 
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-me/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
 
 
 
+                
+                <span>about</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
 
 
 
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
 
 
 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
 
 
 
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
 
 
 
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#技术栈">##技术栈</a></li>
+    <li><a href="#方案设计">##方案设计</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#准备工作">##准备工作</a>
+      <ol>
+        <li><a href="#目录结构">###目录结构</a></li>
+        <li><a href="#-编辑器的选择">### 编辑器的选择</a></li>
+        <li><a href="#-有关git">### 有关git</a></li>
+      </ol>
+    </li>
+    <li><a href="#入门hello-world">##入门：Hello World!</a></li>
+    <li><a href="#实际功能的开发">##实际功能的开发</a>
+      <ol>
+        <li><a href="#copy-it">###Copy it!</a></li>
+        <li><a href="#be-stylish">###Be Stylish</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
 
 
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
 
-
-
-
-
-
-<html
-  class="not-ready text-sm lg:text-base"
-  style="--bg: #faf6f1"
-  lang="zh-cn"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>油猴脚本开发指南 - KanataRoom</title>
-
-  
-  <meta name="theme-color" />
-  
-  <meta name="description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
-暂无
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-#发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
-##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
-extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
-分析技术栈:
-运行于油猴容器
-使用语言如下 TypeScript55.5% JavaScript19.6% Vue18.9% CSS5.9% Shell0.1%
-其实总结来ts是js的加强版，我们只用学习js，vue对应前端框架，我们不需要实现复杂前端，js能搞定，故不学。css可以使用现成框架，有很多选择，由简单到复杂分别推荐bootstrap、mdui、Tailwind CSS.
-##方案设计 由于题目页面我使用的最多，这里首先简单设想了一下题目展示页的改造点，并不全面。
-#着手代码 ##准备工作 ###目录结构 exlg这个项目是工程化的，包括 CI，CD，规范化，组件化，模块化，构建等等。需要一定的 Node 和一些构建工具的基础，光看这目录结构就不是我们现在能学的。 所以，我们暂时采用简单目录结构编写项目。
-新建文件夹，目录结构如下（一个完整项目必须拥有好的目录结构才会显得清晰可拓展，单文件在巨大项目中是不可取的)：
-ybt_style/
-userscript.user.js -&gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
-global/ -&gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
-problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
-信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。
-其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。
-翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。 ### 有关git 如果脚本只是自己写给自己用，那git无关紧要。 如果需要多人一起写或给很多人用，git还是要提一下。有关git用法自行百度，这里讲一些点：" />
-  <meta
-    name="author"
-    content="cjyx9"
-  />
-  
-
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://nick-cjyx9.github.io/main.min.css" />
-
-  
-  <script
-    defer
-    src="https://nick-cjyx9.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  
-
-  
-   
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/theme.png" />
-
-  
-  
-  
-  <link rel="preload" as="image" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
-  
-  
-
-  
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/twitter.svg" />
-  
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/github.svg" />
-  
-
-  
-  <link rel="icon" href="https://nick-cjyx9.github.io/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.110.0">
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:title" content="油猴脚本开发指南" />
-<meta property="og:description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
-暂无
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-#发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
-##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
-extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
-分析技术栈:
-运行于油猴容器
-使用语言如下 TypeScript55.5% JavaScript19.6% Vue18.9% CSS5.9% Shell0.1%
-其实总结来ts是js的加强版，我们只用学习js，vue对应前端框架，我们不需要实现复杂前端，js能搞定，故不学。css可以使用现成框架，有很多选择，由简单到复杂分别推荐bootstrap、mdui、Tailwind CSS.
-##方案设计 由于题目页面我使用的最多，这里首先简单设想了一下题目展示页的改造点，并不全面。
-#着手代码 ##准备工作 ###目录结构 exlg这个项目是工程化的，包括 CI，CD，规范化，组件化，模块化，构建等等。需要一定的 Node 和一些构建工具的基础，光看这目录结构就不是我们现在能学的。 所以，我们暂时采用简单目录结构编写项目。
-新建文件夹，目录结构如下（一个完整项目必须拥有好的目录结构才会显得清晰可拓展，单文件在巨大项目中是不可取的)：
-ybt_style/
-userscript.user.js -&gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
-global/ -&gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
-problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
-信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。
-其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。
-翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。 ### 有关git 如果脚本只是自己写给自己用，那git无关紧要。 如果需要多人一起写或给很多人用，git还是要提一下。有关git用法自行百度，这里讲一些点：" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://nick-cjyx9.github.io/post/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-28T15:50:57+08:00" />
-<meta property="article:modified_time" content="2023-01-28T15:50:57+08:00" />
-
-  
-  <meta itemprop="name" content="油猴脚本开发指南">
-<meta itemprop="description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
-暂无
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-#发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
-##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
-extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
-分析技术栈:
-运行于油猴容器
-使用语言如下 TypeScript55.5% JavaScript19.6% Vue18.9% CSS5.9% Shell0.1%
-其实总结来ts是js的加强版，我们只用学习js，vue对应前端框架，我们不需要实现复杂前端，js能搞定，故不学。css可以使用现成框架，有很多选择，由简单到复杂分别推荐bootstrap、mdui、Tailwind CSS.
-##方案设计 由于题目页面我使用的最多，这里首先简单设想了一下题目展示页的改造点，并不全面。
-#着手代码 ##准备工作 ###目录结构 exlg这个项目是工程化的，包括 CI，CD，规范化，组件化，模块化，构建等等。需要一定的 Node 和一些构建工具的基础，光看这目录结构就不是我们现在能学的。 所以，我们暂时采用简单目录结构编写项目。
-新建文件夹，目录结构如下（一个完整项目必须拥有好的目录结构才会显得清晰可拓展，单文件在巨大项目中是不可取的)：
-ybt_style/
-userscript.user.js -&gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
-global/ -&gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
-problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
-信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。
-其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。
-翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。 ### 有关git 如果脚本只是自己写给自己用，那git无关紧要。 如果需要多人一起写或给很多人用，git还是要提一下。有关git用法自行百度，这里讲一些点："><meta itemprop="datePublished" content="2023-01-28T15:50:57+08:00" />
-<meta itemprop="dateModified" content="2023-01-28T15:50:57+08:00" />
-<meta itemprop="wordCount" content="239">
-<meta itemprop="keywords" content="干货," />
-  
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="油猴脚本开发指南"/>
-<meta name="twitter:description" content="前言： 前一版p话太多，自己都看不下去了，故重构 已基本开发完备，代码见gayhub，缩放75%使用最佳 点击安装(需要暴力猴或tampermonkey插件) 我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧 目录:
-暂无
-《NOI》是由€€£自主研发的一款全新开放世界冒险游戏。游戏发生在一个一个被称作「机房」的幻想世界，在这里，被神选中的仙贝将被授予「C&#43;&#43;」，引导蒟蒻之力，在美妙的学习中寻找摸鱼的真谛和€€£失散的木琴——同时，逐步发掘「草」元素的真相。
-#发现问题 ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕
-##技术栈 找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。
-extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种炫酷魔法。 (github.com)
-分析技术栈:
-运行于油猴容器
-使用语言如下 TypeScript55.5% JavaScript19.6% Vue18.9% CSS5.9% Shell0.1%
-其实总结来ts是js的加强版，我们只用学习js，vue对应前端框架，我们不需要实现复杂前端，js能搞定，故不学。css可以使用现成框架，有很多选择，由简单到复杂分别推荐bootstrap、mdui、Tailwind CSS.
-##方案设计 由于题目页面我使用的最多，这里首先简单设想了一下题目展示页的改造点，并不全面。
-#着手代码 ##准备工作 ###目录结构 exlg这个项目是工程化的，包括 CI，CD，规范化，组件化，模块化，构建等等。需要一定的 Node 和一些构建工具的基础，光看这目录结构就不是我们现在能学的。 所以，我们暂时采用简单目录结构编写项目。
-新建文件夹，目录结构如下（一个完整项目必须拥有好的目录结构才会显得清晰可拓展，单文件在巨大项目中是不可取的)：
-ybt_style/
-userscript.user.js -&gt; 油猴使用的总和脚本文件,由各个页面对应的js文件拼接而来
-global/ -&gt; 全局的代码，适用于每个ybt页面都有的操作（暂时不管，未来重构时会提）
-problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示页单独列成文件夹，未来有了index/、ranklist/等等页面的文件时才不会混乱
-信息学奥赛一本通（C&#43;&#43;版）在线评测系统.html -&gt; 题目展示页的html文件，扒站获得（直接用edge在ybt的某个题目页面按下ctrl&#43;s保存即可） 信息学奥赛一本通（C&#43;&#43;版）在线评测系统_files/ -&gt; edge扒站时产生的静态文件夹，不用管。 problemshow.css problemshow.js ### 编辑器的选择 给出我的环境：windows11下的VScode，使用插件：live server、auto close tag、color highlight、Path Intellisense、chatgpt，主题：Material Theme High Contrast，字体：Jetbrains Mono。
-其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。
-翻日报时看到很多推荐vsc写c&#43;&#43;的，个人认为vsc在写竞赛c&#43;&#43;（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。 ### 有关git 如果脚本只是自己写给自己用，那git无关紧要。 如果需要多人一起写或给很多人用，git还是要提一下。有关git用法自行百度，这里讲一些点："/>
-
-  
-  
-</head>
-
-  <body class="text-black duration-200 ease-out dark:text-white">
-    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
-  <div class="relative z-50 mr-auto flex items-center">
-    <a
-      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
-      href="https://nick-cjyx9.github.io"
-      >KanataRoom</a
-    >
-    <a
-      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-    ></a>
-  </div>
-
-  <a
-    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-  ></a>
-
-  
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = `"#faf6f1"`.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
-  >
-    
-    
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/%E5%B9%B2%E8%B4%A7/"
-        >DryText</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/friends"
-        >Friends</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/contact/"
-        >Contact</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/post/%E6%89%8B%E5%8A%A8%E7%BD%AE%E9%A1%B6%E5%81%87%E6%9C%9Ftodolist"
-        >Todolist</a
-      >
-      
-    </nav>
+    <div class="article-details">
     
 
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">油猴脚本开发指南</a>
+        </h2>
     
-    <nav
-      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
-    >
-      
-      <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href=" https://twitter.com/cjyx9x "
-        target="_blank"
-      ></a>
-      
-      <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href=" https://github.com/nick-cjyx9 "
-        target="_blank"
-      ></a>
-      
-    </nav>
+        
+    </div>
+
     
-  </div>
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 28, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
 </header>
 
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
-    >
-      
-
-<article>
-  <header class="mb-20">
-    <h1 class="!my-0 pb-2.5">油猴脚本开发指南</h1>
-
+    <section class="article-content">
     
-    <div class="text-sm opacity-60">
-      
-      <time>Jan 28, 2023</time>
-      
-      
-      <span class="mx-1">&middot;</span>
-      <span>cjyx9</span>
-      
-    </div>
     
-  </header>
-
-  <section><ul>
+    <ul>
 <li>前言：</li>
 <li>前一版p话太多，自己都看不下去了，故重构</li>
-<li>已基本开发完备，代码见<a href="https://github.com/nick-cjyx9/fxxkybt">gayhub</a>，缩放75%使用最佳 <a href="https://cdn.jsdelivr.net/gh/nick-cjyx9/fxxkybt/userscript.user.js">点击安装(需要暴力猴或tampermonkey插件)</a></li>
+<li>已基本开发完备，代码见<a class="link" href="https://github.com/nick-cjyx9/fxxkybt"  target="_blank" rel="noopener"
+    >gayhub</a>，缩放75%使用最佳 <a class="link" href="https://cdn.jsdelivr.net/gh/nick-cjyx9/fxxkybt/userscript.user.js"  target="_blank" rel="noopener"
+    >点击安装(需要暴力猴或tampermonkey插件)</a></li>
 <li>我知道油猴脚本投日报不怎么合适，求别喷，还有我也不是很了解js（哭，你们的问题尽量解答吧</li>
 </ul>
 <p>目录:</p>
@@ -376,7 +367,8 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
 <p>ciallo~这里是cjyx9捏，瓦达西在使用ybtoj时经常会被其朴实の外观还有伤眼睛的字体戳瞎呢，呐呐，真的是红豆泥麻烦呢，所以瓦达西决定进行⭐彻⭐底⭐的⭐调♂教。（呕</p>
 <h2 id="技术栈">##技术栈</h2>
 <p>找寻其需要的技术栈并不难，我们要实现的其实就是和exlg一样的效果，exlg用什么技术，基本我们就用什么，差不了多少。</p>
-<p><a href="https://github.com/extend-luogu/extend-luogu">extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种<del>炫酷魔法</del>。 (github.com)</a></p>
+<p><a class="link" href="https://github.com/extend-luogu/extend-luogu"  target="_blank" rel="noopener"
+    >extend-luogu/extend-luogu: 大型网络游戏服务器加强插件，增添各种<del>炫酷魔法</del>。 (github.com)</a></p>
 <p>分析技术栈:</p>
 <ul>
 <li>
@@ -384,7 +376,12 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
 </li>
 <li>
 <p>使用语言如下
-<a href="https://github.com/extend-luogu/extend-luogu/search?l=typescript">TypeScript55.5%</a>   <a href="https://github.com/extend-luogu/extend-luogu/search?l=javascript">JavaScript19.6%</a>   <a href="https://github.com/extend-luogu/extend-luogu/search?l=vue">Vue18.9%</a>   <a href="https://github.com/extend-luogu/extend-luogu/search?l=css">CSS5.9%</a>   <a href="https://github.com/extend-luogu/extend-luogu/search?l=shell">Shell0.1%</a></p>
+<a class="link" href="https://github.com/extend-luogu/extend-luogu/search?l=typescript"  target="_blank" rel="noopener"
+    >TypeScript55.5%</a>   <a class="link" href="https://github.com/extend-luogu/extend-luogu/search?l=javascript"  target="_blank" rel="noopener"
+    >JavaScript19.6%</a>   <a class="link" href="https://github.com/extend-luogu/extend-luogu/search?l=vue"  target="_blank" rel="noopener"
+    >Vue18.9%</a>   <a class="link" href="https://github.com/extend-luogu/extend-luogu/search?l=css"  target="_blank" rel="noopener"
+    >CSS5.9%</a>   <a class="link" href="https://github.com/extend-luogu/extend-luogu/search?l=shell"  target="_blank" rel="noopener"
+    >Shell0.1%</a></p>
 </li>
 <li>
 <p>其实总结来ts是js的加强版，我们只用学习js，vue对应前端框架，我们不需要实现复杂前端，js能搞定，故不学。css可以使用现成框架，有很多选择，由简单到复杂分别推荐<code>bootstrap</code>、<code>mdui</code>、<code>Tailwind CSS</code>.</p>
@@ -392,13 +389,29 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
 </ul>
 <h2 id="方案设计">##方案设计</h2>
 <p>由于题目页面我使用的最多，这里首先简单设想了一下题目展示页的改造点，并不全面。</p>
-<p><img src="https://s2.loli.net/2023/01/18/GuXDZ1YELj9W6y7.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/01/18/GuXDZ1YELj9W6y7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <h1 id="着手代码">#着手代码</h1>
 <h2 id="准备工作">##准备工作</h2>
 <h3 id="目录结构">###目录结构</h3>
 <p>exlg这个项目是工程化的，包括 CI，CD，规范化，组件化，模块化，构建等等。需要一定的 Node 和一些构建工具的基础，光看这目录结构就不是我们现在能学的。
 所以，我们暂时采用简单目录结构编写项目。</p>
-<p><img src="https://s2.loli.net/2023/01/15/aRrPlkbhueEJIsy.png" alt="">
+<p><img src="https://s2.loli.net/2023/01/15/aRrPlkbhueEJIsy.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
 新建文件夹，目录结构如下（一个完整项目必须拥有好的目录结构才会显得清晰可拓展，单文件在巨大项目中是不可取的)：</p>
 <p>ybt_style/</p>
 <ul>
@@ -423,7 +436,16 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
 <p>其中，liveserver个人认为比较重要（实时刷新网页，解放双手）。</p>
 <blockquote>
 <p>翻日报时看到很多推荐vsc写c++的，个人认为vsc在写竞赛c++（单文件）的表现不如dev和ouuan大佬的cpeditor，体现在体积大，配置杂，调试难，与其折腾这个好看的vsc，不如老老实实dev。vsc更适合的是python和Js等开发，各种插件用着也很省心，另：别在环境上费太大时间。
-<img src="https://s2.loli.net/2023/01/18/vZ8UwOx245cmjAb.png" alt="image.png"></p>
+<img src="https://s2.loli.net/2023/01/18/vZ8UwOx245cmjAb.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 </blockquote>
 <h3 id="-有关git">### 有关git</h3>
 <p>如果脚本只是自己写给自己用，那git无关紧要。
@@ -432,78 +454,196 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
 <li>回答一下本应是目录结构的问题，油猴插件会自动识别直链中类似xx.xx.user.js的js文件为油猴脚本，所以以userscript.user.js命名</li>
 <li>github raw日常在GFW那边，我们可以使用cdn方便用户获取脚本，见官方示例</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// load any GitHub release, commit, or branch
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// note: we recommend using npm for projects that support it
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//cdn.jsdelivr.net/gh/user/repo@version/file
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// load jQuery v3.2.1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js
-</span></span></span></code></pre></div><p>所以我的脚本放在 <code>github.com/nick-cjyx9/fxxkybt</code> 那么cdn加速就在 <code>https://cdn.jsdelivr.net/gh/nick-cjyx9/fxxkybt/userscript.user.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// load any GitHub release, commit, or branch
+</span></span></span><span class="line"><span class="cl"><span class="c1">// note: we recommend using npm for projects that support it
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">https</span><span class="o">:</span><span class="c1">//cdn.jsdelivr.net/gh/user/repo@version/file
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// load jQuery v3.2.1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">https</span><span class="o">:</span><span class="c1">//cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>所以我的脚本放在 <code>github.com/nick-cjyx9/fxxkybt</code> 那么cdn加速就在 <code>https://cdn.jsdelivr.net/gh/nick-cjyx9/fxxkybt/userscript.user.js</code></p>
 <h2 id="入门hello-world">##入门：Hello World!</h2>
 <p>首先要明确油猴的大概原理：其实就是向网页加入一段自己的js代码以此改变网页内容，实现自动操作等。（只是方便理解，油猴早就抛弃了这种不安全的做法）
 我们要模拟向网页插入我们的脚本，只需要在源码底部加入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;problemshow.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>我们在problemshow.js里加入以下代码后，打开live server。</p>
-<pre tabindex="0"><code class="language-javascipt" data-lang="javascipt">alert(&#34;hello world!&#34;);
-</code></pre><p><img src="https://s2.loli.net/2023/01/28/r2ozg3L7XaFBMTD.png" alt="image.png"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;problemshow.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们在problemshow.js里加入以下代码后，打开live server。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">alert(&#34;hello world!&#34;);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://s2.loli.net/2023/01/28/r2ozg3L7XaFBMTD.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>此时如果浏览器中如下输出，ybt页面基本无误，恭喜你，已经入门了脚本开发（雾。</p>
-<p><img src="https://s2.loli.net/2023/01/28/B6hw9xEZS8yPeRl.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/01/28/B6hw9xEZS8yPeRl.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <h2 id="实际功能的开发">##实际功能的开发</h2>
 <p>个人开发者在开发脚本时，往往优先开发自己想要的功能（？，所以综合考虑，我选择先做复制按钮。</p>
 <h3 id="copy-it">###Copy it!</h3>
 <ol start="0">
 <li>
 <p>最终效果：
-<img src="https://s2.loli.net/2023/01/28/fa8TLXu7AeRgwxV.png" alt="image.png"></p>
+<img src="https://s2.loli.net/2023/01/28/fa8TLXu7AeRgwxV.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 </li>
 <li>
 <p>将按钮插入到网页中：
-<img src="https://s2.loli.net/2023/01/28/sd2iEvWonkbDKPS.png" alt="image.png">
+<img src="https://s2.loli.net/2023/01/28/sd2iEvWonkbDKPS.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+>
 经过f12观察，我们发现所有样例都位于<code>&lt;pre&gt;</code>标签中，且此标签在网页中只负责放样例，所以我们只要选择所有pre标签遍历逐个添加按钮就行，</p>
 </li>
 </ol>
 <p><code>problemshow.js</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createCopyBtn</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">preTags</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;pre&#34;</span>); <span style="color:#75715e">//选中所有pre标签
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">preTags</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">preTag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">preTags</span>[<span style="color:#a6e22e">i</span>];
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">box</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">preTag</span>.<span style="color:#a6e22e">parentElement</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">holder</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;div&#34;</span>); <span style="color:#75715e">//搭载按钮的容器
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">holder</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;a class=&#34;copy&#34; style=&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      font-size: .8em;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      float: right;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      margin-right: 18px;&#34;&gt;copy&lt;/span&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      `</span>; <span style="color:#75715e">//按钮
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#75715e">//此处留白给复制功能
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       <span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">holder</span>); <span style="color:#75715e">//添加按钮
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;use strict&#39;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">createCopyBtn</span>();
-</span></span><span style="display:flex;"><span>})();
-</span></span></code></pre></div><p>运行此代码，可以看到按钮被添加在文本框下。接下来添加点击事件，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">createCopyBtn</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">preTags</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&#34;pre&#34;</span><span class="p">);</span> <span class="c1">//选中所有pre标签
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">preTags</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">preTag</span> <span class="o">=</span> <span class="nx">preTags</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">box</span> <span class="o">=</span> <span class="nx">preTag</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">holder</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;div&#34;</span><span class="p">);</span> <span class="c1">//搭载按钮的容器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">holder</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">      &lt;a class=&#34;copy&#34; style=&#34;
+</span></span></span><span class="line"><span class="cl"><span class="sb">      font-size: .8em;
+</span></span></span><span class="line"><span class="cl"><span class="sb">      float: right;
+</span></span></span><span class="line"><span class="cl"><span class="sb">      margin-right: 18px;&#34;&gt;copy&lt;/span&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">      `</span><span class="p">;</span> <span class="c1">//按钮
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">//此处留白给复制功能
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="nx">box</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">holder</span><span class="p">);</span> <span class="c1">//添加按钮
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">createCopyBtn</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">})();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行此代码，可以看到按钮被添加在文本框下。接下来添加点击事件，</p>
 <ol start="2">
 <li>点击事件：</li>
 </ol>
 <p>作为一个Google-Oriented Programmer，我去百度找了一段代码<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，直接套用是不行的，因为<code>@click</code>是vue的写法，我们对它稍作修改</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">holder</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//监听按钮按下事件
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">input</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;input&#39;</span>) <span style="color:#75715e">// 创建input对象
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">input</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">preTag</span>.<span style="color:#a6e22e">innerText</span> <span style="color:#75715e">// 设置复制内容
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">input</span>) <span style="color:#75715e">// 添加临时实例
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">input</span>.<span style="color:#a6e22e">select</span>() <span style="color:#75715e">// 选择实例内容
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">execCommand</span>(<span style="color:#e6db74">&#39;Copy&#39;</span>) <span style="color:#75715e">// 执行复制
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">removeChild</span>(<span style="color:#a6e22e">input</span>) <span style="color:#75715e">// 删除临时实例
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">truebtn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">holder</span>.<span style="color:#a6e22e">children</span>[<span style="color:#ae81ff">0</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">truebtn</span>.<span style="color:#a6e22e">innerText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;copied!&#39;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">truebtn</span>.<span style="color:#a6e22e">innerText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;copy&#39;</span>, <span style="color:#ae81ff">1000</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//设计一个copied效果提示用户
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><p><img src="https://s2.loli.net/2023/01/28/ZaNTzqDtG3OsWxn.png" alt="image.png"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">holder</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//监听按钮按下事件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">)</span> <span class="c1">// 创建input对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">preTag</span><span class="p">.</span><span class="nx">innerText</span> <span class="c1">// 设置复制内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="c1">// 添加临时实例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">input</span><span class="p">.</span><span class="nx">select</span><span class="p">()</span> <span class="c1">// 选择实例内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s1">&#39;Copy&#39;</span><span class="p">)</span> <span class="c1">// 执行复制
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="c1">// 删除临时实例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">truebtn</span> <span class="o">=</span> <span class="nx">holder</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">truebtn</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s1">&#39;copied!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">truebtn</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s1">&#39;copy&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//设计一个copied效果提示用户
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://s2.loli.net/2023/01/28/ZaNTzqDtG3OsWxn.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>这样就成了，在测试时，我们又发现，它不能复制多行内容</p>
 <ol start="3">
 <li>修第一个bug—善用搜索引擎：
@@ -517,82 +657,240 @@ problemshow/ -&gt; 由于我们不止想美化单个页面，故将题目展示�
 <hr>
 <ol>
 <li id="fn:1">
-<p><a href="https://blog.csdn.net/qq_45093219/article/details/127088101">js实现点击一键复制文本-csdn</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a class="link" href="https://blog.csdn.net/qq_45093219/article/details/127088101"  target="_blank" rel="noopener"
+    >js实现点击一键复制文本-csdn</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://www.zhann.cn/notes/531.html">HTML+JS点击复制文字效果（包含点击复制多行）最简单代码_ECMS帝国之家 (zhann.cn)</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a class="link" href="https://www.zhann.cn/notes/531.html"  target="_blank" rel="noopener"
+    >HTML+JS点击复制文字效果（包含点击复制多行）最简单代码_ECMS帝国之家 (zhann.cn)</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
+
 </section>
 
-  
-  
-  <footer class="mt-12 flex flex-wrap">
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B9%B2%E8%B4%A7/">干货</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
      
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7"
-      >干货</a
-    >
     
-  </footer>
-  
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="nick-cjyx9/blog-comment"
+    data-repo-id="R_kgDOIu_GWQ"
+    data-category="Show and tell"
+    data-category-id="DIC_kwDOIu_GWc4CTc3U"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
 
-  
-  
-  
-  <nav
-    class="mt-24 flex rounded-lg bg-black/[3%] p-1.5 text-lg dark:bg-white/[8%]" style="margin-bottom: 22px;"
-  >
-    
-    
-    <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-md p-6 pl-3 no-underline hover:bg-black/[2%]"
-      href="https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5bb/"
-      ><span>今日bb</span><span class="ml-1.5">→</span></a
-    >
-    
-  </nav>
-  
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
 
-  
-  <script src="https://giscus.app/client.js"
-        data-repo="nick-cjyx9/blog-comment"
-        data-repo-id="R_kgDOIu_GWQ"
-        data-category="Show and tell"
-        data-category-id="DIC_kwDOIu_GWc4CTc3U"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('true');
+            }
+        }
+    })();
 </script>
 
-    </main>
+    
 
-    <footer
-  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
->
-  <div class="mr-auto">
-    &copy; 2023
-    <a class="link" href="https://nick-cjyx9.github.io">KanataRoom</a>
-  </div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >Powered by Hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >▷ Paper 6</a
-  >
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2023 KanataRoom
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
 </footer>
 
-  </body>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
 </html>

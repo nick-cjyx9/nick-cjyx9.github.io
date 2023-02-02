@@ -1,317 +1,353 @@
 <!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='【题目直达】 信息学奥赛一本通（C&#43;&#43;版）在线评测系统 (ssoier.cn) https://www.luogu.com.cn/problem/P1120 【tips】 ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子'>
+<title>Ybt_1442_拼棍子</title>
+
+<link rel='canonical' href='https://nick-cjyx9.github.io/post/ybt_1442_%E6%8B%BC%E6%A3%8D%E5%AD%90/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='Ybt_1442_拼棍子'>
+<meta property='og:description' content='【题目直达】 信息学奥赛一本通（C&#43;&#43;版）在线评测系统 (ssoier.cn) https://www.luogu.com.cn/problem/P1120 【tips】 ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子'>
+<meta property='og:url' content='https://nick-cjyx9.github.io/post/ybt_1442_%E6%8B%BC%E6%A3%8D%E5%AD%90/'>
+<meta property='og:site_name' content='KanataRoom'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ybt' /><meta property='article:tag' content='干货' /><meta property='article:tag' content='题解' /><meta property='article:published_time' content='2023-01-13T22:08:59&#43;08:00'/><meta property='article:modified_time' content='2023-01-13T22:08:59&#43;08:00'/>
+<meta name="twitter:title" content="Ybt_1442_拼棍子">
+<meta name="twitter:description" content="【题目直达】 信息学奥赛一本通（C&#43;&#43;版）在线评测系统 (ssoier.cn) https://www.luogu.com.cn/problem/P1120 【tips】 ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子">
+    <link rel="shortcut icon" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">😅</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">KanataRoom</a></h1>
+            <h2 class="site-description">Do not repeat yourself.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/nick_cjyx9'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
 
 
 
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/cjyx9x'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
 
 
 
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
 
 
 
+                
+                <span>home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
 
 
 
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
 
 
 
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-me/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
 
 
 
+                
+                <span>about</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
 
 
 
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
 
 
 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
 
 
 
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
 
 
 
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#题目直达">【题目直达】</a></li>
+        <li><a href="#tips">【tips】</a></li>
+        <li><a href="#题目描述">【题目描述】</a></li>
+        <li><a href="#输入">【输入】</a></li>
+        <li><a href="#输出">【输出】</a></li>
+        <li><a href="#输入样例">【输入样例】</a></li>
+        <li><a href="#输出样例">【输出样例】</a></li>
+        <li><a href="#题解">【题解】</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
 
 
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
 
-
-
-
-
-
-<html
-  class="not-ready text-sm lg:text-base"
-  style="--bg: #faf6f1"
-  lang="zh-cn"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Ybt_1442_拼棍子 - KanataRoom</title>
-
-  
-  <meta name="theme-color" />
-  
-  <meta name="description" content="【题目直达】 信息学奥赛一本通（C&#43;&#43;版）在线评测系统 (ssoier.cn)
-https://www.luogu.com.cn/problem/P1120
-【tips】 ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子，lg规定了范围不用排
-【题目描述】 乔治有一些同样长的小木棍，他把这些木棍随意砍成几段，直到每段的长都不超过50。现在，他想把小木棍拼接成原来的样子，但是却忘记了自己开始时有多少根木棍和它们的长度。给出每段小木棍的长度，编程帮他找出原始木棍的最小可能长度。
-【输入】 第一行为一个单独的整数N表示砍过以后的小木棍的总数，其中N≤60，第二行为N个用空个隔开的正整数，表示N根小木棍的长度。
-【输出】 仅一行，表示要求的原始木棍的最小可能长度。
-【输入样例】 9 5 2 1 5 2 1 5 2 1 【输出样例】 6 【题解】 #include &lt;bits/stdc&#43;&#43;.h&gt; int cnt,N,stk[70],tot,maxn=-1; bool vis[70];int nxt[1000]; template&lt;typename L&gt; inline void Read(L &amp;X){ //tip0：快读 char c=getchar();L zhi=0,fu=1; while(not isdigit(c)){if(c==&#39;-&#39;)fu=-1;c=getchar();} while(isdigit(c)){zhi=(zhi&lt;&lt;1)&#43;(zhi&lt;&lt;3)&#43;c-&#39;0&#39;;c=getchar();} X=fu*zhi; } inline void dfs(int its,int sum,int len){ //爆搜思路 its:上一根拼接的棍子 sum：已拼棍子的长度 len：目标长度 if(sum&#43;stk[its]==len){ //已完成此根拼接 for(int j=1;j&lt;=N;j&#43;&#43;){ //去找下一根的头，同样tip2：从头找以保证最长 if(vis[j]==0){ vis[j]=1; dfs(j,0,len); vis[j]=0; //tip3：vis存储家访过的棍棍，方便回溯 return ; } }std::cout&lt;&lt;len;exit(0); //tip1：找不到就说明已完成所有工作，输出答案后立即退出，不做多余搜索 }else if(sum&#43;stk[its]&lt;len) for(int i=its&#43;1;i&lt;=N;i&#43;&#43;){ //tip2：此处从下一根开找，保证从大到小拼接 if(vis[i]==0&amp;&amp;stk[its]&#43;stk[i]&#43;sum&lt;=len){ vis[i]=1; dfs(i,sum&#43;stk[its],len); vis[i]=0; //tip3 if(len-sum-stk[its]==stk[i]||sum==0)return ; /*tip4：其实我当时也没想明白这个，所以借lg题解区： 如果当前长棍剩余的未拼长度等于当前木棍的长度或原始长度，继续拼下去时却失败了，就直接回溯并改之前拼的木棍。 当前长棍剩余的未拼长度等于当前木棍的长度时，这根木棍在最优情况下显然是拼到这（如果用更多短木根拼完剩下的这段，把这根木棍留到后面显然不如把更多总长相等的短木棍扔到后面）。如果在最优情况下继续拼下去失败了，那肯定是之前的木棍用错了，回溯改即可。 原来的长棍还一点没拼时，现在正在放入一根木棍。很明显，这根木棍还没有跟其它棍子拼接，如果现在拼下去能成功话，它肯定是能用上的，即自组或与其它还没用的木棍拼接。但继续拼下去却失败，说明现在这根木棍不能用上，无法完成拼接，所以回溯改之前的木棍。 */ i=nxt[i]; if(i==N)return ; //tip5：这个长度本来就不行了，不能再用一样长度的了，直接跳到比它小的第一个去 } } } bool cmp(int a,int b){return a&gt;b;} int main(){ Read(cnt);int temp; for(int i=1;i&lt;=cnt;i&#43;&#43;){ //非法数据处理 Read(temp); if(temp&lt;=50){ stk[&#43;&#43;N]=temp; tot&#43;=stk[N]; if(stk[N]&gt;maxn)maxn=stk[N]; } } std::sort(stk&#43;1,stk&#43;N&#43;1,cmp); //tip2：从大到小排序 nxt[N]=N; for(int i=N-1;i&gt;0;i--){ if(stk[i]==stk[i&#43;1]) nxt[i]=nxt[i&#43;1]; else nxt[i]=i; } for(int i=maxn;i&lt;=tot;i&#43;&#43;){ if(tot%i!" />
-  <meta
-    name="author"
-    content="cjyx9"
-  />
-  
-
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://nick-cjyx9.github.io/main.min.css" />
-
-  
-  <script
-    defer
-    src="https://nick-cjyx9.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  
-
-  
-   
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/theme.png" />
-
-  
-  
-  
-  <link rel="preload" as="image" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
-  
-  
-
-  
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/twitter.svg" />
-  
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/github.svg" />
-  
-
-  
-  <link rel="icon" href="https://nick-cjyx9.github.io/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.110.0">
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:title" content="Ybt_1442_拼棍子" />
-<meta property="og:description" content="【题目直达】 信息学奥赛一本通（C&#43;&#43;版）在线评测系统 (ssoier.cn)
-https://www.luogu.com.cn/problem/P1120
-【tips】 ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子，lg规定了范围不用排
-【题目描述】 乔治有一些同样长的小木棍，他把这些木棍随意砍成几段，直到每段的长都不超过50。现在，他想把小木棍拼接成原来的样子，但是却忘记了自己开始时有多少根木棍和它们的长度。给出每段小木棍的长度，编程帮他找出原始木棍的最小可能长度。
-【输入】 第一行为一个单独的整数N表示砍过以后的小木棍的总数，其中N≤60，第二行为N个用空个隔开的正整数，表示N根小木棍的长度。
-【输出】 仅一行，表示要求的原始木棍的最小可能长度。
-【输入样例】 9 5 2 1 5 2 1 5 2 1 【输出样例】 6 【题解】 #include &lt;bits/stdc&#43;&#43;.h&gt; int cnt,N,stk[70],tot,maxn=-1; bool vis[70];int nxt[1000]; template&lt;typename L&gt; inline void Read(L &amp;X){ //tip0：快读 char c=getchar();L zhi=0,fu=1; while(not isdigit(c)){if(c==&#39;-&#39;)fu=-1;c=getchar();} while(isdigit(c)){zhi=(zhi&lt;&lt;1)&#43;(zhi&lt;&lt;3)&#43;c-&#39;0&#39;;c=getchar();} X=fu*zhi; } inline void dfs(int its,int sum,int len){ //爆搜思路 its:上一根拼接的棍子 sum：已拼棍子的长度 len：目标长度 if(sum&#43;stk[its]==len){ //已完成此根拼接 for(int j=1;j&lt;=N;j&#43;&#43;){ //去找下一根的头，同样tip2：从头找以保证最长 if(vis[j]==0){ vis[j]=1; dfs(j,0,len); vis[j]=0; //tip3：vis存储家访过的棍棍，方便回溯 return ; } }std::cout&lt;&lt;len;exit(0); //tip1：找不到就说明已完成所有工作，输出答案后立即退出，不做多余搜索 }else if(sum&#43;stk[its]&lt;len) for(int i=its&#43;1;i&lt;=N;i&#43;&#43;){ //tip2：此处从下一根开找，保证从大到小拼接 if(vis[i]==0&amp;&amp;stk[its]&#43;stk[i]&#43;sum&lt;=len){ vis[i]=1; dfs(i,sum&#43;stk[its],len); vis[i]=0; //tip3 if(len-sum-stk[its]==stk[i]||sum==0)return ; /*tip4：其实我当时也没想明白这个，所以借lg题解区： 如果当前长棍剩余的未拼长度等于当前木棍的长度或原始长度，继续拼下去时却失败了，就直接回溯并改之前拼的木棍。 当前长棍剩余的未拼长度等于当前木棍的长度时，这根木棍在最优情况下显然是拼到这（如果用更多短木根拼完剩下的这段，把这根木棍留到后面显然不如把更多总长相等的短木棍扔到后面）。如果在最优情况下继续拼下去失败了，那肯定是之前的木棍用错了，回溯改即可。 原来的长棍还一点没拼时，现在正在放入一根木棍。很明显，这根木棍还没有跟其它棍子拼接，如果现在拼下去能成功话，它肯定是能用上的，即自组或与其它还没用的木棍拼接。但继续拼下去却失败，说明现在这根木棍不能用上，无法完成拼接，所以回溯改之前的木棍。 */ i=nxt[i]; if(i==N)return ; //tip5：这个长度本来就不行了，不能再用一样长度的了，直接跳到比它小的第一个去 } } } bool cmp(int a,int b){return a&gt;b;} int main(){ Read(cnt);int temp; for(int i=1;i&lt;=cnt;i&#43;&#43;){ //非法数据处理 Read(temp); if(temp&lt;=50){ stk[&#43;&#43;N]=temp; tot&#43;=stk[N]; if(stk[N]&gt;maxn)maxn=stk[N]; } } std::sort(stk&#43;1,stk&#43;N&#43;1,cmp); //tip2：从大到小排序 nxt[N]=N; for(int i=N-1;i&gt;0;i--){ if(stk[i]==stk[i&#43;1]) nxt[i]=nxt[i&#43;1]; else nxt[i]=i; } for(int i=maxn;i&lt;=tot;i&#43;&#43;){ if(tot%i!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://nick-cjyx9.github.io/post/ybt_1442_%E6%8B%BC%E6%A3%8D%E5%AD%90/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-13T22:08:59+08:00" />
-<meta property="article:modified_time" content="2023-01-13T22:08:59+08:00" />
-
-  
-  <meta itemprop="name" content="Ybt_1442_拼棍子">
-<meta itemprop="description" content="【题目直达】 信息学奥赛一本通（C&#43;&#43;版）在线评测系统 (ssoier.cn)
-https://www.luogu.com.cn/problem/P1120
-【tips】 ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子，lg规定了范围不用排
-【题目描述】 乔治有一些同样长的小木棍，他把这些木棍随意砍成几段，直到每段的长都不超过50。现在，他想把小木棍拼接成原来的样子，但是却忘记了自己开始时有多少根木棍和它们的长度。给出每段小木棍的长度，编程帮他找出原始木棍的最小可能长度。
-【输入】 第一行为一个单独的整数N表示砍过以后的小木棍的总数，其中N≤60，第二行为N个用空个隔开的正整数，表示N根小木棍的长度。
-【输出】 仅一行，表示要求的原始木棍的最小可能长度。
-【输入样例】 9 5 2 1 5 2 1 5 2 1 【输出样例】 6 【题解】 #include &lt;bits/stdc&#43;&#43;.h&gt; int cnt,N,stk[70],tot,maxn=-1; bool vis[70];int nxt[1000]; template&lt;typename L&gt; inline void Read(L &amp;X){ //tip0：快读 char c=getchar();L zhi=0,fu=1; while(not isdigit(c)){if(c==&#39;-&#39;)fu=-1;c=getchar();} while(isdigit(c)){zhi=(zhi&lt;&lt;1)&#43;(zhi&lt;&lt;3)&#43;c-&#39;0&#39;;c=getchar();} X=fu*zhi; } inline void dfs(int its,int sum,int len){ //爆搜思路 its:上一根拼接的棍子 sum：已拼棍子的长度 len：目标长度 if(sum&#43;stk[its]==len){ //已完成此根拼接 for(int j=1;j&lt;=N;j&#43;&#43;){ //去找下一根的头，同样tip2：从头找以保证最长 if(vis[j]==0){ vis[j]=1; dfs(j,0,len); vis[j]=0; //tip3：vis存储家访过的棍棍，方便回溯 return ; } }std::cout&lt;&lt;len;exit(0); //tip1：找不到就说明已完成所有工作，输出答案后立即退出，不做多余搜索 }else if(sum&#43;stk[its]&lt;len) for(int i=its&#43;1;i&lt;=N;i&#43;&#43;){ //tip2：此处从下一根开找，保证从大到小拼接 if(vis[i]==0&amp;&amp;stk[its]&#43;stk[i]&#43;sum&lt;=len){ vis[i]=1; dfs(i,sum&#43;stk[its],len); vis[i]=0; //tip3 if(len-sum-stk[its]==stk[i]||sum==0)return ; /*tip4：其实我当时也没想明白这个，所以借lg题解区： 如果当前长棍剩余的未拼长度等于当前木棍的长度或原始长度，继续拼下去时却失败了，就直接回溯并改之前拼的木棍。 当前长棍剩余的未拼长度等于当前木棍的长度时，这根木棍在最优情况下显然是拼到这（如果用更多短木根拼完剩下的这段，把这根木棍留到后面显然不如把更多总长相等的短木棍扔到后面）。如果在最优情况下继续拼下去失败了，那肯定是之前的木棍用错了，回溯改即可。 原来的长棍还一点没拼时，现在正在放入一根木棍。很明显，这根木棍还没有跟其它棍子拼接，如果现在拼下去能成功话，它肯定是能用上的，即自组或与其它还没用的木棍拼接。但继续拼下去却失败，说明现在这根木棍不能用上，无法完成拼接，所以回溯改之前的木棍。 */ i=nxt[i]; if(i==N)return ; //tip5：这个长度本来就不行了，不能再用一样长度的了，直接跳到比它小的第一个去 } } } bool cmp(int a,int b){return a&gt;b;} int main(){ Read(cnt);int temp; for(int i=1;i&lt;=cnt;i&#43;&#43;){ //非法数据处理 Read(temp); if(temp&lt;=50){ stk[&#43;&#43;N]=temp; tot&#43;=stk[N]; if(stk[N]&gt;maxn)maxn=stk[N]; } } std::sort(stk&#43;1,stk&#43;N&#43;1,cmp); //tip2：从大到小排序 nxt[N]=N; for(int i=N-1;i&gt;0;i--){ if(stk[i]==stk[i&#43;1]) nxt[i]=nxt[i&#43;1]; else nxt[i]=i; } for(int i=maxn;i&lt;=tot;i&#43;&#43;){ if(tot%i!"><meta itemprop="datePublished" content="2023-01-13T22:08:59+08:00" />
-<meta itemprop="dateModified" content="2023-01-13T22:08:59+08:00" />
-<meta itemprop="wordCount" content="137">
-<meta itemprop="keywords" content="ybt,干货,题解," />
-  
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Ybt_1442_拼棍子"/>
-<meta name="twitter:description" content="【题目直达】 信息学奥赛一本通（C&#43;&#43;版）在线评测系统 (ssoier.cn)
-https://www.luogu.com.cn/problem/P1120
-【tips】 ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子，lg规定了范围不用排
-【题目描述】 乔治有一些同样长的小木棍，他把这些木棍随意砍成几段，直到每段的长都不超过50。现在，他想把小木棍拼接成原来的样子，但是却忘记了自己开始时有多少根木棍和它们的长度。给出每段小木棍的长度，编程帮他找出原始木棍的最小可能长度。
-【输入】 第一行为一个单独的整数N表示砍过以后的小木棍的总数，其中N≤60，第二行为N个用空个隔开的正整数，表示N根小木棍的长度。
-【输出】 仅一行，表示要求的原始木棍的最小可能长度。
-【输入样例】 9 5 2 1 5 2 1 5 2 1 【输出样例】 6 【题解】 #include &lt;bits/stdc&#43;&#43;.h&gt; int cnt,N,stk[70],tot,maxn=-1; bool vis[70];int nxt[1000]; template&lt;typename L&gt; inline void Read(L &amp;X){ //tip0：快读 char c=getchar();L zhi=0,fu=1; while(not isdigit(c)){if(c==&#39;-&#39;)fu=-1;c=getchar();} while(isdigit(c)){zhi=(zhi&lt;&lt;1)&#43;(zhi&lt;&lt;3)&#43;c-&#39;0&#39;;c=getchar();} X=fu*zhi; } inline void dfs(int its,int sum,int len){ //爆搜思路 its:上一根拼接的棍子 sum：已拼棍子的长度 len：目标长度 if(sum&#43;stk[its]==len){ //已完成此根拼接 for(int j=1;j&lt;=N;j&#43;&#43;){ //去找下一根的头，同样tip2：从头找以保证最长 if(vis[j]==0){ vis[j]=1; dfs(j,0,len); vis[j]=0; //tip3：vis存储家访过的棍棍，方便回溯 return ; } }std::cout&lt;&lt;len;exit(0); //tip1：找不到就说明已完成所有工作，输出答案后立即退出，不做多余搜索 }else if(sum&#43;stk[its]&lt;len) for(int i=its&#43;1;i&lt;=N;i&#43;&#43;){ //tip2：此处从下一根开找，保证从大到小拼接 if(vis[i]==0&amp;&amp;stk[its]&#43;stk[i]&#43;sum&lt;=len){ vis[i]=1; dfs(i,sum&#43;stk[its],len); vis[i]=0; //tip3 if(len-sum-stk[its]==stk[i]||sum==0)return ; /*tip4：其实我当时也没想明白这个，所以借lg题解区： 如果当前长棍剩余的未拼长度等于当前木棍的长度或原始长度，继续拼下去时却失败了，就直接回溯并改之前拼的木棍。 当前长棍剩余的未拼长度等于当前木棍的长度时，这根木棍在最优情况下显然是拼到这（如果用更多短木根拼完剩下的这段，把这根木棍留到后面显然不如把更多总长相等的短木棍扔到后面）。如果在最优情况下继续拼下去失败了，那肯定是之前的木棍用错了，回溯改即可。 原来的长棍还一点没拼时，现在正在放入一根木棍。很明显，这根木棍还没有跟其它棍子拼接，如果现在拼下去能成功话，它肯定是能用上的，即自组或与其它还没用的木棍拼接。但继续拼下去却失败，说明现在这根木棍不能用上，无法完成拼接，所以回溯改之前的木棍。 */ i=nxt[i]; if(i==N)return ; //tip5：这个长度本来就不行了，不能再用一样长度的了，直接跳到比它小的第一个去 } } } bool cmp(int a,int b){return a&gt;b;} int main(){ Read(cnt);int temp; for(int i=1;i&lt;=cnt;i&#43;&#43;){ //非法数据处理 Read(temp); if(temp&lt;=50){ stk[&#43;&#43;N]=temp; tot&#43;=stk[N]; if(stk[N]&gt;maxn)maxn=stk[N]; } } std::sort(stk&#43;1,stk&#43;N&#43;1,cmp); //tip2：从大到小排序 nxt[N]=N; for(int i=N-1;i&gt;0;i--){ if(stk[i]==stk[i&#43;1]) nxt[i]=nxt[i&#43;1]; else nxt[i]=i; } for(int i=maxn;i&lt;=tot;i&#43;&#43;){ if(tot%i!"/>
-
-  
-  
-</head>
-
-  <body class="text-black duration-200 ease-out dark:text-white">
-    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
-  <div class="relative z-50 mr-auto flex items-center">
-    <a
-      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
-      href="https://nick-cjyx9.github.io"
-      >KanataRoom</a
-    >
-    <a
-      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-    ></a>
-  </div>
-
-  <a
-    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-  ></a>
-
-  
-  <script>
+    <div class="article-details">
     
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/ybt_1442_%E6%8B%BC%E6%A3%8D%E5%AD%90/">Ybt_1442_拼棍子</a>
+        </h2>
+    
+        
+    </div>
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 13, 2023</time>
+            </div>
+        
 
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = `"#faf6f1"`.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
 
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
 
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
 
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
-  >
-    
-    
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/%E5%B9%B2%E8%B4%A7/"
-        >DryText</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/friends"
-        >Friends</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/contact/"
-        >Contact</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/post/%E6%89%8B%E5%8A%A8%E7%BD%AE%E9%A1%B6%E5%81%87%E6%9C%9Ftodolist"
-        >Todolist</a
-      >
-      
-    </nav>
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
     
 
     
-    <nav
-      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
-    >
-      
-      <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href=" https://twitter.com/cjyx9x "
-        target="_blank"
-      ></a>
-      
-      <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href=" https://github.com/nick-cjyx9 "
-        target="_blank"
-      ></a>
-      
-    </nav>
-    
-  </div>
+</div>
+
 </header>
 
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
-    >
-      
-
-<article>
-  <header class="mb-20">
-    <h1 class="!my-0 pb-2.5">Ybt_1442_拼棍子</h1>
-
+    <section class="article-content">
     
-    <div class="text-sm opacity-60">
-      
-      <time>Jan 13, 2023</time>
-      
-      
-      <span class="mx-1">&middot;</span>
-      <span>cjyx9</span>
-      
-    </div>
     
-  </header>
-
-  <section><h3 id="题目直达">【题目直达】</h3>
-<p><a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1442">信息学奥赛一本通（C++版）在线评测系统 (ssoier.cn)</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P1120">https://www.luogu.com.cn/problem/P1120</a></p>
+    <h3 id="题目直达">【题目直达】</h3>
+<p><a class="link" href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1442"  target="_blank" rel="noopener"
+    >信息学奥赛一本通（C++版）在线评测系统 (ssoier.cn)</a></p>
+<p><a class="link" href="https://www.luogu.com.cn/problem/P1120"  target="_blank" rel="noopener"
+    >https://www.luogu.com.cn/problem/P1120</a></p>
 <h3 id="tips">【tips】</h3>
 <p>ybt和lg是一样的题目，但是数据不同，ybt需要排除长度大于50的棍子，lg规定了范围不用排</p>
 <h3 id="题目描述">【题目描述】</h3>
@@ -321,169 +357,438 @@ https://www.luogu.com.cn/problem/P1120
 <h3 id="输出">【输出】</h3>
 <p>仅一行，表示要求的原始木棍的最小可能长度。</p>
 <h3 id="输入样例">【输入样例】</h3>
-<pre tabindex="0"><code>9 5 2 1 5 2 1 5 2 1
-</code></pre><h3 id="输出样例">【输出样例】</h3>
-<pre tabindex="0"><code>6
-</code></pre><h3 id="题解">【题解】</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> cnt,N,stk[<span style="color:#ae81ff">70</span>],tot,maxn<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> vis[<span style="color:#ae81ff">70</span>];<span style="color:#66d9ef">int</span> nxt[<span style="color:#ae81ff">1000</span>];
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> L<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> Read(L <span style="color:#f92672">&amp;</span>X){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//tip0：快读
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">char</span> c<span style="color:#f92672">=</span>getchar();L zhi<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,fu<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(not isdigit(c)){<span style="color:#66d9ef">if</span>(c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;-&#39;</span>)fu<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>;c<span style="color:#f92672">=</span>getchar();}
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(isdigit(c)){zhi<span style="color:#f92672">=</span>(zhi<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>(zhi<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">3</span>)<span style="color:#f92672">+</span>c<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>;c<span style="color:#f92672">=</span>getchar();}
-</span></span><span style="display:flex;"><span>	X<span style="color:#f92672">=</span>fu<span style="color:#f92672">*</span>zhi;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> its,<span style="color:#66d9ef">int</span> sum,<span style="color:#66d9ef">int</span> len){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//爆搜思路 its:上一根拼接的棍子 sum：已拼棍子的长度 len：目标长度
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span>(sum<span style="color:#f92672">+</span>stk[its]<span style="color:#f92672">==</span>len){
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//已完成此根拼接
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;j<span style="color:#f92672">&lt;=</span>N;j<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>			<span style="color:#75715e">//去找下一根的头，同样tip2：从头找以保证最长
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(vis[j]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
-</span></span><span style="display:flex;"><span>				vis[j]<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>				dfs(j,<span style="color:#ae81ff">0</span>,len);
-</span></span><span style="display:flex;"><span>				vis[j]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>				<span style="color:#75715e">//tip3：vis存储家访过的棍棍，方便回溯
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span> ;
-</span></span><span style="display:flex;"><span>			}
-</span></span><span style="display:flex;"><span>		}std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span>len;exit(<span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//tip1：找不到就说明已完成所有工作，输出答案后立即退出，不做多余搜索
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(sum<span style="color:#f92672">+</span>stk[its]<span style="color:#f92672">&lt;</span>len) <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>its<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>N;i<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//tip2：此处从下一根开找，保证从大到小拼接
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span>(vis[i]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>stk[its]<span style="color:#f92672">+</span>stk[i]<span style="color:#f92672">+</span>sum<span style="color:#f92672">&lt;=</span>len){
-</span></span><span style="display:flex;"><span>			vis[i]<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>			dfs(i,sum<span style="color:#f92672">+</span>stk[its],len);
-</span></span><span style="display:flex;"><span>			vis[i]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//tip3
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span>(len<span style="color:#f92672">-</span>sum<span style="color:#f92672">-</span>stk[its]<span style="color:#f92672">==</span>stk[i]<span style="color:#f92672">||</span>sum<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)<span style="color:#66d9ef">return</span> ;
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">/*tip4：其实我当时也没想明白这个，所以借lg题解区：
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">如果当前长棍剩余的未拼长度等于当前木棍的长度或原始长度，继续拼下去时却失败了，就直接回溯并改之前拼的木棍。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">当前长棍剩余的未拼长度等于当前木棍的长度时，这根木棍在最优情况下显然是拼到这（如果用更多短木根拼完剩下的这段，把这根木棍留到后面显然不如把更多总长相等的短木棍扔到后面）。如果在最优情况下继续拼下去失败了，那肯定是之前的木棍用错了，回溯改即可。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">原来的长棍还一点没拼时，现在正在放入一根木棍。很明显，这根木棍还没有跟其它棍子拼接，如果现在拼下去能成功话，它肯定是能用上的，即自组或与其它还没用的木棍拼接。但继续拼下去却失败，说明现在这根木棍不能用上，无法完成拼接，所以回溯改之前的木棍。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            */</span>
-</span></span><span style="display:flex;"><span>            i<span style="color:#f92672">=</span>nxt[i];
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span>(i<span style="color:#f92672">==</span>N)<span style="color:#66d9ef">return</span> ;
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//tip5：这个长度本来就不行了，不能再用一样长度的了，直接跳到比它小的第一个去
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp</span>(<span style="color:#66d9ef">int</span> a,<span style="color:#66d9ef">int</span> b){<span style="color:#66d9ef">return</span> a<span style="color:#f92672">&gt;</span>b;}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-</span></span><span style="display:flex;"><span>	Read(cnt);<span style="color:#66d9ef">int</span> temp;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>cnt;i<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//非法数据处理
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Read(temp);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(temp<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">50</span>){
-</span></span><span style="display:flex;"><span>			stk[<span style="color:#f92672">++</span>N]<span style="color:#f92672">=</span>temp;
-</span></span><span style="display:flex;"><span>			tot<span style="color:#f92672">+=</span>stk[N];
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span>(stk[N]<span style="color:#f92672">&gt;</span>maxn)maxn<span style="color:#f92672">=</span>stk[N];
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	std<span style="color:#f92672">::</span>sort(stk<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,stk<span style="color:#f92672">+</span>N<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,cmp);
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//tip2：从大到小排序
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    nxt[N]<span style="color:#f92672">=</span>N;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">--</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(stk[i]<span style="color:#f92672">==</span>stk[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) nxt[i]<span style="color:#f92672">=</span>nxt[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> nxt[i]<span style="color:#f92672">=</span>i;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>maxn;i<span style="color:#f92672">&lt;=</span>tot;i<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(tot<span style="color:#f92672">%</span>i<span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span>)<span style="color:#66d9ef">continue</span>;
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//tip6：原本的棍棍长度符合：
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//是总长的因数 //最短的棍棍&lt;=长度&lt;=总长 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        vis[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>		dfs(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,i);
-</span></span><span style="display:flex;"><span>		memset(vis,<span style="color:#ae81ff">0</span>,<span style="color:#66d9ef">sizeof</span>(vis));
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></section>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">9 5 2 1 5 2 1 5 2 1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="输出样例">【输出样例】</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="题解">【题解】</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="n">cnt</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">stk</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span><span class="n">tot</span><span class="p">,</span><span class="n">maxn</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">vis</span><span class="p">[</span><span class="mi">70</span><span class="p">];</span><span class="kt">int</span> <span class="n">nxt</span><span class="p">[</span><span class="mi">1000</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">L</span><span class="o">&gt;</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">Read</span><span class="p">(</span><span class="n">L</span> <span class="o">&amp;</span><span class="n">X</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//tip0：快读
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span><span class="n">L</span> <span class="n">zhi</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">fu</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">not</span> <span class="n">isdigit</span><span class="p">(</span><span class="n">c</span><span class="p">)){</span><span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="o">==</span><span class="sc">&#39;-&#39;</span><span class="p">)</span><span class="n">fu</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span><span class="n">c</span><span class="o">=</span><span class="n">getchar</span><span class="p">();}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">c</span><span class="p">)){</span><span class="n">zhi</span><span class="o">=</span><span class="p">(</span><span class="n">zhi</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">zhi</span><span class="o">&lt;&lt;</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">c</span><span class="o">-</span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="n">c</span><span class="o">=</span><span class="n">getchar</span><span class="p">();}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">X</span><span class="o">=</span><span class="n">fu</span><span class="o">*</span><span class="n">zhi</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">its</span><span class="p">,</span><span class="kt">int</span> <span class="n">sum</span><span class="p">,</span><span class="kt">int</span> <span class="n">len</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//爆搜思路 its:上一根拼接的棍子 sum：已拼棍子的长度 len：目标长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span><span class="p">(</span><span class="n">sum</span><span class="o">+</span><span class="n">stk</span><span class="p">[</span><span class="n">its</span><span class="p">]</span><span class="o">==</span><span class="n">len</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//已完成此根拼接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//去找下一根的头，同样tip2：从头找以保证最长
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span><span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">				<span class="n">vis</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">dfs</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">len</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="n">vis</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="c1">//tip3：vis存储家访过的棍棍，方便回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//tip1：找不到就说明已完成所有工作，输出答案后立即退出，不做多余搜索
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">sum</span><span class="o">+</span><span class="n">stk</span><span class="p">[</span><span class="n">its</span><span class="p">]</span><span class="o">&lt;</span><span class="n">len</span><span class="p">)</span> <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">its</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//tip2：此处从下一根开找，保证从大到小拼接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span><span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">stk</span><span class="p">[</span><span class="n">its</span><span class="p">]</span><span class="o">+</span><span class="n">stk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">sum</span><span class="o">&lt;=</span><span class="n">len</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sum</span><span class="o">+</span><span class="n">stk</span><span class="p">[</span><span class="n">its</span><span class="p">],</span><span class="n">len</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//tip3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="k">if</span><span class="p">(</span><span class="n">len</span><span class="o">-</span><span class="n">sum</span><span class="o">-</span><span class="n">stk</span><span class="p">[</span><span class="n">its</span><span class="p">]</span><span class="o">==</span><span class="n">stk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">||</span><span class="n">sum</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">return</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/*tip4：其实我当时也没想明白这个，所以借lg题解区：
+</span></span></span><span class="line"><span class="cl"><span class="cm">如果当前长棍剩余的未拼长度等于当前木棍的长度或原始长度，继续拼下去时却失败了，就直接回溯并改之前拼的木棍。
+</span></span></span><span class="line"><span class="cl"><span class="cm">当前长棍剩余的未拼长度等于当前木棍的长度时，这根木棍在最优情况下显然是拼到这（如果用更多短木根拼完剩下的这段，把这根木棍留到后面显然不如把更多总长相等的短木棍扔到后面）。如果在最优情况下继续拼下去失败了，那肯定是之前的木棍用错了，回溯改即可。
+</span></span></span><span class="line"><span class="cl"><span class="cm">原来的长棍还一点没拼时，现在正在放入一根木棍。很明显，这根木棍还没有跟其它棍子拼接，如果现在拼下去能成功话，它肯定是能用上的，即自组或与其它还没用的木棍拼接。但继续拼下去却失败，说明现在这根木棍不能用上，无法完成拼接，所以回溯改之前的木棍。
+</span></span></span><span class="line"><span class="cl"><span class="cm">            */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">i</span><span class="o">=</span><span class="n">nxt</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="n">N</span><span class="p">)</span><span class="k">return</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//tip5：这个长度本来就不行了，不能再用一样长度的了，直接跳到比它小的第一个去
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">cmp</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Read</span><span class="p">(</span><span class="n">cnt</span><span class="p">);</span><span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">cnt</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//非法数据处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Read</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">temp</span><span class="o">&lt;=</span><span class="mi">50</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="n">stk</span><span class="p">[</span><span class="o">++</span><span class="n">N</span><span class="p">]</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tot</span><span class="o">+=</span><span class="n">stk</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span><span class="p">(</span><span class="n">stk</span><span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="o">&gt;</span><span class="n">maxn</span><span class="p">)</span><span class="n">maxn</span><span class="o">=</span><span class="n">stk</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">stk</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">stk</span><span class="o">+</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">cmp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//tip2：从大到小排序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">nxt</span><span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="o">=</span><span class="n">N</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">stk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">stk</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="n">nxt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">nxt</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="n">nxt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">maxn</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">tot</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">tot</span><span class="o">%</span><span class="n">i</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//tip6：原本的棍棍长度符合：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//是总长的因数 //最短的棍棍&lt;=长度&lt;=总长 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">vis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">memset</span><span class="p">(</span><span class="n">vis</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">vis</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
 
-  
-  
-  <footer class="mt-12 flex flex-wrap">
-     
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/ybt"
-      >ybt</a
-    >
-     
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7"
-      >干货</a
-    >
-     
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/%E9%A2%98%E8%A7%A3"
-      >题解</a
-    >
-    
-  </footer>
-  
 
-  
-  
-  
-  <nav
-    class="mt-24 flex rounded-lg bg-black/[3%] p-1.5 text-lg dark:bg-white/[8%]" style="margin-bottom: 22px;"
-  >
+    <footer class="article-footer">
     
-    <a
-      class="flex w-1/2 items-center rounded-md p-6 pr-3 no-underline hover:bg-black/[2%]"
-      href="https://nick-cjyx9.github.io/post/%E4%BA%8C%E6%AC%A1%E5%85%83%E5%95%A5%E5%8D%B5%E7%9A%84%E9%92%B1%E7%9C%9F%E5%A5%BD%E8%B5%9A/"
-      ><span class="mr-1.5">←</span><span>二次元啥卵的钱真好赚</span></a
-    >
-    
-    
-    <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-md p-6 pl-3 no-underline hover:bg-black/[2%]"
-      href="https://nick-cjyx9.github.io/post/%E4%BB%8A%E6%97%A5%E8%B6%A3%E9%97%BB/"
-      ><span>今日趣闻</span><span class="ml-1.5">→</span></a
-    >
-    
-  </nav>
-  
+    <section class="article-tags">
+        
+            <a href="/tags/ybt/">ybt</a>
+        
+            <a href="/tags/%E5%B9%B2%E8%B4%A7/">干货</a>
+        
+            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>
+        
+    </section>
 
-  
-  <script src="https://giscus.app/client.js"
-        data-repo="nick-cjyx9/blog-comment"
-        data-repo-id="R_kgDOIu_GWQ"
-        data-category="Show and tell"
-        data-category-id="DIC_kwDOIu_GWc4CTc3U"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/ybt_1220_%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ybt_1220_单词接龙</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E6%B7%B1%E5%85%A5%E8%B0%83%E6%95%99ybtoj/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">深入调♂教ybtOJ</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="nick-cjyx9/blog-comment"
+    data-repo-id="R_kgDOIu_GWQ"
+    data-category="Show and tell"
+    data-category-id="DIC_kwDOIu_GWc4CTc3U"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('true');
+            }
+        }
+    })();
 </script>
 
-    </main>
+    
 
-    <footer
-  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
->
-  <div class="mr-auto">
-    &copy; 2023
-    <a class="link" href="https://nick-cjyx9.github.io">KanataRoom</a>
-  </div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >Powered by Hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >▷ Paper 6</a
-  >
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2023 KanataRoom
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
 </footer>
 
-  </body>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
 </html>

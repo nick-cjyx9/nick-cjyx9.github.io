@@ -1,333 +1,379 @@
 <!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。 在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oie'>
+<title>胎儿级博客搭建指北</title>
+
+<link rel='canonical' href='https://nick-cjyx9.github.io/post/%E8%83%8E%E5%84%BF%E7%BA%A7%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='胎儿级博客搭建指北'>
+<meta property='og:description' content='瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。 在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oie'>
+<meta property='og:url' content='https://nick-cjyx9.github.io/post/%E8%83%8E%E5%84%BF%E7%BA%A7%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/'>
+<meta property='og:site_name' content='KanataRoom'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='干货' /><meta property='article:tag' content='建站' /><meta property='article:published_time' content='2023-01-15T19:47:43&#43;08:00'/><meta property='article:modified_time' content='2023-01-15T19:47:43&#43;08:00'/>
+<meta name="twitter:title" content="胎儿级博客搭建指北">
+<meta name="twitter:description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。 在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oie">
+    <link rel="shortcut icon" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">😅</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">KanataRoom</a></h1>
+            <h2 class="site-description">Do not repeat yourself.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/nick_cjyx9'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
 
 
 
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/cjyx9x'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
 
 
 
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
 
 
 
+                
+                <span>home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
 
 
 
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
 
 
 
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-me/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
 
 
 
+                
+                <span>about</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
 
 
 
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
 
 
 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
 
 
 
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
 
 
 
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#0x00-博客搭建的方式">0x00 博客搭建的方式</a></li>
+    <li><a href="#0x01-方案2-事前准备">0x01 方案2 事前准备</a>
+      <ol>
+        <li><a href="#点击下载hugohttpsghproxycomqhttpsgithubcomgohugoiohugoreleasesdownloadv01100hugo_extended_01100_windows-amd64zip-由于是github资源可能下载较慢耐心等待"><a href="https://ghproxy.com/?q=https://github.com/gohugoio/hugo/releases/download/v0.110.0/hugo_extended_0.110.0_windows-amd64.zip">点击下载Hugo</a> 由于是GitHub资源，可能下载较慢，耐心等待</a></li>
+        <li><a href="#点击下载githttpsmirrorstunatsinghuaeducngithub-releasegit-for-windowsgitlatestreleasegit-23902-64-bitexe安装一路next"><a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/LatestRelease/Git-2.39.0.2-64-bit.exe">点击下载Git</a>安装一路<code>next</code></a></li>
+        <li><a href="#注册github">注册Github</a></li>
+        <li><a href="#配置">配置</a></li>
+      </ol>
+    </li>
+    <li><a href="#0x02-开始搭建">0x02 开始搭建</a>
+      <ol>
+        <li><a href="#1-生成站点">1. 生成站点</a></li>
+        <li><a href="#2配置主题">2.配置主题</a></li>
+        <li><a href="#0x03-上线吧">0x03 上线吧!</a></li>
+      </ol>
+    </li>
+    <li><a href="#至此教程完结以上的新建文章预览上传github操作均有简化脚本在hugo建站经验---kanataroom-nick-cjyx9githubiohttpsnick-cjyx9githubioposthugo建站经验">至此，教程完结，以上的新建文章、预览、上传github操作均有简化脚本，在<a href="https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/">Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a></a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
 
 
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
 
-
-
-
-
-
-<html
-  class="not-ready text-sm lg:text-base"
-  style="--bg: #faf6f1"
-  lang="zh-cn"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>胎儿级博客搭建指北 - KanataRoom</title>
-
-  
-  <meta name="theme-color" />
-  
-  <meta name="description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
-在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
-0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
-利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
-如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
-0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
-点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
-如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp." />
-  <meta
-    name="author"
-    content="cjyx9"
-  />
-  
-
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://nick-cjyx9.github.io/main.min.css" />
-
-  
-  <script
-    defer
-    src="https://nick-cjyx9.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  
-
-  
-   
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/theme.png" />
-
-  
-  
-  
-  <link rel="preload" as="image" href="https://cravatar.cn/avatar/74ea31416d68b8ecbb828bba878327a2?s=160&amp;d=identicon" />
-  
-  
-
-  
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/twitter.svg" />
-  
-  <link rel="preload" as="image" href="https://nick-cjyx9.github.io/github.svg" />
-  
-
-  
-  <link rel="icon" href="https://nick-cjyx9.github.io/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://nick-cjyx9.github.io/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.110.0">
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <meta property="og:title" content="胎儿级博客搭建指北" />
-<meta property="og:description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
-在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
-0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
-利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
-如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
-0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
-点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
-如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://nick-cjyx9.github.io/post/%E8%83%8E%E5%84%BF%E7%BA%A7%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-15T19:47:43+08:00" />
-<meta property="article:modified_time" content="2023-01-15T19:47:43+08:00" />
-
-  
-  <meta itemprop="name" content="胎儿级博客搭建指北">
-<meta itemprop="description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
-在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
-0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
-利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
-如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
-0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
-点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
-如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp."><meta itemprop="datePublished" content="2023-01-15T19:47:43+08:00" />
-<meta itemprop="dateModified" content="2023-01-15T19:47:43+08:00" />
-<meta itemprop="wordCount" content="424">
-<meta itemprop="keywords" content="干货,建站," />
-  
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="胎儿级博客搭建指北"/>
-<meta name="twitter:description" content="瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。
-在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：
-0x00 博客搭建的方式 最推荐：洛谷博客、博客园 这个应该不用多说，完全白嫖，只需要一个洛谷账号。 优点是白嫖，稳定（洛谷不日爆的前提下），简洁 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好 缺点就是不自由，体现在发言没那么自由，样式没那么自由等 适合不爱折腾，又想让自己的博文被更多人看到的人 类似的方式还有博客园，相较洛谷更加自由
-利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现： 这是本文主讲的方式，自由度极大，稳定，可折腾度高 **适用于能折腾，想要自己网站更炫酷的人（借此机会还可以学习到有关git和html5的知识）**如果你是这类人，请看下去
-如果你是富哥/姐，可选方案极多： i. 不想折腾，还想要自由：V我50，帮你做方案2全套 ii. 不想折腾，使用钞能力：wordpress等付费搭建，域名网站一站式 iii. 折腾：购买服务器，自行部署wordpress等博客系统。
-0x01 方案2 事前准备 前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo 工具：
-点击下载Hugo 由于是GitHub资源，可能下载较慢，耐心等待 下载后解压到你找得到的地方，win&#43;R后输入SystemPropertiesAdvanced.exe点击环境变量选中用户变量-&gt;Path-&gt;编辑-&gt;新建将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在E:\Hugo，然后一路确定 就此hugo安装完成，win&#43;R输入powershell呼出命令行，输入hugo后如果出现类似于如下信息则安装成功，可进行下一步。 Error: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. Total in 1 ms Q:我输入hugo后输出了&#39;hugo&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。这是怎么回事 A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。 点击下载Git安装一路next 注册Github github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容: 进入Join Github,
-如果发现进不去,后续报错,有条件请挂t,无条件的话使用Watt Toolkit - 瓦特工具箱(Steam&#43;&#43;官网) (steampp."/>
-
-  
-  
-</head>
-
-  <body class="text-black duration-200 ease-out dark:text-white">
-    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
-  <div class="relative z-50 mr-auto flex items-center">
-    <a
-      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
-      href="https://nick-cjyx9.github.io"
-      >KanataRoom</a
-    >
-    <a
-      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-    ></a>
-  </div>
-
-  <a
-    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-  ></a>
-
-  
-  <script>
+    <div class="article-details">
     
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E8%83%8E%E5%84%BF%E7%BA%A7%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/">胎儿级博客搭建指北</a>
+        </h2>
+    
+        
+    </div>
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 15, 2023</time>
+            </div>
+        
 
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = `"#faf6f1"`.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
 
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
 
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
 
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
-  >
-    
-    
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/%E5%B9%B2%E8%B4%A7/"
-        >DryText</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/friends"
-        >Friends</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/contact/"
-        >Contact</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/post/%E6%89%8B%E5%8A%A8%E7%BD%AE%E9%A1%B6%E5%81%87%E6%9C%9Ftodolist"
-        >Todolist</a
-      >
-      
-    </nav>
+                <time class="article-time--reading">
+                    阅读时长: 7 分钟
+                </time>
+            </div>
+        
+    </footer>
     
 
     
-    <nav
-      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
-    >
-      
-      <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href=" https://twitter.com/cjyx9x "
-        target="_blank"
-      ></a>
-      
-      <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href=" https://github.com/nick-cjyx9 "
-        target="_blank"
-      ></a>
-      
-    </nav>
-    
-  </div>
+</div>
+
 </header>
 
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 pb-32 dark:prose-invert"
-    >
-      
-
-<article>
-  <header class="mb-20">
-    <h1 class="!my-0 pb-2.5">胎儿级博客搭建指北</h1>
-
+    <section class="article-content">
     
-    <div class="text-sm opacity-60">
-      
-      <time>Jan 15, 2023</time>
-      
-      
-      <span class="mx-1">&middot;</span>
-      <span>cjyx9</span>
-      
-    </div>
     
-  </header>
-
-  <section><blockquote>
+    <blockquote>
 <p>瞎BB：说是胎儿级，其实大部分都是针对oier在写，尽可能做到完整吧。</p>
 </blockquote>
 <p>在搭建博客之前，我们首先要明白自己搭建博客的最终目的，在看过很多oier的博客之后，我发现几个普遍的问题：他们的博客大多外观十分精美，各种功能拓展齐全，有顶级域名甚至服务器备案，但是干货性内容却质量不高，或是建立了很久，博文篇数却极少。在这里说这些就是避免大家陷入过度追求样式的陷阱，毕竟博客只是博文的载体，博文的质量才是最先的。接下来开始教程：</p>
 <h2 id="0x00-博客搭建的方式">0x00 博客搭建的方式</h2>
 <ol>
-<li>最推荐：<a href="https://www.luogu.com.cn/blogAdmin/blogConfig">洛谷博客</a>、博客园
+<li>最推荐：<a class="link" href="https://www.luogu.com.cn/blogAdmin/blogConfig"  target="_blank" rel="noopener"
+    >洛谷博客</a>、博客园
 这个应该不用多说，完全白嫖，只需要一个洛谷账号。
 优点是白嫖，稳定（洛谷不日爆的前提下），简洁
 还有百度收录上的优点，得利于洛谷的出名度，可以看到搜索引擎对于大伙的博客收录情况很好
-<img src="https://s2.loli.net/2023/01/16/ANsCEomFQGJwMt7.png" alt="image.png">
+<img src="https://s2.loli.net/2023/01/16/ANsCEomFQGJwMt7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+>
 缺点就是不自由，体现在发言没那么自由，样式没那么自由等</li>
 </ol>
 <p><strong>适合不爱折腾，又想让自己的博文被更多人看到的人</strong>
-<strong>类似的方式还有<a href="https://www.cnblogs.com/">博客园</a>，相较洛谷更加自由</strong></p>
+<strong>类似的方式还有<a class="link" href="https://www.cnblogs.com/"  target="_blank" rel="noopener"
+    >博客园</a>，相较洛谷更加自由</strong></p>
 <ol start="2">
 <li>
 <p>利用静态网站生成器（Hugo、Hexo等，他们可以实现的远不止博客）加静态网站托管系统（GitHub pages、netlify等）实现：
@@ -344,281 +390,698 @@ iii. 折腾：购买服务器，自行部署wordpress等博客系统。</p>
 <h2 id="0x01-方案2-事前准备">0x01 方案2 事前准备</h2>
 <p>前文提到的生成器Hexo和Hugo都十分优秀，这里图方便使用不需要Node.js的Hugo
 工具：</p>
-<h3 id="点击下载hugohttpsghproxycomqhttpsgithubcomgohugoiohugoreleasesdownloadv01100hugo_extended_01100_windows-amd64zip-由于是github资源可能下载较慢耐心等待"><a href="https://ghproxy.com/?q=https://github.com/gohugoio/hugo/releases/download/v0.110.0/hugo_extended_0.110.0_windows-amd64.zip">点击下载Hugo</a> 由于是GitHub资源，可能下载较慢，耐心等待</h3>
+<h3 id="点击下载hugohttpsghproxycomqhttpsgithubcomgohugoiohugoreleasesdownloadv01100hugo_extended_01100_windows-amd64zip-由于是github资源可能下载较慢耐心等待"><a class="link" href="https://ghproxy.com/?q=https://github.com/gohugoio/hugo/releases/download/v0.110.0/hugo_extended_0.110.0_windows-amd64.zip"  target="_blank" rel="noopener"
+    >点击下载Hugo</a> 由于是GitHub资源，可能下载较慢，耐心等待</h3>
 <ul>
 <li>下载后解压到你找得到的地方，<code>win+R</code>后输入<code>SystemPropertiesAdvanced.exe</code>点击<code>环境变量</code>选中<code>用户变量-&gt;Path-&gt;编辑-&gt;新建</code>将你存放hugo.exe的文件夹地址输入，例如我的hugo.exe存放在<code>E:\Hugo</code>，然后一路<strong>确定</strong></li>
-<li><img src="https://s2.loli.net/2023/01/16/MFoqfz1xjVsG6th.png" alt="image.png"></li>
+<li><img src="https://s2.loli.net/2023/01/16/MFoqfz1xjVsG6th.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></li>
 <li>就此hugo安装完成，<code>win+R</code>输入powershell呼出命令行，输入<code>hugo</code>后如果出现类似于如下信息则安装成功，可进行下一步。</li>
 </ul>
-<pre tabindex="0"><code>Error: Unable to locate config file or config directory. Perhaps you need to create a new site.
-       Run `hugo help new` for details.
-
-Total in 1 ms
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Error: Unable to locate config file or config directory. Perhaps you need to create a new site.
+</span></span><span class="line"><span class="cl">       Run `hugo help new` for details.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Total in 1 ms
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>Q:我输入hugo后输出了<code>'hugo' 不是内部或外部命令，也不是可运行的程序或批处理文件。</code>这是怎么回事</li>
 <li>A:请检查hugo.exe是否在你输入的目录内或环境变量是否配置好，有没有点击确认而不是叉掉。</li>
 </ul>
-<h3 id="点击下载githttpsmirrorstunatsinghuaeducngithub-releasegit-for-windowsgitlatestreleasegit-23902-64-bitexe安装一路next"><a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/LatestRelease/Git-2.39.0.2-64-bit.exe">点击下载Git</a>安装一路<code>next</code></h3>
+<h3 id="点击下载githttpsmirrorstunatsinghuaeducngithub-releasegit-for-windowsgitlatestreleasegit-23902-64-bitexe安装一路next"><a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/LatestRelease/Git-2.39.0.2-64-bit.exe"  target="_blank" rel="noopener"
+    >点击下载Git</a>安装一路<code>next</code></h3>
 <h3 id="注册github">注册Github</h3>
 <p>github是一个开源及私有软件项目的托管平台,有很多有趣的项目,具体使用请百度,这里只讲大致内容:
-进入<a href="https://github.com/signup">Join Github</a>,</p>
-<p>如果发现进不去,后续报错,有条件请挂t,无条件的话使用<a href="https://steampp.net/">Watt Toolkit - 瓦特工具箱(Steam++官网) (steampp.net)</a>点上Github后再访问</p>
+进入<a class="link" href="https://github.com/signup"  target="_blank" rel="noopener"
+    >Join Github</a>,</p>
+<p>如果发现进不去,后续报错,有条件请挂t,无条件的话使用<a class="link" href="https://steampp.net/"  target="_blank" rel="noopener"
+    >Watt Toolkit - 瓦特工具箱(Steam++官网) (steampp.net)</a>点上Github后再访问</p>
 <p>输入你的email-&gt;continue-&gt;输入密码-&gt;continue-&gt;用户名-&gt;输入<code>n</code>-&gt;continue-&gt;验证-&gt;搞定</p>
 <h3 id="配置">配置</h3>
 <p><code>win+R</code>输入<code>powershell</code>:</p>
 <ol>
 <li>git配置</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;你的用户名&#34;</span>
-</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;注册GitHub的邮箱&#34;</span>
-</span></span></code></pre></div><p>输错可再次使用命令改.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;你的用户名&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;注册GitHub的邮箱&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输错可再次使用命令改.
 2. ssh配置</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;你的邮箱&#34;</span>
-</span></span></code></pre></div><p>之后三次询问皆直接回车即可.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.ssh/id_rsa.pub
-</span></span></code></pre></div><p>将输出的以<code>ssh-rsa</code>开头的字符串复制.<strong>打开</strong><a href="https://github.com/">GitHub</a>设置</p>
-<p><img src="https://s2.loli.net/2023/01/16/NZnTDrYxm3vJqMh.png" alt="image.png"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -C <span class="s2">&#34;你的邮箱&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后三次询问皆直接回车即可.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat ~/.ssh/id_rsa.pub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将输出的以<code>ssh-rsa</code>开头的字符串复制.<strong>打开</strong><a class="link" href="https://github.com/"  target="_blank" rel="noopener"
+    >GitHub</a>设置</p>
+<p><img src="https://s2.loli.net/2023/01/16/NZnTDrYxm3vJqMh.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>进入左侧SSH and GPG keys-&gt; New SSH key,粘贴刚才取到的key。</p>
 <p><strong>🎉就此，git与github配置完成</strong></p>
 <h2 id="0x02-开始搭建">0x02 开始搭建</h2>
-<p><strong>首先，本文的一切都可能随hugo版本更新过时，优先参考<a href="https://www.gohugo.org/">Hugo中文文档 (gohugo.org)</a>，不止hugo当你在使用任何项目遇到问题时，都应该优先参考文档。</strong></p>
+<p><strong>首先，本文的一切都可能随hugo版本更新过时，优先参考<a class="link" href="https://www.gohugo.org/"  target="_blank" rel="noopener"
+    >Hugo中文文档 (gohugo.org)</a>，不止hugo当你在使用任何项目遇到问题时，都应该优先参考文档。</strong></p>
 <h3 id="1-生成站点">1. 生成站点</h3>
 <p>还是打开powershell，比如希望博客生成到 <code>D:/my_blog</code> 路径：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new site D:/my_blog
-</span></span></code></pre></div><p>这样就在 <code>hugo new site D:/my_blog</code> 目录里生成了初始站点，进去目录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new site D:/my_blog
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样就在 <code>hugo new site D:/my_blog</code> 目录里生成了初始站点，进去目录：</p>
 <blockquote>
 <p>cd 命令：将工作目录切换到&hellip;
 ls 命令：列出当前工作目录下所有文件及目录</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd hugo new site D:/my_blog
-</span></span><span style="display:flex;"><span>ls
-</span></span></code></pre></div><p>你会看到这样的结构（只截取了部分）：</p>
-<pre tabindex="0"><code>  ▸ archetypes/  -&gt;文章模板
-  ▸ content/     -&gt;存放文章和页面
-  ▸ themes/      -&gt;主题
-  ▸ static/      -&gt;网站静态资源（图片音频类的）
-    config.toml  -&gt;配置文件
-</code></pre><p>至此，站点生成完成。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> hugo new site D:/my_blog
+</span></span><span class="line"><span class="cl">ls
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>你会看到这样的结构（只截取了部分）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  ▸ archetypes/  -&gt;文章模板
+</span></span><span class="line"><span class="cl">  ▸ content/     -&gt;存放文章和页面
+</span></span><span class="line"><span class="cl">  ▸ themes/      -&gt;主题
+</span></span><span class="line"><span class="cl">  ▸ static/      -&gt;网站静态资源（图片音频类的）
+</span></span><span class="line"><span class="cl">    config.toml  -&gt;配置文件
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>至此，站点生成完成。</p>
 <h3 id="2配置主题">2.配置主题</h3>
-<p>hugo的主题很多，各个主题配置不同，难以统一讲解，这里挑选一个我在使用的<a href="https://github.com/nanxiaobei/hugo-paper/">nanxiaobei/hugo-paper: 🪺 A simple, clean, flexible Hugo theme (github.com)</a></p>
+<p>hugo的主题很多，各个主题配置不同，难以统一讲解，这里挑选一个我在使用的<a class="link" href="https://github.com/nanxiaobei/hugo-paper/"  target="_blank" rel="noopener"
+    >nanxiaobei/hugo-paper: 🪺 A simple, clean, flexible Hugo theme (github.com)</a></p>
 <ol>
 <li>安装，在博客目录下使用</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
-</span></span><span style="display:flex;"><span>git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
-</span></span></code></pre></div><ol start="2">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
 <li>
 <p>安装完成后
 找到\themes\paper目录下examplesite文件夹，将里面的内容复制到my_blog也就是博客根目录,替换config.toml，打开config.toml修改配置<code>theme = &quot;hugo-paper&quot;</code>为<code>theme = &quot;paper&quot;</code>。
-<img src="https://s2.loli.net/2023/01/17/Q5bDykrmTdhcYsz.png" alt="image.png"></p>
+<img src="https://s2.loli.net/2023/01/17/Q5bDykrmTdhcYsz.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 </li>
 <li>
 <p>搞定
-此时，在博客目录下执行<code>hugo server</code>，并访问<a href="http://localhost:1313/">localhost:1313</a>，你会看到hugo生成的实例站点
-<img src="https://s2.loli.net/2023/01/17/wk94GnodCqA8MuE.png" alt="image.png"></p>
+此时，在博客目录下执行<code>hugo server</code>，并访问<a class="link" href="http://localhost:1313/"  target="_blank" rel="noopener"
+    >localhost:1313</a>，你会看到hugo生成的实例站点
+<img src="https://s2.loli.net/2023/01/17/wk94GnodCqA8MuE.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 </li>
 <li>
 <p>配置
 确认实例站点无误后，可以删掉它默认的文章（如下），开始配置站点
-<img src="https://s2.loli.net/2023/01/17/jm4GaxPHZnAl2CD.png" alt="image.png"></p>
+<img src="https://s2.loli.net/2023/01/17/jm4GaxPHZnAl2CD.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 </li>
 </ol>
-<p>打开主目录下<code>config.toml</code>修改配置，下面放出我的配置作为参考,大家可以去<a href="https://github.com/nick-cjyx9/blog-comment">nick-cjyx9/blog-comment (github.com)</a>参考我博客的一切配置。三个优化脚本也放在这里了(更多优化参见<a href="https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/">Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a>,如果有人看会一直更)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://nick-cjyx9.github.io&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># title = &#34;Hugo Themes&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;Nick Chen&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;Copyright © 2022–2023, Nick Chen; all rights reserved.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">paginate</span> = <span style="color:#ae81ff">8</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;zh-cn&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DefaultContentLanguage</span> = <span style="color:#e6db74">&#34;zh-cn&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enableInlineShortcodes</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># prevent build failures when using Hugo&#39;s Instagram shortcode due to deprecated Instagram API.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ignoreErrors</span> = [<span style="color:#e6db74">&#34;error-remote-getjson&#34;</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ------------------------------</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;paper&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;KanataRoom&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span> = <span style="color:#e6db74">&#39;linen&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">twitter</span> = <span style="color:#e6db74">&#39;cjyx9x&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">github</span> = <span style="color:#e6db74">&#39;nick-cjyx9&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">avatar</span> = <span style="color:#e6db74">&#39;cjyx9@outlook.com&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#39;Nick&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">bio</span> = <span style="color:#e6db74">&#34;Do not repeat yourself.&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ------------------------------</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># needed to  render raw HTML (e.g. &lt;sub&gt;, &lt;sup&gt;, &lt;kbd&gt;, &lt;mark&gt;)</span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
-</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
-</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">menu</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;about&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;About&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/about/&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;contact&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Contact&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/contact/&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;Todolist&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Todolist&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/post/手动置顶假期todolist&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>  [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span>=<span style="color:#e6db74">&#34;Drytext&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>=<span style="color:#e6db74">&#34;DryText&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span>=<span style="color:#e6db74">&#34;/tags/干货/&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span>=<span style="color:#ae81ff">8</span>
-</span></span><span style="display:flex;"><span>    [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span>=<span style="color:#e6db74">&#34;Friends&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>=<span style="color:#e6db74">&#34;Friends&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span>=<span style="color:#e6db74">&#34;/friends&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span>=<span style="color:#ae81ff">8</span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">taxonomies</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">category</span> = <span style="color:#e6db74">&#34;categories&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tag</span> = <span style="color:#e6db74">&#34;tags&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">series</span> = <span style="color:#e6db74">&#34;series&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">privacy</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">privacy</span>.<span style="color:#a6e22e">vimeo</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disabled</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">simple</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">privacy</span>.<span style="color:#a6e22e">twitter</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disabled</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enableDNT</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">simple</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">privacy</span>.<span style="color:#a6e22e">instagram</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disabled</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">simple</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">privacy</span>.<span style="color:#a6e22e">youtube</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disabled</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">privacyEnhanced</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">services</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">instagram</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disableInlineCSS</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">twitter</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">disableInlineCSS</span> = <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><p>至此，博客搞定，每次配置完想要预览就使用<code>hugo server</code>指令</p>
+<p>打开主目录下<code>config.toml</code>修改配置，下面放出我的配置作为参考,大家可以去<a class="link" href="https://github.com/nick-cjyx9/blog-comment"  target="_blank" rel="noopener"
+    >nick-cjyx9/blog-comment (github.com)</a>参考我博客的一切配置。三个优化脚本也放在这里了(更多优化参见<a class="link" href="https://nick-cjyx9.github.io/post/hugo%e5%bb%ba%e7%ab%99%e7%bb%8f%e9%aa%8c/"  target="_blank" rel="noopener"
+    >Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a>,如果有人看会一直更)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://nick-cjyx9.github.io&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># title = &#34;Hugo Themes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">author</span> <span class="p">=</span> <span class="s2">&#34;Nick Chen&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">copyright</span> <span class="p">=</span> <span class="s2">&#34;Copyright © 2022–2023, Nick Chen; all rights reserved.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">paginate</span> <span class="p">=</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;zh-cn&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">DefaultContentLanguage</span> <span class="p">=</span> <span class="s2">&#34;zh-cn&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">enableInlineShortcodes</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="c"># prevent build failures when using Hugo&#39;s Instagram shortcode due to deprecated Instagram API.</span>
+</span></span><span class="line"><span class="cl"><span class="c"># See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ignoreErrors</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;error-remote-getjson&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># ------------------------------</span>
+</span></span><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;paper&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;KanataRoom&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">color</span> <span class="p">=</span> <span class="s1">&#39;linen&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">twitter</span> <span class="p">=</span> <span class="s1">&#39;cjyx9x&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">github</span> <span class="p">=</span> <span class="s1">&#39;nick-cjyx9&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">avatar</span> <span class="p">=</span> <span class="s1">&#39;cjyx9@outlook.com&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s1">&#39;Nick&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">bio</span> <span class="p">=</span> <span class="s2">&#34;Do not repeat yourself.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># ------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># needed to  render raw HTML (e.g. &lt;sub&gt;, &lt;sup&gt;, &lt;kbd&gt;, &lt;mark&gt;)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">goldmark</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">goldmark</span><span class="p">.</span><span class="nx">renderer</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">unsafe</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;about&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;About&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/about/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;contact&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Contact&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/contact/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;Todolist&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Todolist&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/post/手动置顶假期todolist&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span><span class="p">=</span><span class="s2">&#34;Drytext&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="p">=</span><span class="s2">&#34;DryText&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span><span class="p">=</span><span class="s2">&#34;/tags/干货/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span><span class="p">=</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span><span class="p">=</span><span class="s2">&#34;Friends&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="p">=</span><span class="s2">&#34;Friends&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span><span class="p">=</span><span class="s2">&#34;/friends&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span><span class="p">=</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">taxonomies</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">category</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">tag</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">series</span> <span class="p">=</span> <span class="s2">&#34;series&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">privacy</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">privacy</span><span class="p">.</span><span class="nx">vimeo</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">disabled</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">simple</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">privacy</span><span class="p">.</span><span class="nx">twitter</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">disabled</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">enableDNT</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">simple</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">privacy</span><span class="p">.</span><span class="nx">instagram</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">disabled</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">simple</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">privacy</span><span class="p">.</span><span class="nx">youtube</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">disabled</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">privacyEnhanced</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">services</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">services</span><span class="p">.</span><span class="nx">instagram</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">disableInlineCSS</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">services</span><span class="p">.</span><span class="nx">twitter</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">disableInlineCSS</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>至此，博客搞定，每次配置完想要预览就使用<code>hugo server</code>指令</p>
 <ol start="5">
 <li>写文章
-新建文章可使用套用archetype/中的模板,嫌麻烦可用脚本,见<a href="https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/">Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a></li>
+新建文章可使用套用archetype/中的模板,嫌麻烦可用脚本,见<a class="link" href="https://nick-cjyx9.github.io/post/hugo%e5%bb%ba%e7%ab%99%e7%bb%8f%e9%aa%8c/"  target="_blank" rel="noopener"
+    >Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new post/xxx.md
-</span></span></code></pre></div><p>然后就可以用你喜欢的编辑器愉快写文了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new post/xxx.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后就可以用你喜欢的编辑器愉快写文了</p>
 <h3 id="0x03-上线吧">0x03 上线吧!</h3>
 <p>本地博客搞定后,就可以上线了,首先在博客根目录执行,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo -D
-</span></span></code></pre></div><p>作用是在/public文件夹下生成网站静态文件,继续</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd public
-</span></span><span style="display:flex;"><span>git init
-</span></span><span style="display:flex;"><span>git add .
-</span></span><span style="display:flex;"><span>git commit -m<span style="color:#e6db74">&#34;update&#34;</span>
-</span></span></code></pre></div><p>然后前往github.com
-<img src="https://s2.loli.net/2023/01/17/4DmPbWG8rqnIwVt.png" alt="image.png">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo -D
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>作用是在/public文件夹下生成网站静态文件,继续</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m<span class="s2">&#34;update&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后前往github.com
+<img src="https://s2.loli.net/2023/01/17/4DmPbWG8rqnIwVt.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+>
 新建一个仓库,仓库名填<strong>你的用户名.github.io</strong>,其他不用管,点击创建后,复制第二个代码并执行,下图仅为实例
-<img src="https://s2.loli.net/2023/01/17/r3AolZtRdKnpH6m.png" alt="image.png"></p>
+<img src="https://s2.loli.net/2023/01/17/r3AolZtRdKnpH6m.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>如果上传成功，刷新你的仓库页面将会有一系列文件，和这个github-pages栏目，如果小火箭右侧的tag变为Active代表博客部署成功，你就可以通过<code>你的用户名.github.io</code>访问博客了！</p>
-<p><img src="https://s2.loli.net/2023/01/17/NTxzMqRculG9ktj.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/01/17/NTxzMqRculG9ktj.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
 <p>如果上传失败，请再次尝试<code>git push</code>,可能是网络问题。</p>
-<h2 id="至此教程完结以上的新建文章预览上传github操作均有简化脚本在hugo建站经验---kanataroom-nick-cjyx9githubiohttpsnick-cjyx9githubioposthugo建站经验">至此，教程完结，以上的新建文章、预览、上传github操作均有简化脚本，在<a href="https://nick-cjyx9.github.io/post/hugo%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/">Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a></h2>
+<h2 id="至此教程完结以上的新建文章预览上传github操作均有简化脚本在hugo建站经验---kanataroom-nick-cjyx9githubiohttpsnick-cjyx9githubioposthugo建站经验">至此，教程完结，以上的新建文章、预览、上传github操作均有简化脚本，在<a class="link" href="https://nick-cjyx9.github.io/post/hugo%e5%bb%ba%e7%ab%99%e7%bb%8f%e9%aa%8c/"  target="_blank" rel="noopener"
+    >Hugo建站经验 - KanataRoom (nick-cjyx9.github.io)</a></h2>
+
 </section>
 
-  
-  
-  <footer class="mt-12 flex flex-wrap">
-     
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/%E5%B9%B2%E8%B4%A7"
-      >干货</a
-    >
-     
-    <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-5 py-2 no-underline dark:bg-white/[8%]"
-      href="https://nick-cjyx9.github.io/tags/%E5%BB%BA%E7%AB%99"
-      >建站</a
-    >
-    
-  </footer>
-  
 
-  
-  
-  
-  <nav
-    class="mt-24 flex rounded-lg bg-black/[3%] p-1.5 text-lg dark:bg-white/[8%]" style="margin-bottom: 22px;"
-  >
+    <footer class="article-footer">
     
-    <a
-      class="flex w-1/2 items-center rounded-md p-6 pr-3 no-underline hover:bg-black/[2%]"
-      href="https://nick-cjyx9.github.io/post/%E6%B7%B1%E5%85%A5%E8%B0%83%E6%95%99ybtoj/"
-      ><span class="mr-1.5">←</span><span>深入调♂教ybtOJ</span></a
-    >
-    
-    
-    <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-md p-6 pl-3 no-underline hover:bg-black/[2%]"
-      href="https://nick-cjyx9.github.io/post/%E5%BC%80%E6%96%B0%E5%9D%91/"
-      ><span>开新坑</span><span class="ml-1.5">→</span></a
-    >
-    
-  </nav>
-  
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B9%B2%E8%B4%A7/">干货</a>
+        
+            <a href="/tags/%E5%BB%BA%E7%AB%99/">建站</a>
+        
+    </section>
 
-  
-  <script src="https://giscus.app/client.js"
-        data-repo="nick-cjyx9/blog-comment"
-        data-repo-id="R_kgDOIu_GWQ"
-        data-category="Show and tell"
-        data-category-id="DIC_kwDOIu_GWc4CTc3U"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="nick-cjyx9/blog-comment"
+    data-repo-id="R_kgDOIu_GWQ"
+    data-category="Show and tell"
+    data-category-id="DIC_kwDOIu_GWc4CTc3U"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('true');
+            }
+        }
+    })();
 </script>
 
-    </main>
+    
 
-    <footer
-  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
->
-  <div class="mr-auto">
-    &copy; 2023
-    <a class="link" href="https://nick-cjyx9.github.io">KanataRoom</a>
-  </div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >Powered by Hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >▷ Paper 6</a
-  >
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2023 KanataRoom
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
 </footer>
 
-  </body>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
 </html>
